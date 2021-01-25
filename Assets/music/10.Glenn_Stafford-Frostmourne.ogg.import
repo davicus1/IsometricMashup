@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/10.Glenn_Stafford-Frostmourne.ogg-443cba033de42d3d8f8bfef808c7ba1b.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/10.Glenn_Stafford-Frostmourne.ogg"
+dest_files=[ "res://.import/10.Glenn_Stafford-Frostmourne.ogg-443cba033de42d3d8f8bfef808c7ba1b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

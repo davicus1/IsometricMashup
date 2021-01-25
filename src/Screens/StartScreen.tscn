@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/UI/QuitButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/background.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Title.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/UI_Theme.tres" type="Theme" id=6]
+
+[node name="StartScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 4 )]
+margin_left = -241.227
+margin_top = 84.9557
+margin_right = 227.773
+margin_bottom = 141.956
+theme = ExtResource( 6 )
+text = "Isometric Multiplayer Feature Mashup"
+align = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -220.0
+margin_top = -124.0
+margin_right = 220.0
+margin_bottom = 128.0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SinglePlayer-ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
+margin_right = 440.0
+margin_bottom = 60.0
+next_scene_path = "res://dungeon.tscn"
+
+[node name="MultiPlayer-ChangeSceneButton2" parent="Menu" instance=ExtResource( 3 )]
+margin_top = 64.0
+margin_right = 440.0
+text = "Multiplayer"
+next_scene_path = "res://src/Screens/lobby.tscn"
+
+[node name="Options-ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
+margin_top = 128.0
+margin_right = 440.0
+margin_bottom = 188.0
+text = "Options"
+next_scene_path = "res://src/Screens/OptionsScreen.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 1 )]
+margin_top = 192.0
+margin_right = 440.0

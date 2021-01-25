@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/AutoLoad/music.gd" type="Script" id=1]
+
+[node name="Music" type="Node"]
+script = ExtResource( 1 )
+song_index = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+bus = "BGM"
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]
