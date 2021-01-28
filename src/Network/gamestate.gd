@@ -4,7 +4,7 @@ extends Node
 const DEFAULT_PORT = 14242
 
 # Max number of players.
-const MAX_PEERS = 12
+const MAX_PEERS = 4
 
 # Name for my player.
 var player_name = "The Warrior"
@@ -12,6 +12,8 @@ var player_name = "The Warrior"
 # Names for remote players in id:name format.
 var players = {}
 var players_ready = []
+
+var is_single_player = false
 
 # Signals to let lobby GUI know what's going on.
 signal player_list_changed()
@@ -71,34 +73,38 @@ func unregister_player(id):
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
-	var world = load("res://src/levels/dungeon.tscn").instance()
+	var world = load("res://src/Levels/dungeon.tscn").instance()
 	get_tree().get_root().add_child(world)
 
-	get_tree().get_root().get_node("Lobby").hide()
+	if not is_single_player:
+		get_tree().get_root().get_node("Lobby").hide()
 
 	var player_scene = load("res://src/Actors/troll.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
 		var player = player_scene.instance()
-
+		player.z_index = 1
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
+		
 		player.set_network_master(p_id) #set unique id as master.
 
-		if p_id == get_tree().get_network_unique_id():
+		if is_single_player || p_id == get_tree().get_network_unique_id():
 			# If node for this peer id, set name.
 			player.set_player_name(player_name)
 		else:
 			# Otherwise set name from peer.
 			player.set_player_name(players[p_id])
-
-		world.get_node("Players").add_child(player)
+		
+		
+		#"Players" ???
+		world.get_node("Walls").add_child(player)
 
 	# Set up score.
-	world.get_node("Score").add_player(get_tree().get_network_unique_id(), player_name)
-	for pn in players:
-		world.get_node("Score").add_player(pn, players[pn])
+	#world.get_node("Score").add_player(get_tree().get_network_unique_id(), player_name)
+	#for pn in players:
+	#	world.get_node("Score").add_player(pn, players[pn])
 
 	if not get_tree().is_network_server():
 		# Tell server we are ready to start.
@@ -122,6 +128,11 @@ remote func ready_to_start(id):
 			rpc_id(p, "post_start_game")
 		post_start_game()
 
+#TODO Hack to get single player to work. Then there is the issue of how to start in progress
+func single_player_game():
+	is_single_player = true
+	#register_player(player_name)
+	begin_game()
 
 func host_game(new_player_name):
 	player_name = new_player_name
@@ -146,7 +157,8 @@ func get_player_name():
 
 
 func begin_game():
-	assert(get_tree().is_network_server())
+	if not is_single_player:
+		assert(get_tree().is_network_server())
 
 	# Create a dictionary with peer id and respective spawn points, could be improved by randomizing.
 	var spawn_points = {}
@@ -156,8 +168,9 @@ func begin_game():
 		spawn_points[p] = spawn_point_idx
 		spawn_point_idx += 1
 	# Call to pre-start game with the spawn points.
-	for p in players:
-		rpc_id(p, "pre_start_game", spawn_points)
+	if not is_single_player:
+		for p in players:
+			rpc_id(p, "pre_start_game", spawn_points)
 
 	pre_start_game(spawn_points)
 
