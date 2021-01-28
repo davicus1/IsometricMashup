@@ -71,12 +71,12 @@ func unregister_player(id):
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
-	var world = load("res://world.tscn").instance()
+	var world = load("res://src/levels/dungeon.tscn").instance()
 	get_tree().get_root().add_child(world)
 
 	get_tree().get_root().get_node("Lobby").hide()
 
-	var player_scene = load("res://player.tscn")
+	var player_scene = load("res://src/Actors/troll.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
@@ -172,6 +172,7 @@ func end_game():
 
 
 func _ready():
+	#warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
 	get_tree().connect("connected_to_server", self, "_connected_ok")

@@ -4,7 +4,7 @@ var config_save_path = "user://dw_game.cfg"
 var config_data = ConfigFile.new()
 
 func _ready():
-	var load_response = config_data.load(config_save_path)
+	var _load_response = config_data.load(config_save_path)
 	loadConfig()
 	
 
