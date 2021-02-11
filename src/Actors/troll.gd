@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOTION_SPEED = 160 # Pixels/second.
+const MOTION_SPEED = 160 * 60 # Pixels/second.
 
 #puppet var puppet_pos = Vector2()
 puppet var puppet_motion = Vector2()
@@ -10,13 +10,13 @@ func _ready():
 		$Camera2D.make_current()
 	
 	
-func _physics_process(_delta):
+func _physics_process(delta):
 	var motion = Vector2()
 	if gamestate.is_single_player || is_network_master():
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		motion.y *= 0.5
-		motion = motion.normalized() * MOTION_SPEED
+		motion = motion.normalized() * MOTION_SPEED * delta
 		
 		#Send Network position
 		if not gamestate.is_single_player:

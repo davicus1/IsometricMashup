@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/UI/QuitButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/background.png" type="Texture" id=2]
 [ext_resource path="res://src/UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UI/Title.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/UI/PlayButton.gd" type="Script" id=5]
 [ext_resource path="res://src/UI/UI_Theme.tres" type="Theme" id=6]
 
 [node name="StartScreen" type="Control"]
@@ -49,14 +48,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SinglePlayer-ChangeSceneButton" type="Button" parent="Menu" instance=ExtResource( 3 )]
+[node name="SinglePlayer-ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
 margin_right = 440.0
 margin_bottom = 60.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Play"
-script = ExtResource( 5 )
-next_scene_path = "res://src/Levels/dungeon.tscn"
 
 [node name="MultiPlayer-ChangeSceneButton2" parent="Menu" instance=ExtResource( 3 )]
 margin_top = 64.0

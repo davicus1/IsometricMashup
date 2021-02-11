@@ -73,18 +73,24 @@ func unregister_player(id):
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
-	var world = load("res://src/Levels/dungeon.tscn").instance()
-	get_tree().get_root().add_child(world)
+	var dungeon_scene = load("res://src/Levels/dungeon.tscn").instance()
+	#get_tree().change_scene_to(dungeon_scene)
+	#get_tree().paused = false
+	get_tree().get_root().add_child(dungeon_scene)
 
-	if not is_single_player:
+	if is_single_player:
+		var old_scene = get_tree().get_root().get_node("StartScreen")
+		old_scene.hide()
+		get_tree().get_root().remove_child(old_scene)
+	else:
 		get_tree().get_root().get_node("Lobby").hide()
 
+	
 	var player_scene = load("res://src/Actors/troll.tscn")
-
+	var y_sorter: YSort = dungeon_scene.get_node("YSort")
 	for p_id in spawn_points:
-		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
+		var spawn_pos = dungeon_scene.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
 		var player = player_scene.instance()
-		player.z_index = 1
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
 		
@@ -97,18 +103,26 @@ remote func pre_start_game(spawn_points):
 			# Otherwise set name from peer.
 			player.set_player_name(players[p_id])
 		
+		#var floor_tiles: TileMap = world.get_node("Floor")
+		#world.add_child_below_node(floor_tiles,player,true)
+		#y_sorter.get_node("Players").add_child(player)
+		y_sorter.add_child(player)
 		
-		#"Players" ???
-		world.get_node("Walls").add_child(player)
+		#world.add_child_below_node(floor_tiles,player,true)
+		player.add_to_group("Players",true)
+		#world.get_node("Players").add_child(player)
+		#world.get_node("Walls").add_child(player)
 
+	y_sorter.set_sort_enabled(false)
+	y_sorter.set_sort_enabled(true)
 	# Set up score.
 	#world.get_node("Score").add_player(get_tree().get_network_unique_id(), player_name)
 	#for pn in players:
 	#	world.get_node("Score").add_player(pn, players[pn])
-
-	if not get_tree().is_network_server():
-		# Tell server we are ready to start.
-		rpc_id(1, "ready_to_start", get_tree().get_network_unique_id())
+	if not is_single_player:
+		if not get_tree().is_network_server():
+			# Tell server we are ready to start.
+			rpc_id(1, "ready_to_start", get_tree().get_network_unique_id())
 	elif players.size() == 0:
 		post_start_game()
 
