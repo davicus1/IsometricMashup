@@ -9,13 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Object",
+"class": "Capacity",
+"language": "GDScript",
+"path": "res://src/Components/Capacity.gd"
+}, {
+"base": "Object",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://src/Components/Equipment.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "Node",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://src/Components/Inventory.gd"
+}, {
+"base": "Node2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://src/Components/Item.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": ""
+"Capacity": "",
+"Equipment": "",
+"GitAPI": "",
+"Inventory": "",
+"Item": ""
 }
 
 [application]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Objects/Column_Stone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Objects/item_club.tscn" type="PackedScene" id=3]
 
 [node name="Dungeon" type="Node2D"]
 
@@ -53,3 +54,8 @@ position = Vector2( 390, 288 )
 position = Vector2( 800, 88 )
 
 [node name="Players" type="YSort" parent="YSort"]
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Item_Club" parent="Items" instance=ExtResource( 3 )]
+position = Vector2( 1151.15, 254.49 )
