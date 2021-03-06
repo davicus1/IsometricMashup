@@ -2,15 +2,15 @@ extends Control
 
 onready var scene_tree: = get_tree()
 onready var pause_overlay: ColorRect = get_node("PausedOverlay")
-onready var score: Label = get_node("Score")
+onready var health: Label = get_node("Health")
 onready var ui_title: Label = get_node("PausedOverlay/Title")
 
 const DIED_MESSAGE: = "You Died! :("
 var paused: = false setget set_paused
 
 func _ready():
-	PlayerData.connect("score_updated", self, "update_interface")
-	PlayerData.connect("player_died", self, "_on_PlayerData_player_died")
+	gamestate.connect("health_updated", self, "update_interface")
+	gamestate.connect("player_died", self, "_on_PlayerData_player_died")
 	update_interface()
 	
 func set_paused(value: bool):
@@ -24,7 +24,7 @@ func _unhandled_input(event):
 		scene_tree.set_input_as_handled()
 
 func update_interface():
-	score.text = "Score %s" % PlayerData.score
+	health.text = "Health %s / %s" % [gamestate.local_player_character.health_current, gamestate.local_player_character.health_max]
 
 func _on_PlayerData_player_died():
 	self.paused = true

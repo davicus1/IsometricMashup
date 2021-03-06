@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Actors/troll.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/troll.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=3]
 
 [node name="Troll" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -28,3 +29,7 @@ build_mode = 1
 polygon = PoolVector2Array( -13.058, 9.93562, -10.5382, 11.668, -5.02605, 11.8255, 13.5578, 9.46315, 20.3299, 4.58096, 25.2121, -0.143745, 25.9995, -3.76602, 23.3222, -7.2308, 10.5655, -11.3255, -4.08111, -10.6956, -14.003, -6.12837, -16.0504, -0.143745, -14.9479, 7.1008 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UserInterface" parent="Camera2D" instance=ExtResource( 3 )]
+
+[editable path="Camera2D/UserInterface"]

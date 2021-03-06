@@ -1,9 +1,16 @@
-extends KinematicBody2D
+extends Actor
 
 const MOTION_SPEED = 160 * 60 # Pixels/second.
 
 #puppet var puppet_pos = Vector2()
 puppet var puppet_motion = Vector2()
+
+#A prototype Troll. 
+func _init():
+	health_max = 20
+	health_current = 20
+	capacity = Capacity.new(50,100,20)
+	inventory = Inventory.new()
 
 func _ready():
 	if gamestate.is_single_player || is_network_master():
@@ -33,4 +40,5 @@ func _physics_process(delta):
 	#	puppet_pos = position # To avoid jitter (TODO see this in action, copied from bomber)
 
 func set_player_name(new_name):
+	character_name = new_name
 	get_node("Name").set_text(new_name)

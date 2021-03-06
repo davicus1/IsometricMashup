@@ -14,6 +14,11 @@ var players = {}
 var players_ready = []
 
 var is_single_player = false
+var local_player_character:Actor
+
+# Signals to let the in-game UI know what's going on
+signal health_updated()
+signal player_died()
 
 # Signals to let lobby GUI know what's going on.
 signal player_list_changed()
@@ -99,6 +104,7 @@ remote func pre_start_game(spawn_points):
 		if is_single_player || p_id == get_tree().get_network_unique_id():
 			# If node for this peer id, set name.
 			player.set_player_name(player_name)
+			local_player_character = player
 		else:
 			# Otherwise set name from peer.
 			player.set_player_name(players[p_id])
