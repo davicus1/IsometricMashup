@@ -29,7 +29,20 @@ build_mode = 1
 polygon = PoolVector2Array( -13.058, 9.93562, -10.5382, 11.668, -5.02605, 11.8255, 13.5578, 9.46315, 20.3299, 4.58096, 25.2121, -0.143745, 25.9995, -3.76602, 23.3222, -7.2308, 10.5655, -11.3255, -4.08111, -10.6956, -14.003, -6.12837, -16.0504, -0.143745, -14.9479, 7.1008 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1000
 
 [node name="UserInterface" parent="Camera2D" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -513.0
+margin_top = -299.0
+margin_right = 513.0
+margin_bottom = 299.0
+
+[node name="PausedOverlay" parent="Camera2D/UserInterface" index="1"]
+visible = false
+
+[node name="PauseMenu" parent="Camera2D/UserInterface/PausedOverlay" index="1"]
+visible = true
 
 [editable path="Camera2D/UserInterface"]
