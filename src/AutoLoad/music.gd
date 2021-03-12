@@ -2,7 +2,7 @@ extends Node
 
 #TODO Customize this with an external source or playlist from config
 var music_folder:= "res://Assets/music/"
-var playlist:= ["10.Glenn_Stafford-Frostmourne.ogg","12.Spybreak.ogg"]
+var playlist:= ["PreludeInC-BWV846.ogg"]
 
 export var song_index = 0
 
@@ -30,7 +30,6 @@ func _play_something_if_able():
 		$BackgroundMusic.stream = stream
 		$BackgroundMusic.volume_db = linear2db(1.0)
 		$BackgroundMusic.play()
-		$BackgroundMusic.seek(411.0)
 		
 
 func _on_BackgroundMusic_finished():
