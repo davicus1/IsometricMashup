@@ -1,6 +1,10 @@
 extends Node2D
 class_name Item
 
+var _constructed:bool
+
+var scene_for_item
+var icon:Texture
 var collectable:bool
 var health_current:int
 var health_max:int
@@ -18,4 +22,3 @@ var stack_current:int
 
 func _ready():
 	pass
-

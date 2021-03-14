@@ -9,6 +9,7 @@ var inventory:Inventory
 var capacity:Capacity
 var character_name:String
 
+var collectable_items_in_reach:Array = []
 
 func _ready():
 	pass

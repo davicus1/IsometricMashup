@@ -10,3 +10,5 @@ var neck_equipable:bool
 var head_equipable:bool
 var finger_equipable:bool
 var ear_equipable:bool
+var one_handed_weapon:bool
+var two_handed_weapon:bool
