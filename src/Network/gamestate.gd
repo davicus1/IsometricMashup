@@ -13,7 +13,7 @@ var player_name = "The Warrior"
 var players = {}
 var players_ready = []
 
-var is_single_player = false
+var is_single_player = true
 var local_player_character:Actor
 
 # Signals to let the in-game UI know what's going on
@@ -155,6 +155,7 @@ func single_player_game():
 	begin_game()
 
 func host_game(new_player_name):
+	is_single_player = false
 	player_name = new_player_name
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
@@ -162,6 +163,7 @@ func host_game(new_player_name):
 
 
 func join_game(ip, new_player_name):
+	is_single_player = false
 	player_name = new_player_name
 	var client = NetworkedMultiplayerENet.new()
 	client.create_client(ip, DEFAULT_PORT)

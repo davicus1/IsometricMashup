@@ -24,6 +24,9 @@ var placeholder_sfx = "Some SFX!\nLicensed under Creative Commons: By Attributio
 
 var sfx_credits = [placeholder_sfx,placeholder_sfx,placeholder_sfx,placeholder_sfx,placeholder_sfx]
 
+#Assets
+var kenney_Packs = "Dungeon Pack (2.3), Library Pack (2.1), Created/distributed by Kenney (www.kenney.nl) License: (Creative Commons Zero, CC0)"
+var asset_credits = [kenney_Packs]
 onready var back_button = $BackButton
 onready var credit_list = $ScrollContainer/CreditList
 onready var scroll_container = $ScrollContainer
@@ -38,6 +41,7 @@ func _ready():
 	add_section("Developers",developer_credits)
 	add_section("Music",music_credits)
 	add_section("SFX",sfx_credits)
+	add_section("Assets",asset_credits)
 
 
 func _process(delta:float):
