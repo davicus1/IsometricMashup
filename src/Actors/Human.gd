@@ -25,7 +25,10 @@ func _physics_process(delta):
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		motion.y *= 0.5
-		motion = motion.normalized() * MOTION_SPEED * delta
+		var speed = MOTION_SPEED
+		if Input.is_action_pressed("Run"):
+			speed *= 3
+		motion = motion.normalized() * speed * delta
 		
 		#Send Network position
 		if not gamestate.is_single_player:
