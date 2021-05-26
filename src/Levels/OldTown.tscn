@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Props/Walls/StoneWall_E.tscn" type="PackedScene" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://src/Props/Walls/StoneWallWoodSupport_N.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Props/Walls/StoneHalfWall_S.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Props/Walls/StoneArch_S.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Window.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Props/Doors/StoneWall_W_Door.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Props/Walls/StoneWall_N_Window.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Door.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Props/PreFabBuildings/Stone Building 4x3 E Door 3 Window.tscn" type="PackedScene" id=20]
 
 [node name="OldTown" type="Node2D"]
 
@@ -46,7 +52,21 @@ tile_data = PoolIntArray( -2555896, 76, 0, -2555895, 76, 0, -2490360, 76, 0, -24
 [node name="Actors" type="YSort" parent="YSort"]
 
 [node name="Player" parent="YSort/Actors" instance=ExtResource( 7 )]
-position = Vector2( -11848, 5224 )
+position = Vector2( 2992, 1432 )
+
+[node name="Doors" type="YSort" parent="YSort"]
+
+[node name="StoneWall_W" parent="YSort/Doors" instance=ExtResource( 17 )]
+position = Vector2( 2976, -1416 )
+
+[node name="StoneWall_W2" parent="YSort/Doors" instance=ExtResource( 17 )]
+position = Vector2( 3488, -1672 )
+
+[node name="StoneWall_W3" parent="YSort/Doors" instance=ExtResource( 17 )]
+position = Vector2( 1568, -1216 )
+
+[node name="StoneWall_E" parent="YSort/Doors" instance=ExtResource( 19 )]
+position = Vector2( 3432, 168 )
 
 [node name="Walls" type="YSort" parent="YSort"]
 
@@ -239,6 +259,65 @@ position = Vector2( -12248, 6168 )
 [node name="StoneArch_S3" parent="YSort/Walls" instance=ExtResource( 14 )]
 position = Vector2( -12120, 6232 )
 
+[node name="StoneWall_Corner_E2" parent="YSort/Walls" instance=ExtResource( 10 )]
+position = Vector2( 3576, -1240 )
+
+[node name="StoneWall_Corner_N2" parent="YSort/Walls" instance=ExtResource( 5 )]
+position = Vector2( 3200, -1464 )
+
+[node name="StoneWall_Corner_S2" parent="YSort/Walls" instance=ExtResource( 4 )]
+position = Vector2( 3328, -1120 )
+
+[node name="StoneWall_E_Window2" parent="YSort/Walls" instance=ExtResource( 9 )]
+position = Vector2( 3552, -1184 )
+
+[node name="StoneWall_S2" parent="YSort/Walls" instance=ExtResource( 8 )]
+position = Vector2( 3104, -1184 )
+
+[node name="StoneWall_N5" parent="YSort/Walls" instance=ExtResource( 6 )]
+position = Vector2( 3424, -1416 )
+
+[node name="StoneWall_N6" parent="YSort/Walls" instance=ExtResource( 18 )]
+position = Vector2( 3552, -1352 )
+
+[node name="StoneWall_S3" parent="YSort/Walls" instance=ExtResource( 16 )]
+position = Vector2( 2976, -1248 )
+
+[node name="StoneWall_Corner_E3" parent="YSort/Walls" instance=ExtResource( 15 )]
+position = Vector2( 2952, -1304 )
+
+[node name="StoneWall_Corner_E4" parent="YSort/Walls" instance=ExtResource( 10 )]
+position = Vector2( 4088, -1496 )
+
+[node name="StoneWall_Corner_N3" parent="YSort/Walls" instance=ExtResource( 5 )]
+position = Vector2( 3712, -1720 )
+
+[node name="StoneWall_Corner_S3" parent="YSort/Walls" instance=ExtResource( 4 )]
+position = Vector2( 3840, -1376 )
+
+[node name="StoneWall_E_Window3" parent="YSort/Walls" instance=ExtResource( 9 )]
+position = Vector2( 4064, -1440 )
+
+[node name="StoneWall_S4" parent="YSort/Walls" instance=ExtResource( 8 )]
+position = Vector2( 3616, -1440 )
+
+[node name="StoneWall_N7" parent="YSort/Walls" instance=ExtResource( 6 )]
+position = Vector2( 3936, -1672 )
+
+[node name="StoneWall_N8" parent="YSort/Walls" instance=ExtResource( 18 )]
+position = Vector2( 4064, -1608 )
+
+[node name="StoneWall_S5" parent="YSort/Walls" instance=ExtResource( 16 )]
+position = Vector2( 3488, -1504 )
+
+[node name="StoneWall_Corner_E5" parent="YSort/Walls" instance=ExtResource( 15 )]
+position = Vector2( 3464, -1560 )
+
 [node name="Stuff" type="YSort" parent="YSort"]
 
 [node name="Fountain" parent="YSort/Stuff" instance=ExtResource( 11 )]
+
+[node name="BuildingsPhase1" type="YSort" parent="YSort"]
+
+[node name="Water Mill Apprentice House" parent="YSort/BuildingsPhase1" instance=ExtResource( 20 )]
+position = Vector2( 4016, 1848 )
