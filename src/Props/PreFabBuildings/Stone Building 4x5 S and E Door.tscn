@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_E.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Props/Walls/StoneWall_W_Window.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Props/Walls/StoneWall_E_Window.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_S.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Props/Walls/StoneWall_N_Window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Window.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Props/Doors/StoneWall_S_Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Props/Walls/StoneWall_W.tscn" type="PackedScene" id=12]
+
+[node name="Stone Building 4x5 S and E door" type="YSort"]
+
+[node name="StoneWall_Corner_E" parent="." instance=ExtResource( 1 )]
+position = Vector2( 472, 72 )
+
+[node name="StoneWall_Corner_W" parent="." instance=ExtResource( 11 )]
+position = Vector2( -400, 139 )
+
+[node name="StoneWall_Corner_S" parent="." instance=ExtResource( 5 )]
+position = Vector2( -32, 320 )
+
+[node name="StoneWall_Corner_N" parent="." instance=ExtResource( 6 )]
+position = Vector2( 96, -136 )
+
+[node name="StoneWall_N_Window" parent="." instance=ExtResource( 8 )]
+position = Vector2( 320, -88 )
+
+[node name="StoneWall_N_Window2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, -24 )
+
+[node name="Floor" type="TileMap" parent="."]
+position = Vector2( 3296, -2656 )
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 256, 128 )
+cell_quadrant_size = 128
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( 2097159, 76, 0, 2097160, 76, 0, 2097161, 76, 0, 2097162, 76, 0, 2162695, 76, 0, 2162696, 76, 0, 2162697, 76, 0, 2162698, 76, 0, 2228231, 76, 0, 2228232, 76, 0, 2228233, 76, 0, 2228234, 76, 0, 2293767, 76, 0, 2293768, 76, 0, 2293769, 76, 0, 2293770, 76, 0, 2359303, 76, 0, 2359304, 76, 0, 2359305, 76, 0, 2359306, 76, 0 )
+
+[node name="StoneWall_S_Window2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -240, 264 )
+
+[node name="StoneWall_W_Window" parent="." instance=ExtResource( 3 )]
+position = Vector2( -384, 32 )
+
+[node name="StoneWall_E_Window" parent="." instance=ExtResource( 4 )]
+position = Vector2( 192, 256 )
+
+[node name="StoneWall_E_Door" parent="." instance=ExtResource( 7 )]
+position = Vector2( 320, 192 )
+
+[node name="StoneWall_S_Door" parent="." instance=ExtResource( 10 )]
+position = Vector2( -368, 200 )
+
+[node name="StoneWall_W" parent="." instance=ExtResource( 12 )]
+position = Vector2( 344, 136 )
+
+[node name="StoneWall_E_Window2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -32, -96 )
+
+[node name="StoneWall_W2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -256, -32 )

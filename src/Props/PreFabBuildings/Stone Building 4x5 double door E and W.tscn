@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_E.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Props/Walls/StoneWall_W_Window.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Props/Walls/StoneWall_E_Window.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_S.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Props/Walls/StoneWall_N_Window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Window.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Props/Doors/StoneWall_W_Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=11]
+
+[node name="Merchants Guild" type="YSort"]
+
+[node name="StoneWall_Corner_E" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2824, 2728 )
+
+[node name="StoneWall_Corner_W" type="StaticBody2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( -3696, 2795 )
+
+[node name="StoneWall_Corner_S" type="StaticBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -3328, 2976 )
+
+[node name="StoneWall_Corner_N" type="StaticBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( -3200, 2520 )
+
+[node name="StoneWall_N_Window" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -2976, 2568 )
+
+[node name="StoneWall_N_Window2" type="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -2848, 2632 )
+
+[node name="Floor" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 256, 128 )
+cell_quadrant_size = 128
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( 2097159, 76, 0, 2097160, 76, 0, 2097161, 76, 0, 2097162, 76, 0, 2162695, 76, 0, 2162696, 76, 0, 2162697, 76, 0, 2162698, 76, 0, 2228231, 76, 0, 2228232, 76, 0, 2228233, 76, 0, 2228234, 76, 0, 2293767, 76, 0, 2293768, 76, 0, 2293769, 76, 0, 2293770, 76, 0, 2359303, 76, 0, 2359304, 76, 0, 2359305, 76, 0, 2359306, 76, 0 )
+
+[node name="StoneWall_S_Window" type="StaticBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( -3664, 2856 )
+
+[node name="StoneWall_S_Window2" type="StaticBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( -3536, 2920 )
+
+[node name="StoneWall_W_Door" type="StaticBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( -3424, 2568 )
+
+[node name="StoneWall_W_Door2" type="StaticBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( -3552, 2632 )
+
+[node name="StoneWall_W" type="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -3680, 2696 )
+
+[node name="StoneWall_E_Window" type="StaticBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( -3104, 2912 )
+
+[node name="StoneWall_E_Door" type="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -2976, 2848 )
+
+[node name="StoneWall_E_Door2" type="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -2848, 2784 )

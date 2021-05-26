@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_N.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Walls/StoneWall_N_Window.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Window.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Props/Walls/StoneWall_E_WoodSupports.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=8]
+
+[node name="Vendor" type="YSort"]
+
+[node name="StoneWall_E_WoodSupports" parent="." instance=ExtResource( 7 )]
+position = Vector2( 127, 200 )
+
+[node name="StoneWall_E_WoodSupports2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 383, 72 )
+
+[node name="StoneWall_S_Window2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -225, 120 )
+
+[node name="StoneWall_S_Window" parent="." instance=ExtResource( 6 )]
+position = Vector2( -97, 184 )
+
+[node name="StoneWall_N_Window" parent="." instance=ExtResource( 5 )]
+position = Vector2( 351, 8 )
+
+[node name="StoneWall_N_Window2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 223, -56 )
+
+[node name="StoneWall_Corner_E" parent="." instance=ExtResource( 8 )]
+position = Vector2( -256, 60 )
+
+[node name="StoneWall_Corner_N" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1, -104 )
+
+[node name="StoneWall_E" parent="." instance=ExtResource( 4 )]
+position = Vector2( -129, -56 )
+
+[node name="StoneWall_E_Gate" parent="." instance=ExtResource( 1 )]
+position = Vector2( 255, 136 )
+
+[node name="Floor" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 256, 128 )
+cell_quadrant_size = 128
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -1, 18, 0, -65536, 18, 0, -65535, 18, 0, -65534, 18, 0, 65535, 18, 0, 0, 18, 0, 1, 18, 0, 2, 18, 0, 131071, 18, 0, 65536, 18, 0, 65537, 18, 0, 65538, 18, 0 )
