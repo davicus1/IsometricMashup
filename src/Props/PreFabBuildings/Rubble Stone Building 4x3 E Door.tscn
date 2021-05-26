@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/Props/Walls/StoneWall_N.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_E.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Props/Walls/StoneWall_E_Rubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Rubble_Left.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_S.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Props/Walls/StoneWall_W_Rubble_Left_Aged.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Props/Walls/StoneWall_N_Window.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Props/Walls/StoneWall_S_Rubble_Right.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Props/Doors/StoneWall_W_Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Props/Walls/StoneWall_W_Rubble_Right_Aged.tscn" type="PackedScene" id=10]
+
+[node name="Rubble Stone Building 4x3 E Door" type="YSort"]
+
+[node name="Walls" type="YSort" parent="."]
+
+[node name="StoneWall_W" parent="Walls" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( -272, -64 )
+
+[node name="StoneWall_Corner_E2" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 328, 112 )
+
+[node name="StoneWall_Corner_S2" parent="Walls" instance=ExtResource( 5 )]
+position = Vector2( 80, 232 )
+
+[node name="StoneWall_N5" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 176, -64 )
+
+[node name="StoneWall_N6" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 48, -128 )
+
+[node name="StoneWall_N_Window" parent="Walls" instance=ExtResource( 7 )]
+position = Vector2( 304, 0 )
+
+[node name="StoneWall_E_Rubble" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 304, 168 )
+
+[node name="StoneWall_S_Rubble_Left" parent="Walls" instance=ExtResource( 4 )]
+position = Vector2( -144, 168 )
+
+[node name="StoneWall_S_Rubble_Right" parent="Walls" instance=ExtResource( 8 )]
+position = Vector2( -368, 64 )
+
+[node name="StoneWall_W_Rubble_Left_Aged" parent="Walls" instance=ExtResource( 6 )]
+position = Vector2( -400, 0 )
+
+[node name="StoneWall_W_Rubble_Right_Aged" parent="Walls" instance=ExtResource( 10 )]
+position = Vector2( -176, -112 )
