@@ -26,6 +26,7 @@
 [ext_resource path="res://src/Props/PreFabBuildings/Water Cistern.tscn" type="PackedScene" id=24]
 
 [node name="OldTown" type="Node2D"]
+position = Vector2( 568, 88 )
 script = ExtResource( 16 )
 
 [node name="Dirt" type="TileMap" parent="."]
@@ -57,7 +58,7 @@ tile_data = PoolIntArray( -2555896, 76, 0, -2555895, 76, 0, -2490360, 76, 0, -24
 [node name="Actors" type="YSort" parent="YSort"]
 
 [node name="Player" parent="YSort/Actors" instance=ExtResource( 7 )]
-position = Vector2( -9568, 4944 )
+position = Vector2( 4984, -776 )
 
 [node name="Doors" type="YSort" parent="YSort"]
 

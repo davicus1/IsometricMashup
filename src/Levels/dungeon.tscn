@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Objects/Column_Stone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Objects/item_club.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/item_rock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/DoorOpener.gd" type="Script" id=5]
 
 [node name="Dungeon" type="Node2D"]
 
@@ -58,3 +59,9 @@ position = Vector2( 1144.42, 267.322 )
 
 [node name="Item_Club" parent="Items" instance=ExtResource( 3 )]
 position = Vector2( 1151.15, 254.49 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 607.376, 56.6819, 633.193, 78.0086, 596.151, 101.019, 561.916, 75.2025, 515.334, 33.6714, 553.498, 10.0997 )

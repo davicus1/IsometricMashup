@@ -49,5 +49,6 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="gui_input" from="." to="." method="_on_CreditsScreen_gui_input"]
 [connection signal="gui_input" from="ScrollContainer/CreditList" to="." method="_on_CreditList_gui_input"]

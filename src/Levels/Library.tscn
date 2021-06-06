@@ -55,3 +55,8 @@ position = Vector2( 4348, 93 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 4218.47, 502.591 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 3295, 266, 3712, 473, 3739, 462, 3336, 252, 3350, 213, 3995, -83, 3976, -111, 3304, 211 )
