@@ -769,28 +769,28 @@ tracks/0/keys = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id=26]
-animation = "IdleN"
-
-[sub_resource type="AnimationNodeAnimation" id=27]
-animation = "IdleS"
-
-[sub_resource type="AnimationNodeAnimation" id=28]
-animation = "IdleE"
-
-[sub_resource type="AnimationNodeAnimation" id=29]
-animation = "IdleW"
-
-[sub_resource type="AnimationNodeAnimation" id=30]
-animation = "IdleW"
-
-[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "IdleSE"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "IdleNW"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "IdleNE"
 
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "IdleSW"
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "IdleS"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "IdleW"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "IdleE"
+
 [sub_resource type="AnimationNodeAnimation" id=59]
-animation = "RunSE"
+animation = "IdleN"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=34]
 blend_point_0/node = SubResource( 26 )
@@ -802,38 +802,38 @@ blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 29 )
 blend_point_3/pos = Vector2( -1, 0 )
 blend_point_4/node = SubResource( 30 )
-blend_point_4/pos = Vector2( -1, 1 )
+blend_point_4/pos = Vector2( -0.5, 0.5 )
 blend_point_5/node = SubResource( 32 )
-blend_point_5/pos = Vector2( -1, -1 )
+blend_point_5/pos = Vector2( -0.5, -0.5 )
 blend_point_6/node = SubResource( 33 )
-blend_point_6/pos = Vector2( 1, 1 )
+blend_point_6/pos = Vector2( 0.5, 0.5 )
 blend_point_7/node = SubResource( 59 )
-blend_point_7/pos = Vector2( 1, -1 )
+blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=35]
-animation = "PickupS"
-
-[sub_resource type="AnimationNodeAnimation" id=36]
-animation = "PickupE"
-
-[sub_resource type="AnimationNodeAnimation" id=37]
-animation = "PickupNE"
-
-[sub_resource type="AnimationNodeAnimation" id=38]
-animation = "PickupSE"
-
-[sub_resource type="AnimationNodeAnimation" id=39]
-animation = "PickupN"
-
-[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "PickupNW"
 
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "PickupNE"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "PickupE"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "PickupN"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "PickupSE"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "PickupS"
+
 [sub_resource type="AnimationNodeAnimation" id=41]
-animation = "PickupW"
+animation = "PickupSW"
 
 [sub_resource type="AnimationNodeAnimation" id=42]
-animation = "PickupSW"
+animation = "PickupW"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=43]
 blend_point_0/node = SubResource( 35 )
@@ -841,60 +841,61 @@ blend_point_0/pos = Vector2( 0, -1 )
 blend_point_1/node = SubResource( 36 )
 blend_point_1/pos = Vector2( 1, 0 )
 blend_point_2/node = SubResource( 37 )
-blend_point_2/pos = Vector2( 1, 1 )
+blend_point_2/pos = Vector2( 0.5, 0.5 )
 blend_point_3/node = SubResource( 38 )
-blend_point_3/pos = Vector2( 1, -1 )
+blend_point_3/pos = Vector2( 0.5, -0.5 )
 blend_point_4/node = SubResource( 39 )
 blend_point_4/pos = Vector2( 0, 1 )
 blend_point_5/node = SubResource( 40 )
-blend_point_5/pos = Vector2( -1, 1 )
+blend_point_5/pos = Vector2( -0.5, 0.5 )
 blend_point_6/node = SubResource( 41 )
 blend_point_6/pos = Vector2( -1, 0 )
 blend_point_7/node = SubResource( 42 )
-blend_point_7/pos = Vector2( -1, -1 )
+blend_point_7/pos = Vector2( -0.5, -0.5 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=51]
-animation = "RunW"
+animation = "RunSW"
 
 [sub_resource type="AnimationNodeAnimation" id=52]
-animation = "RunNW"
-
-[sub_resource type="AnimationNodeAnimation" id=53]
-animation = "RunN"
-
-[sub_resource type="AnimationNodeAnimation" id=54]
-animation = "RunNE"
-
-[sub_resource type="AnimationNodeAnimation" id=55]
-animation = "RunE"
-
-[sub_resource type="AnimationNodeAnimation" id=56]
-animation = "RunSE"
-
-[sub_resource type="AnimationNodeAnimation" id=57]
 animation = "RunS"
 
+[sub_resource type="AnimationNodeAnimation" id=53]
+animation = "RunSE"
+
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "RunE"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "RunNE"
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "RunN"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "RunNW"
+
 [sub_resource type="AnimationNodeAnimation" id=58]
-animation = "RunSW"
+animation = "RunW"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=44]
 blend_point_0/node = SubResource( 51 )
 blend_point_0/pos = Vector2( -1, 0 )
 blend_point_1/node = SubResource( 52 )
-blend_point_1/pos = Vector2( -1, 1 )
+blend_point_1/pos = Vector2( -0.5, 0.5 )
 blend_point_2/node = SubResource( 53 )
 blend_point_2/pos = Vector2( 0, 1 )
 blend_point_3/node = SubResource( 54 )
-blend_point_3/pos = Vector2( 1, 1 )
+blend_point_3/pos = Vector2( 0.5, 0.5 )
 blend_point_4/node = SubResource( 55 )
 blend_point_4/pos = Vector2( 1, 0 )
 blend_point_5/node = SubResource( 56 )
-blend_point_5/pos = Vector2( 1, -1 )
+blend_point_5/pos = Vector2( 0.5, -0.5 )
 blend_point_6/node = SubResource( 57 )
 blend_point_6/pos = Vector2( 0, -1 )
 blend_point_7/node = SubResource( 58 )
-blend_point_7/pos = Vector2( -1, -1 )
+blend_point_7/pos = Vector2( -0.5, -0.5 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=45]
 
@@ -925,8 +926,8 @@ polygon = PoolVector2Array( 0.163509, 18.8723, -20.2017, 14.5614, -26.2963, 2.37
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -191.216 )
 frames = SubResource( 1 )
-animation = "Run-E"
-frame = 7
+animation = "Run-SW"
+frame = 9
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -965,4 +966,4 @@ active = true
 parameters/playback = SubResource( 50 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Pickup/blend_position = Vector2( 0, 0 )
-parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( -0.0018416, -0.0123457 )
