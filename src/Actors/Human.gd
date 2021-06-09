@@ -17,6 +17,7 @@ var actionDirection = Vector2.DOWN #intention is this is southeast
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
+onready var animatedSprite = $AnimatedSprite
 onready var animationState = animationTree.get("parameters/playback")
 
 #A prototype HU-MAAN. 
@@ -46,17 +47,24 @@ func moveState(delta):
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		motion.y *= 0.5
+		actionDirection = motion.normalized()
+		animationTree.set("parameters/Idle/blend_position", actionDirection)
+		animationTree.set("parameters/Run/blend_position", actionDirection)
+		animationTree.set("parameters/Walk/blend_position", actionDirection)
+		animationTree.set("parameters/Pickup/blend_position", actionDirection)
+			
 		if motion != Vector2.ZERO:
 			var speed = MOTION_SPEED
 			if Input.is_action_pressed("Run"):
 				speed *= 3
-			actionDirection = motion.normalized()
+				animatedSprite.speed_scale = 1
+				animationState.travel("Run")
+			else:
+				animatedSprite.speed_scale = .3
+				animationState.travel("Walk")
 			motion = actionDirection * speed * delta
-			animationTree.set("parameters/Idle/blend_position", actionDirection)
-			animationTree.set("parameters/Run/blend_position", actionDirection)
-			animationTree.set("parameters/Pickup/blend_position", actionDirection)
-			animationState.travel("Run")
 		else:
+			animatedSprite.speed_scale = 1
 			animationState.travel("Idle")
 		#Send Network position
 		#TODO check actionDirection animations for multiplayer
@@ -70,6 +78,7 @@ func moveState(delta):
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
 	if Input.is_action_just_pressed("Pickup"):
+		animatedSprite.speed_scale = 1
 		state = PlayerState.PICKUP
 	
 	#if not is_network_master():
