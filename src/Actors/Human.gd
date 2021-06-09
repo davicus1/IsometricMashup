@@ -47,13 +47,8 @@ func moveState(delta):
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		motion.y *= 0.5
-		actionDirection = motion.normalized()
-		animationTree.set("parameters/Idle/blend_position", actionDirection)
-		animationTree.set("parameters/Run/blend_position", actionDirection)
-		animationTree.set("parameters/Walk/blend_position", actionDirection)
-		animationTree.set("parameters/Pickup/blend_position", actionDirection)
-			
 		if motion != Vector2.ZERO:
+			actionDirection = motion.normalized()
 			var speed = MOTION_SPEED
 			if Input.is_action_pressed("Run"):
 				speed *= 3
@@ -66,6 +61,10 @@ func moveState(delta):
 		else:
 			animatedSprite.speed_scale = 1
 			animationState.travel("Idle")
+		animationTree.set("parameters/Idle/blend_position", actionDirection)
+		animationTree.set("parameters/Run/blend_position", actionDirection)
+		animationTree.set("parameters/Walk/blend_position", actionDirection)
+		animationTree.set("parameters/Pickup/blend_position", actionDirection)
 		#Send Network position
 		#TODO check actionDirection animations for multiplayer
 		if not gamestate.is_single_player:
