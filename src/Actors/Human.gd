@@ -8,6 +8,8 @@ puppet var puppet_motion = Vector2.ZERO
 puppet var puppet_direction = Vector2.DOWN
 puppet var puppet_running = false
 puppet var puppet_state = PlayerState.MOVE
+puppet var puppet_position = Vector2.ZERO
+
 
 enum PlayerState{
 	MOVE,
@@ -62,11 +64,13 @@ func moveState(delta):
 			rset("puppet_direction", actionDirection)
 			rset("puppet_running", running)
 			rset("puppet_state", state)
+			rset("puppet_position", position)
 	else:
 		motion = puppet_motion
 		actionDirection = puppet_direction
 		running = puppet_running
 		state = puppet_state
+		position = puppet_position
 		
 	animationTree.set("parameters/Idle/blend_position", actionDirection)
 	animationTree.set("parameters/Run/blend_position", actionDirection)
