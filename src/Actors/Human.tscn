@@ -172,44 +172,44 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 164 ), ExtResource( 163 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 160 ), ExtResource( 86 ), ExtResource( 65 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "Pickup-SE",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 45 ), ExtResource( 57 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 54 ), ExtResource( 80 ), ExtResource( 34 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 91 ) ],
 "loop": true,
 "name": "Pickup-S",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 123 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 139 ), ExtResource( 146 ), ExtResource( 155 ), ExtResource( 147 ), ExtResource( 153 ), ExtResource( 142 ), ExtResource( 98 ) ],
-"loop": true,
-"name": "Pickup-NE",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 96 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": false,
-"name": "Idle-S",
+"name": "Idle-NW",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 27 ), ExtResource( 7 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 30 ) ],
 "loop": true,
-"name": "Run-W",
-"speed": 13.0
+"name": "Pickup-NW",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 152 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 168 ) ],
+"loop": true,
+"name": "Walk-E",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 152 ), ExtResource( 132 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ) ],
 "loop": true,
 "name": "Run-E",
 "speed": 13.0
 }, {
+"frames": [ ExtResource( 127 ) ],
+"loop": false,
+"name": "Idle-N",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 96 ) ],
+"loop": false,
+"name": "Idle-S",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 154 ), ExtResource( 122 ), ExtResource( 140 ), ExtResource( 145 ), ExtResource( 114 ), ExtResource( 126 ), ExtResource( 110 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 124 ) ],
 "loop": true,
 "name": "Run-N",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "Run-SW",
 "speed": 13.0
 }, {
 "frames": [ ExtResource( 81 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 62 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 37 ), ExtResource( 38 ) ],
@@ -217,40 +217,45 @@ animations = [ {
 "name": "Run-S",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 138 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 148 ), ExtResource( 150 ), ExtResource( 113 ), ExtResource( 102 ), ExtResource( 143 ), ExtResource( 120 ) ],
-"loop": true,
-"name": "Run-NE",
-"speed": 13.0
-}, {
 "frames": [ ExtResource( 73 ), ExtResource( 89 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 9 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Pickup-W",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 156 ) ],
-"loop": false,
-"name": "Idle-SE",
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Run-W",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 138 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 148 ), ExtResource( 150 ), ExtResource( 113 ), ExtResource( 102 ), ExtResource( 143 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "Run-NE",
+"speed": 13.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 85 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 64 ) ],
 "loop": true,
 "name": "Run-SE",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 23 ) ],
-"loop": false,
-"name": "Idle-NW",
-"speed": 5.0
+"frames": [ ExtResource( 123 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 139 ), ExtResource( 146 ), ExtResource( 155 ), ExtResource( 147 ), ExtResource( 153 ), ExtResource( 142 ), ExtResource( 98 ) ],
+"loop": true,
+"name": "Pickup-NE",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 82 ), ExtResource( 92 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 93 ), ExtResource( 61 ), ExtResource( 90 ), ExtResource( 55 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "Pickup-SW",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 128 ), ExtResource( 149 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 112 ), ExtResource( 129 ), ExtResource( 151 ), ExtResource( 130 ), ExtResource( 131 ) ],
 "loop": true,
 "name": "Pickup-E",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 27 ), ExtResource( 7 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
 "loop": true,
-"name": "Pickup-NW",
-"speed": 10.0
+"name": "Run-SW",
+"speed": 13.0
 }, {
 "frames": [ ExtResource( 43 ) ],
 "loop": true,
@@ -262,35 +267,40 @@ animations = [ {
 "name": "Idle-E",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 52 ), ExtResource( 82 ), ExtResource( 92 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 93 ), ExtResource( 61 ), ExtResource( 90 ), ExtResource( 55 ), ExtResource( 72 ) ],
+"frames": [ ExtResource( 164 ), ExtResource( 163 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 160 ), ExtResource( 86 ), ExtResource( 65 ), ExtResource( 69 ) ],
 "loop": true,
-"name": "Pickup-SW",
+"name": "Pickup-SE",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 144 ), ExtResource( 99 ), ExtResource( 121 ), ExtResource( 103 ), ExtResource( 117 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 133 ), ExtResource( 115 ), ExtResource( 125 ) ],
-"loop": true,
-"name": "Pickup-N",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 119 ) ],
-"loop": false,
-"name": "Idle-NE",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ) ],
-"loop": false,
-"name": "Idle-SW",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 25 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Run-NW",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 127 ) ],
+"frames": [ ExtResource( 156 ) ],
 "loop": false,
-"name": "Idle-N",
+"name": "Idle-SE",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 119 ) ],
+"loop": false,
+"name": "Idle-NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 144 ), ExtResource( 99 ), ExtResource( 121 ), ExtResource( 103 ), ExtResource( 117 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 133 ), ExtResource( 115 ), ExtResource( 125 ) ],
+"loop": true,
+"name": "Pickup-N",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": false,
+"name": "Idle-SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Walk-W",
+"speed": 4.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -783,13 +793,13 @@ animation = "IdleSW"
 [sub_resource type="AnimationNodeAnimation" id=30]
 animation = "IdleS"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=31]
 animation = "IdleW"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "IdleE"
 
-[sub_resource type="AnimationNodeAnimation" id=59]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "IdleN"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=34]
@@ -803,11 +813,11 @@ blend_point_3/node = SubResource( 29 )
 blend_point_3/pos = Vector2( -1, 0 )
 blend_point_4/node = SubResource( 30 )
 blend_point_4/pos = Vector2( -0.5, 0.5 )
-blend_point_5/node = SubResource( 32 )
+blend_point_5/node = SubResource( 31 )
 blend_point_5/pos = Vector2( -0.5, -0.5 )
-blend_point_6/node = SubResource( 33 )
+blend_point_6/node = SubResource( 32 )
 blend_point_6/pos = Vector2( 0.5, 0.5 )
-blend_point_7/node = SubResource( 59 )
+blend_point_7/node = SubResource( 33 )
 blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
@@ -854,71 +864,80 @@ blend_point_7/node = SubResource( 42 )
 blend_point_7/pos = Vector2( -0.5, -0.5 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=44]
 animation = "RunSW"
 
-[sub_resource type="AnimationNodeAnimation" id=52]
+[sub_resource type="AnimationNodeAnimation" id=45]
 animation = "RunS"
 
-[sub_resource type="AnimationNodeAnimation" id=53]
+[sub_resource type="AnimationNodeAnimation" id=46]
 animation = "RunSE"
 
-[sub_resource type="AnimationNodeAnimation" id=54]
+[sub_resource type="AnimationNodeAnimation" id=47]
 animation = "RunE"
 
-[sub_resource type="AnimationNodeAnimation" id=55]
+[sub_resource type="AnimationNodeAnimation" id=48]
 animation = "RunNE"
 
-[sub_resource type="AnimationNodeAnimation" id=56]
+[sub_resource type="AnimationNodeAnimation" id=49]
 animation = "RunN"
 
-[sub_resource type="AnimationNodeAnimation" id=57]
+[sub_resource type="AnimationNodeAnimation" id=50]
 animation = "RunNW"
 
-[sub_resource type="AnimationNodeAnimation" id=58]
+[sub_resource type="AnimationNodeAnimation" id=51]
 animation = "RunW"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=44]
-blend_point_0/node = SubResource( 51 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=52]
+blend_point_0/node = SubResource( 44 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 52 )
+blend_point_1/node = SubResource( 45 )
 blend_point_1/pos = Vector2( -0.5, 0.5 )
-blend_point_2/node = SubResource( 53 )
+blend_point_2/node = SubResource( 46 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 54 )
+blend_point_3/node = SubResource( 47 )
 blend_point_3/pos = Vector2( 0.5, 0.5 )
-blend_point_4/node = SubResource( 55 )
+blend_point_4/node = SubResource( 48 )
 blend_point_4/pos = Vector2( 1, 0 )
-blend_point_5/node = SubResource( 56 )
+blend_point_5/node = SubResource( 49 )
 blend_point_5/pos = Vector2( 0.5, -0.5 )
-blend_point_6/node = SubResource( 57 )
+blend_point_6/node = SubResource( 50 )
 blend_point_6/pos = Vector2( 0, -1 )
-blend_point_7/node = SubResource( 58 )
+blend_point_7/node = SubResource( 51 )
 blend_point_7/pos = Vector2( -0.5, -0.5 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+[sub_resource type="AnimationNodeStateMachineTransition" id=61]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+[sub_resource type="AnimationNodeStateMachineTransition" id=62]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+[sub_resource type="AnimationNodeStateMachineTransition" id=63]
 
-[sub_resource type="AnimationNodeStateMachine" id=49]
+[sub_resource type="AnimationNodeStateMachine" id=68]
 states/Idle/node = SubResource( 34 )
 states/Idle/position = Vector2( 83, 183 )
 states/Pickup/node = SubResource( 43 )
 states/Pickup/position = Vector2( 189, 298 )
-states/Run/node = SubResource( 44 )
+states/Run/node = SubResource( 52 )
 states/Run/position = Vector2( 189, 74 )
-transitions = [ "Idle", "Run", SubResource( 45 ), "Run", "Idle", SubResource( 46 ), "Idle", "Pickup", SubResource( 47 ), "Pickup", "Idle", SubResource( 48 ) ]
+transitions = [ "Idle", "Run", SubResource( 60 ), "Run", "Idle", SubResource( 61 ), "Idle", "Pickup", SubResource( 62 ), "Pickup", "Idle", SubResource( 63 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=69]
 
 [node name="Human" type="KinematicBody2D"]
 script = ExtResource( 169 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = -20.0453
+margin_top = -146.553
+margin_right = 19.9547
+margin_bottom = -132.553
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0.163509, 18.8723, -20.2017, 14.5614, -26.2963, 2.37202, -19.1611, -10.2633, -0.579746, -13.9796, 16.9611, -9.81734, 26.3261, 2.22337, 17.5557, 14.8587 )
@@ -926,12 +945,10 @@ polygon = PoolVector2Array( 0.163509, 18.8723, -20.2017, 14.5614, -26.2963, 2.37
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -191.216 )
 frames = SubResource( 1 )
-animation = "Run-SW"
-frame = 9
+animation = "Idle-S"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IdleE = SubResource( 2 )
@@ -960,10 +977,10 @@ anims/RunSW = SubResource( 24 )
 anims/RunW = SubResource( 25 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 49 )
+tree_root = SubResource( 68 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 50 )
+parameters/playback = SubResource( 69 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Pickup/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( -0.0018416, -0.0123457 )

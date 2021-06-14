@@ -78,10 +78,11 @@ func unregister_player(id):
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
-	var dungeon_scene = load("res://src/Levels/dungeon.tscn").instance()
+	#var map_to_load = load("res://src/Levels/dungeon.tscn").instance()
+	var map_to_load = load("res://src/Levels/HotelCalifornia.tscn").instance()
 	#get_tree().change_scene_to(dungeon_scene)
 	#get_tree().paused = false
-	get_tree().get_root().add_child(dungeon_scene)
+	get_tree().get_root().add_child(map_to_load)
 
 	if is_single_player:
 		var old_scene = get_tree().get_root().get_node("StartScreen")
@@ -91,10 +92,11 @@ remote func pre_start_game(spawn_points):
 		get_tree().get_root().get_node("Lobby").hide()
 
 	
-	var player_scene = load("res://src/Actors/troll.tscn")
-	var y_sorter: YSort = dungeon_scene.get_node("YSort")
+	#var player_scene = load("res://src/Actors/troll.tscn")
+	var player_scene = load("res://src/Actors/Human.tscn")
+	var y_sorter: YSort = map_to_load.get_node("YSort/Players")
 	for p_id in spawn_points:
-		var spawn_pos = dungeon_scene.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
+		var spawn_pos = map_to_load.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
 		var player = player_scene.instance()
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
