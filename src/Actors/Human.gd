@@ -56,6 +56,12 @@ func moveState(delta):
 		running = Input.is_action_pressed("Run")
 		if Input.is_action_just_pressed("Pickup"):
 			state = PlayerState.PICKUP
+		
+		if not gamestate.is_single_player:
+			rset("puppet_motion", motion)
+			rset("puppet_direction", actionDirection)
+			rset("puppet_running", running)
+			rset("puppet_state", state)
 	else:
 		motion = puppet_motion
 		actionDirection = puppet_direction
@@ -77,11 +83,7 @@ func moveState(delta):
 		
 	#Send Network position
 	#TODO check actionDirection animations for multiplayer
-	if not gamestate.is_single_player && is_network_master():
-		rset("puppet_motion", motion)
-		rset("puppet_direction", actionDirection)
-		rset("puppet_running", running)
-		rset("puppet_state", state)
+
 		
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
