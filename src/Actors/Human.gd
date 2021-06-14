@@ -4,7 +4,10 @@ extends Actor
 const MOTION_SPEED = 160 * 60 # Pixels/second.
 
 #puppet var puppet_pos = Vector2()
-puppet var puppet_motion = Vector2()
+puppet var puppet_motion = Vector2.ZERO
+puppet var puppet_direction = Vector2.DOWN
+puppet var puppet_running = false
+puppet var puppet_state = PlayerState.MOVE
 
 enum PlayerState{
 	MOVE,
@@ -19,6 +22,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animatedSprite = $AnimatedSprite
 onready var animationState = animationTree.get("parameters/playback")
+onready var myCamera = $Camera2D
 
 #A prototype HU-MAAN. 
 func _init():
@@ -31,6 +35,7 @@ func _init():
 func _ready():
 	if gamestate.is_single_player || is_network_master():
 		$Camera2D.make_current()
+	
 	animationTree.set("parameters/Idle/blend_position", actionDirection)
 	animationTree.set("parameters/Run/blend_position", actionDirection)
 	animationTree.set("parameters/Pickup/blend_position", actionDirection)
@@ -43,43 +48,43 @@ func _physics_process(delta):
 			pickupState(delta)
 
 func moveState(delta):
+	var running = false
 	if gamestate.is_single_player || is_network_master():
 		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		motion.y *= 0.5
-		animationTree.set("parameters/Idle/blend_position", actionDirection)
-		animationTree.set("parameters/Run/blend_position", actionDirection)
-		animationTree.set("parameters/Walk/blend_position", actionDirection)
-		animationTree.set("parameters/Pickup/blend_position", actionDirection)
-		if motion != Vector2.ZERO:
-			actionDirection = motion.normalized()
-			var speed = MOTION_SPEED
-			if Input.is_action_pressed("Run"):
-				speed *= 3
-				animatedSprite.speed_scale = 1
-				animationState.travel("Run")
-			else:
-				animatedSprite.speed_scale = .3
-				animationState.travel("Walk")
-			motion = actionDirection * speed * delta
-		else:
-			animatedSprite.speed_scale = 1
-			animationState.travel("Idle")
-		
-		#Send Network position
-		#TODO check actionDirection animations for multiplayer
-		if not gamestate.is_single_player:
-			rset("puppet_motion", motion)
-		#rset("puppet_pos", position)
+		running = Input.is_action_pressed("Run")
+		if Input.is_action_just_pressed("Pickup"):
+			state = PlayerState.PICKUP
 	else:
-		#position = puppet_pos
 		motion = puppet_motion
+		actionDirection = puppet_direction
+		running = puppet_running
+		state = puppet_state
+		
+	animationTree.set("parameters/Idle/blend_position", actionDirection)
+	animationTree.set("parameters/Run/blend_position", actionDirection)
+	animationTree.set("parameters/Pickup/blend_position", actionDirection)
+	if motion != Vector2.ZERO:
+		actionDirection = motion.normalized()
+		var speed = MOTION_SPEED
+		if running:
+			speed *= 3
+		animationState.travel("Run")
+		motion = actionDirection * speed * delta
+	else:
+		animationState.travel("Idle")
+		
+	#Send Network position
+	#TODO check actionDirection animations for multiplayer
+	if not gamestate.is_single_player && is_network_master():
+		rset("puppet_motion", motion)
+		rset("puppet_direction", actionDirection)
+		rset("puppet_running", running)
+		rset("puppet_state", state)
 		
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
-	if Input.is_action_just_pressed("Pickup"):
-		animatedSprite.speed_scale = 1
-		state = PlayerState.PICKUP
 	
 	#if not is_network_master():
 	#	puppet_pos = position # To avoid jitter (TODO see this in action, copied from bomber)

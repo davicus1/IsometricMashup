@@ -1,0 +1,160 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Resources/Floor.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Props/Walls/StoneWall_W_Window.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_N.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_E.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Props/Walls/StoneWall_Corner_S.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Props/Walls/StoneWall_E.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Props/Walls/StoneWall_N.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Props/Doors/StoneWall_E_Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Props/Walls/StoneWall_S.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Props/Walls/StoneWall_W.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/item_rock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Objects/item_club.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Props/Cases/DisplayCaseWSword_E.tscn" type="PackedScene" id=14]
+
+[node name="HotelCalifornia" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+cell_quadrant_size = 128
+format = 1
+tile_data = PoolIntArray( 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 6, 0, 262156, 6, 0, 262157, 6, 0, 262158, 6, 0, 262159, 6, 0, 262160, 6, 0, 327685, 6, 0, 327686, 6, 0, 327687, 6, 0, 327688, 6, 0, 327689, 6, 0, 327690, 6, 0, 327691, 6, 0, 327692, 6, 0, 327693, 6, 0, 327694, 6, 0, 327695, 6, 0, 327696, 6, 0, 393221, 6, 0, 393222, 6, 0, 393223, 6, 0, 393224, 6, 0, 393225, 6, 0, 393226, 6, 0, 393227, 6, 0, 393228, 6, 0, 393229, 6, 0, 393230, 6, 0, 393231, 6, 0, 393232, 6, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 6, 0, 458767, 6, 0, 458768, 6, 0, 524293, 6, 0, 524294, 6, 0, 524295, 6, 0, 524296, 6, 0, 524297, 6, 0, 524298, 6, 0, 524299, 6, 0, 524300, 6, 0, 524301, 6, 0, 524302, 6, 0, 524303, 6, 0, 524304, 6, 0, 589829, 6, 0, 589830, 6, 0, 589831, 6, 0, 589832, 6, 0, 589833, 6, 0, 589834, 6, 0, 589835, 6, 0, 589836, 6, 0, 589837, 6, 0, 589838, 6, 0, 589839, 6, 0, 589840, 6, 0 )
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 135, 805 )
+
+[node name="1" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -20, 895 )
+
+[node name="2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 240, 870 )
+
+[node name="3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 85, 950 )
+
+[node name="4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -125, 955 )
+
+[node name="5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -5, 1005 )
+
+[node name="6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 360, 855 )
+
+[node name="DisplayCaseWSword_E" parent="SpawnPoints/6" instance=ExtResource( 14 )]
+position = Vector2( 415, 370 )
+
+[node name="Item_Club" parent="SpawnPoints/6" instance=ExtResource( 13 )]
+position = Vector2( 140, 355 )
+
+[node name="Item_Rock" parent="SpawnPoints/6" instance=ExtResource( 12 )]
+position = Vector2( 675, 390 )
+
+[node name="Item_Rock2" parent="SpawnPoints/6" instance=ExtResource( 12 )]
+position = Vector2( 680, 395 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Players" type="YSort" parent="YSort"]
+
+[node name="Buildings" type="YSort" parent="YSort"]
+
+[node name="StoneWall_E_Door" parent="YSort/Buildings" instance=ExtResource( 9 )]
+position = Vector2( 495, 1005 )
+
+[node name="StoneWall_N2" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 1175, 1140 )
+
+[node name="StoneWall_N3" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 1045, 1075 )
+
+[node name="StoneWall_N4" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 915, 1010 )
+
+[node name="StoneWall_N5" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 785, 945 )
+
+[node name="StoneWall_N6" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 655, 880 )
+
+[node name="StoneWall_N7" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 525, 815 )
+
+[node name="StoneWall_N8" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 395, 750 )
+
+[node name="StoneWall_Corner_E" parent="YSort/Buildings" instance=ExtResource( 5 )]
+position = Vector2( 1336, 1320 )
+
+[node name="StoneWall_E" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 1175, 1445 )
+
+[node name="StoneWall_E6" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 1045, 1510 )
+
+[node name="StoneWall_E5" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 235, 1135 )
+
+[node name="StoneWall_E7" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 150, 1170 )
+
+[node name="StoneWall_E3" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 625, 940 )
+
+[node name="StoneWall_E4" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 365, 1070 )
+
+[node name="StoneWall_Corner_N" parent="YSort/Buildings" instance=ExtResource( 4 )]
+position = Vector2( 170, 705 )
+
+[node name="StoneWall_Corner_S" parent="YSort/Buildings" instance=ExtResource( 6 )]
+position = Vector2( 820, 1575 )
+
+[node name="StoneWall_Corner_W" parent="YSort/Buildings" instance=ExtResource( 2 )]
+position = Vector2( -345, 1000 )
+
+[node name="StoneWall_E2" parent="YSort/Buildings" instance=ExtResource( 7 )]
+position = Vector2( 1304, 1380 )
+
+[node name="StoneWall_N" parent="YSort/Buildings" instance=ExtResource( 8 )]
+position = Vector2( 1305, 1205 )
+
+[node name="StoneWall_W" parent="YSort/Buildings" instance=ExtResource( 11 )]
+position = Vector2( -55, 755 )
+
+[node name="StoneWall_W_Window" parent="YSort/Buildings" instance=ExtResource( 3 )]
+position = Vector2( -185, 820 )
+
+[node name="StoneWall_W2" parent="YSort/Buildings" instance=ExtResource( 11 )]
+position = Vector2( -315, 885 )
+
+[node name="StoneWall_S" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -315, 1060 )
+
+[node name="StoneWall_S2" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -185, 1125 )
+
+[node name="StoneWall_S3" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -55, 1190 )
+
+[node name="StoneWall_S4" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( 75, 1255 )
+
+[node name="StoneWall_S5" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( 205, 1320 )
+
+[node name="StoneWall_S6" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( 335, 1385 )
+
+[node name="StoneWall_S7" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( 465, 1450 )
+
+[node name="StoneWall_S8" parent="YSort/Buildings" instance=ExtResource( 10 )]
+position = Vector2( 595, 1515 )
