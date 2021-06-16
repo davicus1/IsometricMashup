@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=3]
+
+[node name="PlayerCameraInterface" type="Camera2D"]
+z_index = 1000
+
+[node name="UserInterface" parent="." instance=ExtResource( 3 )]
+margin_left = -513.0
+margin_top = -299.0
+margin_right = 513.0
+margin_bottom = 299.0
+
+[editable path="UserInterface"]

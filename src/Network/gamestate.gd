@@ -92,8 +92,8 @@ remote func pre_start_game(spawn_points):
 		get_tree().get_root().get_node("Lobby").hide()
 
 	
-	#var player_scene = load("res://src/Actors/troll.tscn")
-	var player_scene = load("res://src/Actors/Human.tscn")
+	var player_scene = load("res://src/Actors/troll.tscn")
+	#var player_scene = load("res://src/Actors/Human.tscn")
 	var y_sorter: YSort = map_to_load.get_node("YSort/Players")
 	for p_id in spawn_points:
 		var spawn_pos = map_to_load.get_node("SpawnPoints/" + str(spawn_points[p_id])).position

@@ -24,7 +24,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animatedSprite = $AnimatedSprite
 onready var animationState = animationTree.get("parameters/playback")
-onready var myCamera = $Camera2D
+onready var myCamera = $PlayerCameraInterface
 
 #A prototype HU-MAAN. 
 func _init():
@@ -36,7 +36,7 @@ func _init():
 
 func _ready():
 	if gamestate.is_single_player || is_network_master():
-		$Camera2D.make_current()
+		myCamera.make_current()
 	
 	animationTree.set("parameters/Idle/blend_position", actionDirection)
 	animationTree.set("parameters/Run/blend_position", actionDirection)
