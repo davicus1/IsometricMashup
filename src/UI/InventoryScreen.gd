@@ -11,3 +11,4 @@ func _refresh_items_in_location():
 	$InLocationItemList.clear()
 	for item in player.collectable_items_in_reach:
 		$InLocationItemList.add_item(item.item_name, item.icon, true)
+

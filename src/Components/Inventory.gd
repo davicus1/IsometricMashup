@@ -6,9 +6,10 @@ var current_mass:float = 0.0
 var current_volume:float = 0.0
 
 func add(new_item:Item):
-	current_mass += new_item.mass
-	current_volume += new_item.volume
-	items.append(new_item)
+	if null != new_item:
+		current_mass += new_item.mass
+		current_volume += new_item.volume
+		items.append(new_item)
 
 func remove(index):
 	assert (items.size() > index)

@@ -101,6 +101,7 @@ func pickupState(_delta):
 
 func pickupAnimationFinished():
 	state = PlayerState.MOVE
+	pickup_next_item()
 
 func set_player_name(new_name):
 	character_name = new_name
