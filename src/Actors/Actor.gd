@@ -39,4 +39,4 @@ func on_InteractionArea_area_shape_exited(area_id, area, area_shape, self_shape)
 
 func pickup_next_item():
 	var collectable = collectable_items_in_reach.pop_back()
-	inventory.add(collectable.construct())
+	inventory.add(collectable)

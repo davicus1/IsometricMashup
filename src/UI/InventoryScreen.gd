@@ -12,3 +12,11 @@ func _refresh_items_in_location():
 	for item in player.collectable_items_in_reach:
 		$InLocationItemList.add_item(item.item_name, item.icon, true)
 
+func _refresh_items_in_inventory():
+	$InventoryItemList.clear()
+	for item in player.inventory.items:
+		$InventoryItemList.add_item(item.item_name, item.icon, true)
+
+func refresh_inventory():
+	_refresh_items_in_location()
+	_refresh_items_in_inventory()

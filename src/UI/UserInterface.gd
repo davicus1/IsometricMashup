@@ -31,9 +31,11 @@ func _unhandled_input(event):
 func show_hide_inventory():
 	inventory_visible = not inventory_visible
 	if inventory_visible:
-		inventory_screen._refresh_items_in_location()
+		inventory_screen.refresh_inventory()
 	inventory_screen.visible = inventory_visible
-	
+
+
+
 func update_interface():
 	health.text = "Health %s / %s" % [gamestate.local_player_character.health_current, gamestate.local_player_character.health_max]
 

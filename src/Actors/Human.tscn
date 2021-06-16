@@ -178,54 +178,54 @@ animations = [ {
 "name": "Pickup-S",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 52 ), ExtResource( 82 ), ExtResource( 92 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 93 ), ExtResource( 61 ), ExtResource( 90 ), ExtResource( 55 ), ExtResource( 72 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "Pickup-SW",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "Idle-W",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Run-W",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 156 ) ],
-"loop": false,
-"name": "Idle-SE",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ) ],
-"loop": false,
-"name": "Idle-SW",
-"speed": 5.0
+"name": "Run-NW",
+"speed": 13.0
 }, {
 "frames": [ ExtResource( 164 ), ExtResource( 163 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 160 ), ExtResource( 86 ), ExtResource( 65 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "Pickup-SE",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 106 ) ],
-"loop": false,
-"name": "Idle-E",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 81 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 62 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"frames": [ ExtResource( 152 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 168 ) ],
 "loop": true,
-"name": "Run-S",
+"name": "Walk-E",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 123 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 139 ), ExtResource( 146 ), ExtResource( 155 ), ExtResource( 147 ), ExtResource( 153 ), ExtResource( 142 ), ExtResource( 98 ) ],
+"loop": true,
+"name": "Pickup-NE",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 138 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 148 ), ExtResource( 150 ), ExtResource( 113 ), ExtResource( 102 ), ExtResource( 143 ), ExtResource( 120 ) ],
+"loop": true,
+"name": "Run-NE",
 "speed": 13.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "Idle-W",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 144 ), ExtResource( 99 ), ExtResource( 121 ), ExtResource( 103 ), ExtResource( 117 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 133 ), ExtResource( 115 ), ExtResource( 125 ) ],
 "loop": true,
 "name": "Pickup-N",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 127 ) ],
-"loop": false,
-"name": "Idle-N",
+"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "Run-SW",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 85 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "Run-SE",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Run-W",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 152 ), ExtResource( 132 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ) ],
@@ -233,34 +233,29 @@ animations = [ {
 "name": "Run-E",
 "speed": 13.0
 }, {
+"frames": [ ExtResource( 156 ) ],
+"loop": false,
+"name": "Idle-SE",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 96 ) ],
 "loop": false,
 "name": "Idle-S",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 128 ), ExtResource( 149 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 112 ), ExtResource( 129 ), ExtResource( 151 ), ExtResource( 130 ), ExtResource( 131 ) ],
+"frames": [ ExtResource( 73 ), ExtResource( 89 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 9 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "Pickup-E",
+"name": "Pickup-W",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 154 ), ExtResource( 122 ), ExtResource( 140 ), ExtResource( 145 ), ExtResource( 114 ), ExtResource( 126 ), ExtResource( 110 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 124 ) ],
-"loop": true,
-"name": "Run-N",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Run-NW",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "Run-SW",
-"speed": 13.0
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "Idle-NW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 127 ) ],
+"loop": false,
+"name": "Idle-N",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 27 ), ExtResource( 7 ), ExtResource( 32 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 30 ) ],
@@ -273,35 +268,40 @@ animations = [ {
 "name": "Idle-NE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 73 ), ExtResource( 89 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 9 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "Pickup-W",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 44 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 85 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 59 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "Run-SE",
-"speed": 13.0
-}, {
 "frames": [ ExtResource( 28 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Walk-W",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 123 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 139 ), ExtResource( 146 ), ExtResource( 155 ), ExtResource( 147 ), ExtResource( 153 ), ExtResource( 142 ), ExtResource( 98 ) ],
+"frames": [ ExtResource( 106 ) ],
+"loop": false,
+"name": "Idle-E",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 58 ), ExtResource( 60 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 62 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 37 ), ExtResource( 38 ) ],
 "loop": true,
-"name": "Pickup-NE",
+"name": "Run-S",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 39 ) ],
+"loop": false,
+"name": "Idle-SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 82 ), ExtResource( 92 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 93 ), ExtResource( 61 ), ExtResource( 90 ), ExtResource( 55 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "Pickup-SW",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 152 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 168 ) ],
+"frames": [ ExtResource( 154 ), ExtResource( 122 ), ExtResource( 140 ), ExtResource( 145 ), ExtResource( 114 ), ExtResource( 126 ), ExtResource( 110 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 124 ) ],
 "loop": true,
-"name": "Walk-E",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 138 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 148 ), ExtResource( 150 ), ExtResource( 113 ), ExtResource( 102 ), ExtResource( 143 ), ExtResource( 120 ) ],
-"loop": true,
-"name": "Run-NE",
+"name": "Run-N",
 "speed": 13.0
+}, {
+"frames": [ ExtResource( 128 ), ExtResource( 149 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 112 ), ExtResource( 129 ), ExtResource( 151 ), ExtResource( 130 ), ExtResource( 131 ) ],
+"loop": true,
+"name": "Pickup-E",
+"speed": 10.0
 } ]
 
 [sub_resource type="Animation" id=2]
