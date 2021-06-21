@@ -173,16 +173,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 45 ), ExtResource( 57 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 54 ), ExtResource( 80 ), ExtResource( 34 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 91 ) ],
-"loop": true,
-"name": "Pickup-S",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Run-NW",
-"speed": 13.0
-}, {
 "frames": [ ExtResource( 164 ), ExtResource( 163 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 159 ), ExtResource( 162 ), ExtResource( 160 ), ExtResource( 86 ), ExtResource( 65 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "Pickup-SE",
@@ -302,6 +292,16 @@ animations = [ {
 "loop": true,
 "name": "Pickup-E",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 57 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 54 ), ExtResource( 80 ), ExtResource( 34 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 91 ) ],
+"loop": true,
+"name": "Pickup-S",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Run-NW",
+"speed": 13.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -451,7 +451,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -480,7 +480,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -509,7 +509,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -538,7 +538,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -566,7 +566,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -594,7 +594,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -623,7 +623,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -652,7 +652,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],

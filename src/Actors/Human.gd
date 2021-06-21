@@ -58,6 +58,7 @@ func moveState(delta):
 		running = Input.is_action_pressed("Run")
 		if Input.is_action_just_pressed("Pickup"):
 			state = PlayerState.PICKUP
+			animationState.travel("Pickup")
 		
 		if not gamestate.is_single_player:
 			rset("puppet_motion", motion)

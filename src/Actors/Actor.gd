@@ -38,5 +38,7 @@ func on_InteractionArea_area_shape_exited(area_id, area, area_shape, self_shape)
 			_collectable_item_not_in_reach(owner)
 
 func pickup_next_item():
-	var collectable = collectable_items_in_reach.pop_back()
-	inventory.add(collectable)
+	var collectable:Item = collectable_items_in_reach.pop_back()
+	if collectable != null:
+		collectable.get_parent().remove_child(collectable)
+		inventory.add(collectable)
