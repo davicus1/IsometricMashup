@@ -15,3 +15,4 @@ func _get_configuration_warning():
 
 func _on_SinglePlayer_Button_pressed():
 	gamestate.single_player_game()
+
