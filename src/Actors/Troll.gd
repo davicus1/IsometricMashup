@@ -16,9 +16,13 @@ func _init():
 	inventory.add(ItemRock.new().construct())
 
 func _ready():
+	#BAD CODE HERE
+	status_overlay = myCamera.get_child(0)
+	status_overlay._actor_to_watch(self)
+	####
 	if gamestate.is_single_player || is_network_master():
 		myCamera.make_current()
-	
+
 	
 func _physics_process(delta):
 	var motion = Vector2()

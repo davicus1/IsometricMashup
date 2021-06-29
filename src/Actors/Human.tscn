@@ -173,44 +173,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "Run-SW",
+"speed": 13.0
+}, {
 "frames": [ ExtResource( 138 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 148 ), ExtResource( 150 ), ExtResource( 113 ), ExtResource( 102 ), ExtResource( 143 ), ExtResource( 120 ) ],
 "loop": true,
 "name": "Run-NE",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 152 ), ExtResource( 132 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ) ],
-"loop": true,
-"name": "Run-E",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 119 ) ],
-"loop": false,
-"name": "Idle-NE",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Walk-W",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 127 ) ],
-"loop": false,
-"name": "Idle-N",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 106 ) ],
-"loop": false,
-"name": "Idle-E",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 43 ) ],
-"loop": true,
-"name": "Idle-W",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Run-W",
 "speed": 13.0
 }, {
 "frames": [ ExtResource( 73 ), ExtResource( 89 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 9 ), ExtResource( 17 ) ],
@@ -298,9 +268,39 @@ animations = [ {
 "name": "Idle-SE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 56 ), ExtResource( 68 ), ExtResource( 70 ), ExtResource( 41 ), ExtResource( 71 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 152 ), ExtResource( 132 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 136 ), ExtResource( 165 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ) ],
 "loop": true,
-"name": "Run-SW",
+"name": "Run-E",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 119 ) ],
+"loop": false,
+"name": "Idle-NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Walk-W",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 127 ) ],
+"loop": false,
+"name": "Idle-N",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 106 ) ],
+"loop": false,
+"name": "Idle-E",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "Idle-W",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Run-W",
 "speed": 13.0
 } ]
 
@@ -998,4 +998,3 @@ shape = SubResource( 59 )
 [connection signal="area_shape_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_shape_exited"]
 
 [editable path="PlayerCameraInterface"]
-[editable path="PlayerCameraInterface/UserInterface"]

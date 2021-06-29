@@ -8,11 +8,15 @@ var volume:float
 var inventory:Inventory
 var capacity:Capacity
 var character_name:String
+var status_overlay:ActorStatusOverlay
 
 var collectable_items_in_reach:Array = []
 
 func _ready():
-	pass
+	if status_overlay:
+		print("Attempting to connect...")
+		status_overlay.connect("whoAreYou", self, "connect_to_status_overlay")
+
 
 func on_InteractionArea_area_shape_entered(area_id, area:Area2D, area_shape, self_shape):
 	#TODO Why does this not work when the docs say this is how you find it!????
@@ -42,3 +46,7 @@ func pickup_next_item():
 	if collectable != null:
 		collectable.get_parent().remove_child(collectable)
 		inventory.add(collectable)
+
+func connect_to_status_overlay():
+	print("connect_to_status_overlay " )
+	#actor_status_overlay.it_is_me(self)

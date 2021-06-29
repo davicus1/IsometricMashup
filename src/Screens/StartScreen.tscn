@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UI/QuitButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/background.png" type="Texture" id=2]
 [ext_resource path="res://src/UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UI/Title.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Screens/OptionsScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UI/UI_Theme.tres" type="Theme" id=6]
+[ext_resource path="res://src/Screens/StartScreen.gd" type="Script" id=7]
 
 [node name="StartScreen" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,7 +68,6 @@ margin_top = 102.0
 margin_right = 440.0
 margin_bottom = 149.0
 text = "Options"
-next_scene_path = "res://src/Screens/OptionsScreen.tscn"
 
 [node name="ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
 margin_top = 153.0
@@ -77,3 +79,8 @@ next_scene_path = "res://src/Screens/Credits.tscn"
 [node name="QuitButton" parent="Menu" instance=ExtResource( 1 )]
 margin_top = 204.0
 margin_right = 440.0
+
+[node name="OptionsScreen" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="pressed" from="Menu/Options-ChangeSceneButton" to="." method="_on_OptionsButton_pressed"]

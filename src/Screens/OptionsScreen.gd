@@ -19,3 +19,8 @@ func _on_PlayMusicCheckBox_toggled(button_pressed):
 
 func _on_Save_pressed():
 	GameConfig.saveConfig()
+	self.visible = false
+
+
+func _on_BackButton_pressed():
+	self.visible = false

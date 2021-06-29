@@ -2,6 +2,7 @@ extends Button
 
 export var reference_path = ""
 export(bool) var start_focused = false
+export(bool) var quit_button = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,6 @@ func _on_Button_mouse_entered():
 func _on_Button_pressed():
 	if(reference_path != ""):
 		get_tree().change_scene(reference_path)
-	else:
+	elif(quit_button):
 		get_tree().quit(0)
 	
