@@ -21,6 +21,7 @@ var local_player_character:Actor
 # Signals to let the in-game UI know what's going on
 signal health_updated()
 signal player_died()
+signal paused_state_changed()
 
 # Signals to let lobby GUI know what's going on.
 signal player_list_changed()
@@ -150,6 +151,15 @@ remote func ready_to_start(id):
 		for p in players:
 			rpc_id(p, "post_start_game")
 		post_start_game()
+
+func pause_game_all(is_paused:bool):
+	for p in players:
+		rpc_id(p, "network_pause", is_paused)
+	network_pause(is_paused)
+
+remote func network_pause(is_paused:bool):
+	get_tree().set_pause(is_paused)
+	emit_signal("paused_state_changed")
 
 #TODO Hack to get single player to work. Then there is the issue of how to start in progress
 func single_player_game():

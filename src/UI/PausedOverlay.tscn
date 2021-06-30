@@ -59,7 +59,7 @@ text = "Options"
 [node name="QuitButton" parent="PauseMenu" instance=ExtResource( 7 )]
 margin_top = 72.0
 margin_right = 420.0
-margin_bottom = 302.0
+margin_bottom = 301.0
 
 [node name="OptionsScreen" parent="." instance=ExtResource( 2 )]
 visible = false
