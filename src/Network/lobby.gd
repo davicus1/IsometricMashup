@@ -1,5 +1,7 @@
 extends Control
 
+onready var playerCreation = $PlayerCreation
+
 func _ready():
 	# Called every time the node is added to the scene.
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
@@ -21,7 +23,8 @@ func _on_host_pressed():
 		return
 
 	$Connect.hide()
-	$Players.show()
+	playerCreation.show()
+	#$Players.show()
 	$Connect/ErrorLabel.text = ""
 
 	var player_name = $Connect/Name.text
@@ -86,3 +89,8 @@ func refresh_lobby():
 
 func _on_start_pressed():
 	gamestate.begin_game()
+
+
+func _on_PlayButton_pressed():
+	playerCreation.hide()
+	$Players.show()
