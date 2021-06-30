@@ -222,7 +222,11 @@ func end_game():
 func _ready():
 	#warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_connected", self, "_player_connected")
+	#warning-ignore:return_value_discarded
 	get_tree().connect("network_peer_disconnected", self,"_player_disconnected")
+	#warning-ignore:return_value_discarded
 	get_tree().connect("connected_to_server", self, "_connected_ok")
+	#warning-ignore:return_value_discarded
 	get_tree().connect("connection_failed", self, "_connected_fail")
+	#warning-ignore:return_value_discarded
 	get_tree().connect("server_disconnected", self, "_server_disconnected")

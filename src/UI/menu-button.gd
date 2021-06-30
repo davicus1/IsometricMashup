@@ -9,7 +9,10 @@ func _ready():
 	if(start_focused):
 		grab_focus()
 		
+	
+# warning-ignore:return_value_discarded
 	connect("mouse_entered",self,"_on_Button_mouse_entered")
+# warning-ignore:return_value_discarded
 	connect("pressed",self,"_on_Button_pressed")
 
 func _on_Button_mouse_entered():
@@ -17,7 +20,8 @@ func _on_Button_mouse_entered():
 	
 func _on_Button_pressed():
 	if(reference_path != ""):
-		get_tree().change_scene(reference_path)
-	elif(quit_button):
+		var change_scene_result = get_tree().change_scene(reference_path)
+		if change_scene_result != OK:
+			printerr ("Failed to change scene to next scene path " + reference_path)
 		get_tree().quit(0)
 	

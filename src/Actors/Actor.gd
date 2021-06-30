@@ -13,12 +13,10 @@ var status_overlay:ActorStatusOverlay
 var collectable_items_in_reach:Array = []
 
 func _ready():
-	if status_overlay:
-		print("Attempting to connect...")
-		status_overlay.connect("whoAreYou", self, "connect_to_status_overlay")
+	pass
 
 
-func on_InteractionArea_area_shape_entered(area_id, area:Area2D, area_shape, self_shape):
+func on_InteractionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):
 	#TODO Why does this not work when the docs say this is how you find it!????
 	#var obj2 = shape_owner_get_owner(shape_find_owner(area_id))
 	
@@ -34,7 +32,7 @@ func _collectable_item_in_reach(item:Item):
 func _collectable_item_not_in_reach(item:Item):
 	collectable_items_in_reach.erase(item)
 
-func on_InteractionArea_area_shape_exited(area_id, area, area_shape, self_shape):
+func on_InteractionArea_area_shape_exited(area_id, area, _area_shape, _self_shape):
 	#TODO this seems brittle
 	var owner = area.get_parent()
 	if owner is Item:
