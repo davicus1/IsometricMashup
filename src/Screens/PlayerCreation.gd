@@ -24,6 +24,3 @@ func update_player_class():
 	if not array_of_selected_item_positions.empty():
 		var the_selected_item = array_of_selected_item_positions[0]
 		gamestate.player_class = class_list.get_item_text(the_selected_item)
-
-
-

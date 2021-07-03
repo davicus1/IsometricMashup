@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "ItemRock",
 "language": "GDScript",
 "path": "res://src/Objects/item_rock.gd"
+}, {
+"base": "Node",
+"class": "PlayerInfo",
+"language": "GDScript",
+"path": "res://src/Network/PlayerInfo.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "Inventory": "",
 "Item": "",
 "ItemClub": "",
-"ItemRock": ""
+"ItemRock": "",
+"PlayerInfo": ""
 }
 
 [application]

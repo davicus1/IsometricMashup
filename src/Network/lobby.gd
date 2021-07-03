@@ -52,7 +52,8 @@ func _on_join_pressed():
 
 func _on_connection_success():
 	$Connect.hide()
-	$Players.show()
+	playerCreation.show()
+	#$Players.show()
 
 
 func _on_connection_failed():
@@ -82,7 +83,7 @@ func refresh_lobby():
 	$Players/List.clear()
 	$Players/List.add_item(gamestate.get_player_name() + " (You)")
 	for p in players:
-		$Players/List.add_item(p)
+		$Players/List.add_item(p.player_name)
 
 	$Players/Start.disabled = not get_tree().is_network_server()
 
@@ -91,6 +92,8 @@ func _on_start_pressed():
 	gamestate.begin_game()
 
 
-func _on_PlayButton_pressed():
+func _on_FinishCreation_pressed():
+	if not is_network_master():
+		rpc_id(1, "player_creation", gamestate.player_name, gamestate.player_class)
 	playerCreation.hide()
 	$Players.show()
