@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/UI_Theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/UI/ActorStatusOverlay.gd" type="Script" id=6]
+
+[node name="ActorStatusOverlay" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = -31.0
+margin_right = 63.5
+text = "Health %s"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

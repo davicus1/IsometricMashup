@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Inventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/ActorStatusOverlay.tscn" type="PackedScene" id=3]
 
 [node name="PlayerCameraInterface" type="Camera2D"]
 z_index = 1000
 
-[node name="UserInterface" parent="." instance=ExtResource( 3 )]
-margin_left = -513.0
-margin_top = -299.0
-margin_right = 513.0
-margin_bottom = 299.0
+[node name="ActorStatusOverlay" parent="." instance=ExtResource( 3 )]
+margin_left = 0.33371
+margin_top = 40.7126
+margin_right = 0.33371
+margin_bottom = 40.7126
 
-[editable path="UserInterface"]
+[node name="Inventory" parent="." instance=ExtResource( 1 )]

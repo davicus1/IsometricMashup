@@ -16,12 +16,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
 margin_left = 928.0
 margin_top = 24.0
 margin_right = 1000.0
 margin_bottom = 88.0
-reference_path = "res://src/Screens/StartScreen.tscn"
+reference_path = ""
 
 [node name="Menu" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -47,7 +55,6 @@ margin_right = 204.0
 margin_bottom = 66.0
 grow_horizontal = 2
 text = "Save"
-reference_path = "res://src/Screens/StartScreen.tscn"
 
 [node name="Load" parent="Menu" instance=ExtResource( 3 )]
 margin_left = 214.0
@@ -119,6 +126,8 @@ tick_count = 5
 ticks_on_borders = true
 script = ExtResource( 6 )
 audio_bus_name = "BGM"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Menu/Save" to="." method="_on_Save_pressed"]
 [connection signal="toggled" from="VBoxContainer/MusicContainer/PlayMusicButton" to="." method="_on_PlayMusicCheckBox_toggled"]
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer2/BackgroundVolume" to="VBoxContainer/HBoxContainer2/BackgroundVolume" method="_on_value_changed"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/UI/PausedOverlay.gd" type="Script" id=1]
+[ext_resource path="res://src/Screens/OptionsScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/Title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/QuitButton.tscn" type="PackedScene" id=7]
+
+[node name="PausedOverlay" type="ColorRect"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.66968
+margin_top = -2.66971
+margin_right = 2.66968
+margin_bottom = -2.66968
+color = Color( 0, 0, 0, 0.411765 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 5 )]
+margin_left = -124.0
+margin_right = 124.0
+margin_bottom = 31.0
+text = "Menu"
+align = 1
+
+[node name="PauseMenu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -151.0
+margin_right = 210.0
+margin_bottom = 151.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackToGameButton" type="Button" parent="PauseMenu"]
+margin_right = 420.0
+margin_bottom = 20.0
+text = "Back to the Game"
+
+[node name="PauseButton" type="Button" parent="PauseMenu"]
+margin_top = 24.0
+margin_right = 420.0
+margin_bottom = 44.0
+text = "Pause"
+
+[node name="OptionsButtion" type="Button" parent="PauseMenu"]
+margin_top = 48.0
+margin_right = 420.0
+margin_bottom = 68.0
+text = "Options"
+
+[node name="QuitButton" parent="PauseMenu" instance=ExtResource( 7 )]
+margin_top = 72.0
+margin_right = 420.0
+margin_bottom = 301.0
+
+[node name="OptionsScreen" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[connection signal="pressed" from="PauseMenu/BackToGameButton" to="." method="_on_BackToGameButton_pressed"]
+[connection signal="pressed" from="PauseMenu/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="PauseMenu/OptionsButtion" to="." method="_on_OptionsButtion_pressed"]

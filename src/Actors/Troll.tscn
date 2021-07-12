@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/UI/PlayerCameraInterface.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Actors/troll.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Troll.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/troll.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -42,4 +42,3 @@ shape = SubResource( 1 )
 [connection signal="area_shape_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_shape_exited"]
 
 [editable path="PlayerCameraInterface"]
-[editable path="PlayerCameraInterface/UserInterface"]
