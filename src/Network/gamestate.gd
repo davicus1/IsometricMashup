@@ -11,12 +11,16 @@ var player_name = "The Warrior"
 var player_class = "Human"
 var classes = ["Human", "Troll"]
 
-# Names for remote players in id:name format.
+# Names for remote players in id:PlayerInfo format.
 var players = {}
 var players_ready = []
 
 var is_single_player = true
 var local_player_character:Actor
+
+##### REMOVE THIS VAR?
+var host:NetworkedMultiplayerENet
+
 
 # Signals to let the in-game UI know what's going on
 signal health_updated()
@@ -33,14 +37,17 @@ signal game_error(what)
 # Callback from SceneTree.
 func _player_connected(id):
 	# Registration of a client beings here, tell the connected player that we are here.
-	rpc_id(id, "register_player", player_name)
+	rpc_id(id, "register_player", player_name, player_class)
+	##### TODO Adjust This and fix so we don't need a null check here
+	if host != null:
+		host.set_peer_timeout(id, 100000, 300000, 600000)
 
 
 # Callback from SceneTree.
 func _player_disconnected(id):
 	if has_node("/root/World"): # Game is in progress.
 		if get_tree().is_network_server():
-			emit_signal("game_error", "Player " + players[id] + " disconnected")
+			emit_signal("game_error", "Player " + players[id].player_name + " disconnected")
 			##end_game()
 	else: # Game is not in progress.
 		# Unregister this player.
@@ -67,10 +74,13 @@ func _connected_fail():
 
 # Lobby management functions.
 
-remote func register_player(new_player_name):
+remote func register_player(new_player_name, new_player_class):
 	var id = get_tree().get_rpc_sender_id()
 	print(id)
-	players[id] = new_player_name
+	var player_info = PlayerInfo.new()
+	player_info.player_name = new_player_name
+	player_info.player_class = new_player_class
+	players[id] = player_info
 	emit_signal("player_list_changed")
 
 
@@ -78,6 +88,18 @@ func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
+remote func player_creation(new_player_name, new_player_class):
+	var id = get_tree().get_rpc_sender_id()
+	players[id].player_name = new_player_name
+	players[id].player_class = new_player_class
+	emit_signal("player_list_changed")
+	for p in players:
+		if p != id:
+			rpc_id(p, "player_updated", id, new_player_name, new_player_class)
+
+remote func player_updated(id, new_player_name, new_player_class):
+	players[id].player_name = new_player_name
+	players[id].player_class = new_player_class
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
@@ -88,30 +110,34 @@ remote func pre_start_game(spawn_points):
 	get_tree().get_root().add_child(map_to_load)
 
 	if is_single_player:
-		var old_scene = get_tree().get_root().get_node("PlayerCreation")
+		var old_scene = get_tree().get_root().get_node("SingleplayerPlayerCreation")
 		old_scene.hide()
 		get_tree().get_root().remove_child(old_scene)
 	else:
 		get_tree().get_root().get_node("Lobby").hide()
 
 	
-	var player_scene = load("res://src/Actors/" + player_class + ".tscn")
+	
 	var y_sorter: YSort = map_to_load.get_node("YSort/Players")
 	for p_id in spawn_points:
 		var spawn_pos = map_to_load.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
-		var player = player_scene.instance()
+		var player_scene
+		var player
+		if is_single_player || p_id == get_tree().get_network_unique_id():
+			player_scene = load("res://src/Actors/" + player_class + ".tscn")
+			player = player_scene.instance()
+			player.set_player_name(player_name)
+			local_player_character = player
+		else:
+			var player_info = players[p_id]
+			player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
+			player = player_scene.instance()
+			player.set_player_name(player_info.player_name)
+		
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
 		
 		player.set_network_master(p_id) #set unique id as master.
-
-		if is_single_player || p_id == get_tree().get_network_unique_id():
-			# If node for this peer id, set name.
-			player.set_player_name(player_name)
-			local_player_character = player
-		else:
-			# Otherwise set name from peer.
-			player.set_player_name(players[p_id])
 		
 		#var floor_tiles: TileMap = world.get_node("Floor")
 		#world.add_child_below_node(floor_tiles,player,true)
@@ -170,7 +196,7 @@ func single_player_game():
 func host_game(new_player_name):
 	is_single_player = false
 	player_name = new_player_name
-	var host = NetworkedMultiplayerENet.new()
+	host = NetworkedMultiplayerENet.new()
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
 
