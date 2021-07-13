@@ -1,24 +1,5 @@
 extends Actor
 
-##TODO Duplicate Code from Troll
-const MOTION_SPEED = 160 * 60 # Pixels/second.
-
-#puppet var puppet_pos = Vector2()
-puppet var puppet_motion = Vector2.ZERO
-puppet var puppet_direction = Vector2.DOWN
-puppet var puppet_running = false
-puppet var puppet_state = PlayerState.MOVE
-puppet var puppet_position = Vector2.ZERO
-
-
-enum PlayerState{
-	MOVE,
-	PICKUP
-}
-
-var state = PlayerState.MOVE
-var motion = Vector2.ZERO
-var actionDirection = Vector2.DOWN #intention is this is southeast
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -32,8 +13,6 @@ func _init():
 	health_max = 10
 	health_current = 10
 	capacity = Capacity.new(50,100,20)
-	inventory = Inventory.new()
-	inventory.add(ItemRock.new().construct())
 
 func _ready():
 	#BAD CODE HERE
@@ -46,13 +25,7 @@ func _ready():
 	animationTree.set("parameters/Idle/blend_position", actionDirection)
 	animationTree.set("parameters/Run/blend_position", actionDirection)
 	animationTree.set("parameters/Pickup/blend_position", actionDirection)
-	
-func _physics_process(delta):
-	match state:
-		PlayerState.MOVE:
-			moveState(delta)
-		PlayerState.PICKUP:
-			pickupState(delta)
+
 
 func moveState(delta):
 	var running = false
@@ -109,9 +82,6 @@ func pickupAnimationFinished():
 	state = PlayerState.MOVE
 	pickup_next_item()
 
-func set_player_name(new_name):
-	character_name = new_name
-	get_node("Name").set_text(new_name)
 
 func _on_InteractionArea_area_shape_entered(area_id: int, area: Area2D, area_shape: int, local_shape: int) -> void:
 	on_InteractionArea_area_shape_entered(area_id, area, area_shape, local_shape)

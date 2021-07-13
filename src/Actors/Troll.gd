@@ -1,16 +1,5 @@
 extends Actor
 
-const MOTION_SPEED = 160 * 60 # Pixels/second.
-
-#puppet var puppet_pos = Vector2()
-puppet var puppet_motion = Vector2()
-
-enum PlayerState{
-	MOVE,
-	PICKUP
-}
-
-var state = PlayerState.MOVE
 
 onready var myCamera = $PlayerCameraInterface
 
@@ -19,8 +8,6 @@ func _init():
 	health_max = 20
 	health_current = 20
 	capacity = Capacity.new(50,100,20)
-	inventory = Inventory.new()
-	inventory.add(ItemRock.new().construct())
 
 func _ready():
 	#BAD CODE HERE
@@ -30,13 +17,6 @@ func _ready():
 	if gamestate.is_single_player || is_network_master():
 		myCamera.make_current()
 
-	
-func _physics_process(delta):
-	match state:
-		PlayerState.MOVE:
-			moveState(delta)
-		PlayerState.PICKUP:
-			pickupState(delta)
 
 func moveState(delta):
 	var motion = Vector2()
@@ -65,10 +45,6 @@ func pickupState(delta):
 	state = PlayerState.MOVE
 	pickup_next_item()
 
-
-func set_player_name(new_name):
-	character_name = new_name
-	get_node("Name").set_text(new_name)
 
 func _on_InteractionArea_area_shape_entered(area_id: int, area: Area2D, area_shape: int, local_shape: int) -> void:
 	on_InteractionArea_area_shape_entered(area_id, area, area_shape, local_shape)
