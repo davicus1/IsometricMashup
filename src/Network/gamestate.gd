@@ -93,9 +93,15 @@ remote func player_creation(new_player_name, new_player_class):
 	players[id].player_name = new_player_name
 	players[id].player_class = new_player_class
 	emit_signal("player_list_changed")
-	for p in players:
-		if p != id:
-			rpc_id(p, "player_updated", id, new_player_name, new_player_class)
+	update_clients_player_updated(id, new_player_name, new_player_class)
+
+# TODO Maybe the players list should include the server Or the current network master player for client case)
+# So that this and the player creation method can be called by everyone and not special cased for the server. See Lobby._on_FinishCreation_pressed
+func update_clients_player_updated(id, new_player_name, new_player_class):
+		for p in players:
+			if p != id:
+				rpc_id(p, "player_updated", id, new_player_name, new_player_class)
+
 
 remote func player_updated(id, new_player_name, new_player_class):
 	players[id].player_name = new_player_name
