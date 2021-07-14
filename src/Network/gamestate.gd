@@ -8,8 +8,8 @@ const MAX_PEERS = 4
 
 # Name for my player.
 var player_name = "The Warrior"
-var player_class = "Human"
-var classes = ["Human", "Troll"]
+var player_class = "Humanoid"
+var classes = ["Humanoid", "Human", "Troll"]
 
 # Names for remote players in id:PlayerInfo format.
 var players = {}

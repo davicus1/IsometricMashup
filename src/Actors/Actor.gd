@@ -3,7 +3,6 @@ class_name Actor
 
 const MOTION_SPEED = 160 * 60 # Pixels/second.
 
-#puppet var puppet_pos = Vector2()
 puppet var puppet_motion = Vector2.ZERO
 puppet var puppet_direction = Vector2.DOWN
 puppet var puppet_running = false
@@ -17,7 +16,9 @@ var volume:float
 var inventory:Inventory
 var capacity:Capacity
 var character_name:String
-var status_overlay:ActorStatusOverlay
+onready var myCamera = $PlayerCameraInterface
+onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStatusOverlay
+onready var nameLabel = $Name
 
 var collectable_items_in_reach:Array = []
 
@@ -36,7 +37,10 @@ func _init():
 
 
 func _ready():
-	pass
+	status_overlay._actor_to_watch(self)
+	if gamestate.is_single_player || is_network_master():
+		myCamera.make_current()
+	nameLabel.set_text(character_name)
 
 
 func _physics_process(delta):
@@ -106,7 +110,6 @@ func pickupState(_delta):
 
 func set_player_name(new_name):
 	character_name = new_name
-	get_node("Name").set_text(new_name)
 
 
 func on_InteractionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):
@@ -142,7 +145,3 @@ func pickup_next_item():
 		collectable.get_parent().remove_child(collectable)
 		inventory.add(collectable)
 
-
-func connect_to_status_overlay():
-	print("connect_to_status_overlay " )
-	#actor_status_overlay.it_is_me(self)
