@@ -145,3 +145,11 @@ func pickup_next_item():
 		collectable.get_parent().remove_child(collectable)
 		inventory.add(collectable)
 
+
+#func _build_animated_sprite(character_race:String, character_gender:String, character_model:String):
+#	var animatedSprite:AnimatedSprite = null
+#	var animation_names = ["Idle-E", "Pickup-NW"]
+#	for animation in animation_names:
+#		animatedSprite.frames.add_animation(animation)
+#		var texturepath = "res://basePath/" + character_race + "/" + character_gender + "/" + character_model + "_" + animation + "_" + direction
+#		animatedSprite.frames.add_frame(animation,)

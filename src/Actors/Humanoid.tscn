@@ -1,4 +1,4 @@
-[gd_scene load_steps=230 format=2]
+[gd_scene load_steps=229 format=2]
 
 [ext_resource path="res://src/Actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/Male/Male_5_Pickup8.png" type="Texture" id=2]
@@ -928,9 +928,6 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=58]
 
-[sub_resource type="CircleShape2D" id=59]
-radius = 31.4654
-
 [node name="Humanoid" instance=ExtResource( 1 )]
 script = ExtResource( 170 )
 
@@ -977,13 +974,5 @@ parameters/playback = SubResource( 58 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Pickup/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( -0.0018416, -0.0123457 )
-
-[node name="InteractionArea" type="Area2D" parent="." index="6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0"]
-shape = SubResource( 59 )
-
-[connection signal="area_shape_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_shape_entered"]
-[connection signal="area_shape_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_shape_exited"]
 
 [editable path="PlayerCameraInterface"]

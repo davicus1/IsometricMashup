@@ -13,6 +13,7 @@ func _init():
 	health_current = 10
 	capacity = Capacity.new(50,100,20)
 
+
 func _ready():
 	callBlendPosition(actionDirection)
 
@@ -39,9 +40,3 @@ func pickupAnimationFinished():
 	state = PlayerState.MOVE
 	pickup_next_item()
 
-
-func _on_InteractionArea_area_shape_entered(area_id: int, area: Area2D, area_shape: int, local_shape: int) -> void:
-	on_InteractionArea_area_shape_entered(area_id, area, area_shape, local_shape)
-
-func _on_InteractionArea_area_shape_exited(area_id: int, area: Area2D, area_shape: int, local_shape: int) -> void:
-	on_InteractionArea_area_shape_exited(area_id, area, area_shape, local_shape)
