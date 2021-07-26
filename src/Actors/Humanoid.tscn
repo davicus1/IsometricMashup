@@ -1,4 +1,4 @@
-[gd_scene load_steps=229 format=2]
+[gd_scene load_steps=748 format=2]
 
 [ext_resource path="res://src/Actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/Male/Male_5_Pickup8.png" type="Texture" id=2]
@@ -170,18 +170,754 @@
 [ext_resource path="res://Assets/Characters/Male/Male_3_Pickup0.png" type="Texture" id=168]
 [ext_resource path="res://Assets/Characters/Male/Male_2_Run7.png" type="Texture" id=169]
 [ext_resource path="res://src/Actors/Humanoid.gd" type="Script" id=170]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00029.png" type="Texture" id=171]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00030.png" type="Texture" id=172]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00008.png" type="Texture" id=173]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00010.png" type="Texture" id=174]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00011.png" type="Texture" id=175]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00013.png" type="Texture" id=176]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00012.png" type="Texture" id=177]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00015.png" type="Texture" id=178]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00009.png" type="Texture" id=179]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00014.png" type="Texture" id=180]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00007.png" type="Texture" id=181]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00019.png" type="Texture" id=182]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00023.png" type="Texture" id=183]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00020.png" type="Texture" id=184]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00021.png" type="Texture" id=185]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00025.png" type="Texture" id=186]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00016.png" type="Texture" id=187]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00026.png" type="Texture" id=188]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00027.png" type="Texture" id=189]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00028.png" type="Texture" id=190]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00024.png" type="Texture" id=191]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00022.png" type="Texture" id=192]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00017.png" type="Texture" id=193]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_R_00018.png" type="Texture" id=194]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00021.png" type="Texture" id=195]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00022.png" type="Texture" id=196]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00023.png" type="Texture" id=197]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00021.png" type="Texture" id=198]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00018.png" type="Texture" id=199]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00028.png" type="Texture" id=200]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00029.png" type="Texture" id=201]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00022.png" type="Texture" id=202]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00015.png" type="Texture" id=203]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00012.png" type="Texture" id=204]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00019.png" type="Texture" id=205]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00020.png" type="Texture" id=206]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00013.png" type="Texture" id=207]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00023.png" type="Texture" id=208]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00022.png" type="Texture" id=209]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00024.png" type="Texture" id=210]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00019.png" type="Texture" id=211]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00017.png" type="Texture" id=212]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00024.png" type="Texture" id=213]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00016.png" type="Texture" id=214]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00026.png" type="Texture" id=215]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00011.png" type="Texture" id=216]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00017.png" type="Texture" id=217]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00009.png" type="Texture" id=218]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00026.png" type="Texture" id=219]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00027.png" type="Texture" id=220]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00030.png" type="Texture" id=221]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00021.png" type="Texture" id=222]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00007.png" type="Texture" id=223]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00011.png" type="Texture" id=224]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00019.png" type="Texture" id=225]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00025.png" type="Texture" id=226]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00013.png" type="Texture" id=227]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00008.png" type="Texture" id=228]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00012.png" type="Texture" id=229]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00011.png" type="Texture" id=230]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00025.png" type="Texture" id=231]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00007.png" type="Texture" id=232]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00018.png" type="Texture" id=233]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00028.png" type="Texture" id=234]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00020.png" type="Texture" id=235]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00008.png" type="Texture" id=236]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00007.png" type="Texture" id=237]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00010.png" type="Texture" id=238]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00012.png" type="Texture" id=239]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00018.png" type="Texture" id=240]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00008.png" type="Texture" id=241]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00010.png" type="Texture" id=242]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00013.png" type="Texture" id=243]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00017.png" type="Texture" id=244]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00009.png" type="Texture" id=245]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00009.png" type="Texture" id=246]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00015.png" type="Texture" id=247]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00016.png" type="Texture" id=248]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00014.png" type="Texture" id=249]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00015.png" type="Texture" id=250]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00030.png" type="Texture" id=251]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00020.png" type="Texture" id=252]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00023.png" type="Texture" id=253]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00010.png" type="Texture" id=254]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_R_00029.png" type="Texture" id=255]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00016.png" type="Texture" id=256]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00027.png" type="Texture" id=257]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00014.png" type="Texture" id=258]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_R_00014.png" type="Texture" id=259]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00027.png" type="Texture" id=260]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00020.png" type="Texture" id=261]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00021.png" type="Texture" id=262]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00017.png" type="Texture" id=263]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00014.png" type="Texture" id=264]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00009.png" type="Texture" id=265]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00030.png" type="Texture" id=266]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00025.png" type="Texture" id=267]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00015.png" type="Texture" id=268]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00019.png" type="Texture" id=269]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00021.png" type="Texture" id=270]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00010.png" type="Texture" id=271]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00025.png" type="Texture" id=272]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00016.png" type="Texture" id=273]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00030.png" type="Texture" id=274]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00011.png" type="Texture" id=275]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00018.png" type="Texture" id=276]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00019.png" type="Texture" id=277]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00016.png" type="Texture" id=278]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00028.png" type="Texture" id=279]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00024.png" type="Texture" id=280]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00014.png" type="Texture" id=281]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00029.png" type="Texture" id=282]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00027.png" type="Texture" id=283]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00026.png" type="Texture" id=284]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00029.png" type="Texture" id=285]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00022.png" type="Texture" id=286]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00020.png" type="Texture" id=287]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00009.png" type="Texture" id=288]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00008.png" type="Texture" id=289]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00012.png" type="Texture" id=290]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00015.png" type="Texture" id=291]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00028.png" type="Texture" id=292]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00024.png" type="Texture" id=293]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00017.png" type="Texture" id=294]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00028.png" type="Texture" id=295]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_00029.png" type="Texture" id=296]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00013.png" type="Texture" id=297]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00018.png" type="Texture" id=298]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00023.png" type="Texture" id=299]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00025.png" type="Texture" id=300]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00026.png" type="Texture" id=301]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00030.png" type="Texture" id=302]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00007.png" type="Texture" id=303]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00023.png" type="Texture" id=304]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00012.png" type="Texture" id=305]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00007.png" type="Texture" id=306]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00011.png" type="Texture" id=307]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00027.png" type="Texture" id=308]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00008.png" type="Texture" id=309]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_L_00026.png" type="Texture" id=310]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00013.png" type="Texture" id=311]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00024.png" type="Texture" id=312]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00022.png" type="Texture" id=313]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Down_00010.png" type="Texture" id=314]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00017.png" type="Texture" id=315]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00029.png" type="Texture" id=316]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00024.png" type="Texture" id=317]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00029.png" type="Texture" id=318]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00030.png" type="Texture" id=319]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00030.png" type="Texture" id=320]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00016.png" type="Texture" id=321]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00020.png" type="Texture" id=322]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00023.png" type="Texture" id=323]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00026.png" type="Texture" id=324]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00022.png" type="Texture" id=325]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00013.png" type="Texture" id=326]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00014.png" type="Texture" id=327]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00019.png" type="Texture" id=328]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00011.png" type="Texture" id=329]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00028.png" type="Texture" id=330]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00009.png" type="Texture" id=331]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00012.png" type="Texture" id=332]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00018.png" type="Texture" id=333]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00010.png" type="Texture" id=334]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00027.png" type="Texture" id=335]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00021.png" type="Texture" id=336]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00007.png" type="Texture" id=337]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00015.png" type="Texture" id=338]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00008.png" type="Texture" id=339]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00025.png" type="Texture" id=340]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00014.png" type="Texture" id=341]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00012.png" type="Texture" id=342]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00008.png" type="Texture" id=343]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00010.png" type="Texture" id=344]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00015.png" type="Texture" id=345]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00007.png" type="Texture" id=346]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00011.png" type="Texture" id=347]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00009.png" type="Texture" id=348]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00013.png" type="Texture" id=349]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00016.png" type="Texture" id=350]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00027.png" type="Texture" id=351]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00021.png" type="Texture" id=352]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00028.png" type="Texture" id=353]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00018.png" type="Texture" id=354]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00025.png" type="Texture" id=355]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00023.png" type="Texture" id=356]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00017.png" type="Texture" id=357]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00020.png" type="Texture" id=358]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00024.png" type="Texture" id=359]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00019.png" type="Texture" id=360]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00022.png" type="Texture" id=361]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_L_00026.png" type="Texture" id=362]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00019.png" type="Texture" id=363]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00012.png" type="Texture" id=364]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00015.png" type="Texture" id=365]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00016.png" type="Texture" id=366]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00020.png" type="Texture" id=367]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00014.png" type="Texture" id=368]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00013.png" type="Texture" id=369]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00017.png" type="Texture" id=370]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00022.png" type="Texture" id=371]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00011.png" type="Texture" id=372]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00017.png" type="Texture" id=373]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00009.png" type="Texture" id=374]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00016.png" type="Texture" id=375]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00007.png" type="Texture" id=376]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00013.png" type="Texture" id=377]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00014.png" type="Texture" id=378]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00018.png" type="Texture" id=379]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00021.png" type="Texture" id=380]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00022.png" type="Texture" id=381]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00018.png" type="Texture" id=382]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00008.png" type="Texture" id=383]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00010.png" type="Texture" id=384]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00011.png" type="Texture" id=385]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00012.png" type="Texture" id=386]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00021.png" type="Texture" id=387]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00020.png" type="Texture" id=388]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00008.png" type="Texture" id=389]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00013.png" type="Texture" id=390]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00016.png" type="Texture" id=391]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00007.png" type="Texture" id=392]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00019.png" type="Texture" id=393]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00022.png" type="Texture" id=394]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00010.png" type="Texture" id=395]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00015.png" type="Texture" id=396]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00017.png" type="Texture" id=397]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_00019.png" type="Texture" id=398]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00021.png" type="Texture" id=399]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00009.png" type="Texture" id=400]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00020.png" type="Texture" id=401]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00015.png" type="Texture" id=402]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00014.png" type="Texture" id=403]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_L_00018.png" type="Texture" id=404]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00012.png" type="Texture" id=405]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00009.png" type="Texture" id=406]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00017.png" type="Texture" id=407]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00019.png" type="Texture" id=408]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00022.png" type="Texture" id=409]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00007.png" type="Texture" id=410]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00009.png" type="Texture" id=411]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00022.png" type="Texture" id=412]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00007.png" type="Texture" id=413]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00020.png" type="Texture" id=414]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00008.png" type="Texture" id=415]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00021.png" type="Texture" id=416]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00010.png" type="Texture" id=417]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00013.png" type="Texture" id=418]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00009.png" type="Texture" id=419]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00014.png" type="Texture" id=420]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00011.png" type="Texture" id=421]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00013.png" type="Texture" id=422]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_R_00012.png" type="Texture" id=423]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00011.png" type="Texture" id=424]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00017.png" type="Texture" id=425]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00016.png" type="Texture" id=426]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00007.png" type="Texture" id=427]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00021.png" type="Texture" id=428]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00008.png" type="Texture" id=429]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00016.png" type="Texture" id=430]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00010.png" type="Texture" id=431]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00019.png" type="Texture" id=432]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00012.png" type="Texture" id=433]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00015.png" type="Texture" id=434]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00015.png" type="Texture" id=435]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00014.png" type="Texture" id=436]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00010.png" type="Texture" id=437]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00008.png" type="Texture" id=438]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00011.png" type="Texture" id=439]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00018.png" type="Texture" id=440]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_R_00020.png" type="Texture" id=441]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_R_00018.png" type="Texture" id=442]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00010.png" type="Texture" id=443]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00013.png" type="Texture" id=444]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00017.png" type="Texture" id=445]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00018.png" type="Texture" id=446]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00015.png" type="Texture" id=447]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00022.png" type="Texture" id=448]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00014.png" type="Texture" id=449]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00016.png" type="Texture" id=450]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00020.png" type="Texture" id=451]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00021.png" type="Texture" id=452]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00011.png" type="Texture" id=453]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00012.png" type="Texture" id=454]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00019.png" type="Texture" id=455]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00018.png" type="Texture" id=456]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00019.png" type="Texture" id=457]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00021.png" type="Texture" id=458]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00022.png" type="Texture" id=459]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00007.png" type="Texture" id=460]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00008.png" type="Texture" id=461]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00020.png" type="Texture" id=462]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00009.png" type="Texture" id=463]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00010.png" type="Texture" id=464]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00011.png" type="Texture" id=465]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00012.png" type="Texture" id=466]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00007.png" type="Texture" id=467]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00008.png" type="Texture" id=468]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00011.png" type="Texture" id=469]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00009.png" type="Texture" id=470]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00012.png" type="Texture" id=471]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00013.png" type="Texture" id=472]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00010.png" type="Texture" id=473]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00014.png" type="Texture" id=474]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00015.png" type="Texture" id=475]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00016.png" type="Texture" id=476]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Down_00017.png" type="Texture" id=477]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00014.png" type="Texture" id=478]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00009.png" type="Texture" id=479]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00016.png" type="Texture" id=480]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00017.png" type="Texture" id=481]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00013.png" type="Texture" id=482]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00020.png" type="Texture" id=483]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00015.png" type="Texture" id=484]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00018.png" type="Texture" id=485]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00019.png" type="Texture" id=486]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00021.png" type="Texture" id=487]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_L_00022.png" type="Texture" id=488]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00007.png" type="Texture" id=489]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Run/Cor_Run_Up_L_00008.png" type="Texture" id=490]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00018.png" type="Texture" id=491]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00027.png" type="Texture" id=492]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00029.png" type="Texture" id=493]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00021.png" type="Texture" id=494]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00032.png" type="Texture" id=495]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00008.png" type="Texture" id=496]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00019.png" type="Texture" id=497]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00036.png" type="Texture" id=498]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00033.png" type="Texture" id=499]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00038.png" type="Texture" id=500]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00039.png" type="Texture" id=501]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00011.png" type="Texture" id=502]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00023.png" type="Texture" id=503]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00022.png" type="Texture" id=504]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00026.png" type="Texture" id=505]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00031.png" type="Texture" id=506]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00017.png" type="Texture" id=507]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00025.png" type="Texture" id=508]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00016.png" type="Texture" id=509]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00009.png" type="Texture" id=510]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00010.png" type="Texture" id=511]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00013.png" type="Texture" id=512]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00012.png" type="Texture" id=513]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00014.png" type="Texture" id=514]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00028.png" type="Texture" id=515]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00034.png" type="Texture" id=516]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00035.png" type="Texture" id=517]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00007.png" type="Texture" id=518]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00015.png" type="Texture" id=519]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00020.png" type="Texture" id=520]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00024.png" type="Texture" id=521]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00030.png" type="Texture" id=522]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_R_00037.png" type="Texture" id=523]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00029.png" type="Texture" id=524]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00028.png" type="Texture" id=525]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00030.png" type="Texture" id=526]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00014.png" type="Texture" id=527]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00009.png" type="Texture" id=528]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00008.png" type="Texture" id=529]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00010.png" type="Texture" id=530]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00013.png" type="Texture" id=531]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00007.png" type="Texture" id=532]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00012.png" type="Texture" id=533]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00011.png" type="Texture" id=534]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00015.png" type="Texture" id=535]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00016.png" type="Texture" id=536]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00018.png" type="Texture" id=537]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00021.png" type="Texture" id=538]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00023.png" type="Texture" id=539]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00024.png" type="Texture" id=540]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00017.png" type="Texture" id=541]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00019.png" type="Texture" id=542]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00022.png" type="Texture" id=543]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00025.png" type="Texture" id=544]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00026.png" type="Texture" id=545]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00020.png" type="Texture" id=546]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00027.png" type="Texture" id=547]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00036.png" type="Texture" id=548]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00035.png" type="Texture" id=549]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00037.png" type="Texture" id=550]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00031.png" type="Texture" id=551]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00038.png" type="Texture" id=552]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00033.png" type="Texture" id=553]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00039.png" type="Texture" id=554]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00032.png" type="Texture" id=555]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_R_00034.png" type="Texture" id=556]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00021.png" type="Texture" id=557]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00008.png" type="Texture" id=558]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00022.png" type="Texture" id=559]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00008.png" type="Texture" id=560]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00017.png" type="Texture" id=561]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00023.png" type="Texture" id=562]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00028.png" type="Texture" id=563]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00032.png" type="Texture" id=564]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00007.png" type="Texture" id=565]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00022.png" type="Texture" id=566]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00039.png" type="Texture" id=567]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00018.png" type="Texture" id=568]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00024.png" type="Texture" id=569]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00021.png" type="Texture" id=570]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00015.png" type="Texture" id=571]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00012.png" type="Texture" id=572]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00029.png" type="Texture" id=573]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00038.png" type="Texture" id=574]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00007.png" type="Texture" id=575]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00019.png" type="Texture" id=576]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00025.png" type="Texture" id=577]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00026.png" type="Texture" id=578]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00027.png" type="Texture" id=579]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00028.png" type="Texture" id=580]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00010.png" type="Texture" id=581]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00015.png" type="Texture" id=582]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00017.png" type="Texture" id=583]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00026.png" type="Texture" id=584]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00010.png" type="Texture" id=585]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00023.png" type="Texture" id=586]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00020.png" type="Texture" id=587]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00030.png" type="Texture" id=588]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00024.png" type="Texture" id=589]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00031.png" type="Texture" id=590]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00036.png" type="Texture" id=591]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00009.png" type="Texture" id=592]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00011.png" type="Texture" id=593]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00016.png" type="Texture" id=594]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00037.png" type="Texture" id=595]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00034.png" type="Texture" id=596]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00027.png" type="Texture" id=597]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00009.png" type="Texture" id=598]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00012.png" type="Texture" id=599]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00013.png" type="Texture" id=600]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00018.png" type="Texture" id=601]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00019.png" type="Texture" id=602]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00025.png" type="Texture" id=603]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00013.png" type="Texture" id=604]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00033.png" type="Texture" id=605]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00035.png" type="Texture" id=606]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00011.png" type="Texture" id=607]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00014.png" type="Texture" id=608]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00020.png" type="Texture" id=609]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Up_L_00014.png" type="Texture" id=610]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00016.png" type="Texture" id=611]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00013.png" type="Texture" id=612]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00013.png" type="Texture" id=613]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00029.png" type="Texture" id=614]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00030.png" type="Texture" id=615]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00027.png" type="Texture" id=616]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00035.png" type="Texture" id=617]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00016.png" type="Texture" id=618]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00018.png" type="Texture" id=619]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00019.png" type="Texture" id=620]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00020.png" type="Texture" id=621]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00023.png" type="Texture" id=622]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00030.png" type="Texture" id=623]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00025.png" type="Texture" id=624]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00024.png" type="Texture" id=625]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00032.png" type="Texture" id=626]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00038.png" type="Texture" id=627]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00018.png" type="Texture" id=628]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00020.png" type="Texture" id=629]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00007.png" type="Texture" id=630]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00031.png" type="Texture" id=631]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00014.png" type="Texture" id=632]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00028.png" type="Texture" id=633]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00029.png" type="Texture" id=634]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00037.png" type="Texture" id=635]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00017.png" type="Texture" id=636]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00011.png" type="Texture" id=637]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00010.png" type="Texture" id=638]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00032.png" type="Texture" id=639]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00010.png" type="Texture" id=640]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00021.png" type="Texture" id=641]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00022.png" type="Texture" id=642]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00014.png" type="Texture" id=643]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00024.png" type="Texture" id=644]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00026.png" type="Texture" id=645]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00031.png" type="Texture" id=646]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00017.png" type="Texture" id=647]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00035.png" type="Texture" id=648]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00019.png" type="Texture" id=649]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00021.png" type="Texture" id=650]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00034.png" type="Texture" id=651]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00039.png" type="Texture" id=652]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00016.png" type="Texture" id=653]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00022.png" type="Texture" id=654]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00026.png" type="Texture" id=655]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00034.png" type="Texture" id=656]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00038.png" type="Texture" id=657]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00015.png" type="Texture" id=658]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00007.png" type="Texture" id=659]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00036.png" type="Texture" id=660]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00015.png" type="Texture" id=661]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00037.png" type="Texture" id=662]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00008.png" type="Texture" id=663]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00011.png" type="Texture" id=664]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00012.png" type="Texture" id=665]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00009.png" type="Texture" id=666]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00025.png" type="Texture" id=667]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00009.png" type="Texture" id=668]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00008.png" type="Texture" id=669]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_L_00033.png" type="Texture" id=670]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00036.png" type="Texture" id=671]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00012.png" type="Texture" id=672]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00033.png" type="Texture" id=673]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00023.png" type="Texture" id=674]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_Down_00039.png" type="Texture" id=675]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00027.png" type="Texture" id=676]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00036.png" type="Texture" id=677]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00037.png" type="Texture" id=678]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00038.png" type="Texture" id=679]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00039.png" type="Texture" id=680]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00031.png" type="Texture" id=681]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00029.png" type="Texture" id=682]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00030.png" type="Texture" id=683]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00032.png" type="Texture" id=684]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00033.png" type="Texture" id=685]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00035.png" type="Texture" id=686]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00028.png" type="Texture" id=687]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00034.png" type="Texture" id=688]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 427 ), ExtResource( 438 ), ExtResource( 411 ), ExtResource( 437 ), ExtResource( 439 ), ExtResource( 433 ), ExtResource( 422 ), ExtResource( 420 ), ExtResource( 434 ), ExtResource( 426 ), ExtResource( 407 ), ExtResource( 440 ), ExtResource( 408 ), ExtResource( 441 ), ExtResource( 416 ), ExtResource( 412 ) ],
+"loop": true,
+"name": "Run-N",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 232 ), ExtResource( 241 ), ExtResource( 245 ), ExtResource( 254 ), ExtResource( 224 ), ExtResource( 204 ), ExtResource( 243 ), ExtResource( 259 ), ExtResource( 250 ), ExtResource( 256 ), ExtResource( 244 ), ExtResource( 233 ), ExtResource( 211 ), ExtResource( 235 ), ExtResource( 198 ), ExtResource( 202 ), ExtResource( 208 ), ExtResource( 213 ), ExtResource( 226 ), ExtResource( 215 ), ExtResource( 257 ), ExtResource( 200 ), ExtResource( 201 ), ExtResource( 221 ) ],
+"loop": true,
+"name": "Idle-NE",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 518 ), ExtResource( 496 ), ExtResource( 510 ), ExtResource( 511 ), ExtResource( 502 ), ExtResource( 513 ), ExtResource( 512 ), ExtResource( 514 ), ExtResource( 519 ), ExtResource( 509 ), ExtResource( 507 ), ExtResource( 491 ), ExtResource( 497 ), ExtResource( 520 ), ExtResource( 494 ), ExtResource( 504 ), ExtResource( 503 ), ExtResource( 521 ), ExtResource( 508 ), ExtResource( 505 ), ExtResource( 492 ), ExtResource( 515 ), ExtResource( 493 ), ExtResource( 522 ), ExtResource( 506 ), ExtResource( 495 ), ExtResource( 499 ), ExtResource( 516 ), ExtResource( 517 ), ExtResource( 498 ), ExtResource( 523 ), ExtResource( 500 ), ExtResource( 501 ) ],
+"loop": true,
+"name": "Pickup-NE",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 223 ), ExtResource( 236 ), ExtResource( 218 ), ExtResource( 242 ), ExtResource( 230 ), ExtResource( 229 ), ExtResource( 207 ), ExtResource( 249 ), ExtResource( 247 ), ExtResource( 214 ), ExtResource( 212 ), ExtResource( 240 ), ExtResource( 225 ), ExtResource( 252 ), ExtResource( 222 ), ExtResource( 209 ), ExtResource( 253 ), ExtResource( 210 ), ExtResource( 231 ), ExtResource( 219 ), ExtResource( 220 ), ExtResource( 234 ), ExtResource( 255 ), ExtResource( 251 ) ],
+"loop": true,
+"name": "Idle-N",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 532 ), ExtResource( 529 ), ExtResource( 528 ), ExtResource( 530 ), ExtResource( 534 ), ExtResource( 533 ), ExtResource( 531 ), ExtResource( 527 ), ExtResource( 535 ), ExtResource( 536 ), ExtResource( 541 ), ExtResource( 537 ), ExtResource( 542 ), ExtResource( 546 ), ExtResource( 538 ), ExtResource( 543 ), ExtResource( 539 ), ExtResource( 540 ), ExtResource( 544 ), ExtResource( 545 ), ExtResource( 547 ), ExtResource( 525 ), ExtResource( 524 ), ExtResource( 526 ), ExtResource( 551 ), ExtResource( 555 ), ExtResource( 553 ), ExtResource( 556 ), ExtResource( 549 ), ExtResource( 548 ), ExtResource( 550 ), ExtResource( 552 ), ExtResource( 554 ) ],
+"loop": true,
+"name": "Pickup-N",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 337 ), ExtResource( 339 ), ExtResource( 331 ), ExtResource( 334 ), ExtResource( 329 ), ExtResource( 332 ), ExtResource( 326 ), ExtResource( 327 ), ExtResource( 338 ), ExtResource( 321 ), ExtResource( 315 ), ExtResource( 333 ), ExtResource( 328 ), ExtResource( 322 ), ExtResource( 336 ), ExtResource( 325 ), ExtResource( 323 ), ExtResource( 317 ), ExtResource( 340 ), ExtResource( 324 ), ExtResource( 335 ), ExtResource( 330 ), ExtResource( 318 ), ExtResource( 319 ) ],
+"loop": true,
+"name": "Idle-W",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 392 ), ExtResource( 383 ), ExtResource( 400 ), ExtResource( 384 ), ExtResource( 385 ), ExtResource( 364 ), ExtResource( 390 ), ExtResource( 403 ), ExtResource( 365 ), ExtResource( 366 ), ExtResource( 373 ), ExtResource( 404 ), ExtResource( 393 ), ExtResource( 367 ), ExtResource( 399 ), ExtResource( 394 ) ],
+"loop": true,
+"name": "Run-S",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 467 ), ExtResource( 468 ), ExtResource( 470 ), ExtResource( 473 ), ExtResource( 469 ), ExtResource( 471 ), ExtResource( 472 ), ExtResource( 474 ), ExtResource( 475 ), ExtResource( 476 ), ExtResource( 477 ), ExtResource( 456 ), ExtResource( 457 ), ExtResource( 462 ), ExtResource( 458 ), ExtResource( 459 ) ],
+"loop": true,
+"name": "Run-SE",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 376 ), ExtResource( 389 ), ExtResource( 374 ), ExtResource( 395 ), ExtResource( 372 ), ExtResource( 386 ), ExtResource( 377 ), ExtResource( 378 ), ExtResource( 396 ), ExtResource( 391 ), ExtResource( 397 ), ExtResource( 379 ), ExtResource( 398 ), ExtResource( 388 ), ExtResource( 380 ), ExtResource( 381 ) ],
+"loop": true,
+"name": "Run-NW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 346 ), ExtResource( 343 ), ExtResource( 348 ), ExtResource( 344 ), ExtResource( 347 ), ExtResource( 342 ), ExtResource( 349 ), ExtResource( 341 ), ExtResource( 345 ), ExtResource( 350 ), ExtResource( 357 ), ExtResource( 354 ), ExtResource( 360 ), ExtResource( 358 ), ExtResource( 352 ), ExtResource( 361 ), ExtResource( 356 ), ExtResource( 359 ), ExtResource( 355 ), ExtResource( 362 ), ExtResource( 351 ), ExtResource( 353 ), ExtResource( 316 ), ExtResource( 320 ) ],
+"loop": true,
+"name": "Idle-SW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 575 ), ExtResource( 560 ), ExtResource( 598 ), ExtResource( 581 ), ExtResource( 607 ), ExtResource( 599 ), ExtResource( 600 ), ExtResource( 608 ), ExtResource( 582 ), ExtResource( 611 ), ExtResource( 561 ), ExtResource( 568 ), ExtResource( 576 ), ExtResource( 609 ), ExtResource( 557 ), ExtResource( 559 ), ExtResource( 562 ), ExtResource( 569 ), ExtResource( 577 ), ExtResource( 578 ), ExtResource( 579 ), ExtResource( 580 ), ExtResource( 614 ), ExtResource( 615 ), ExtResource( 631 ), ExtResource( 626 ), ExtResource( 670 ), ExtResource( 651 ), ExtResource( 648 ), ExtResource( 660 ), ExtResource( 662 ), ExtResource( 627 ), ExtResource( 652 ) ],
+"loop": true,
+"name": "Pickup-S",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 154 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk-E",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 237 ), ExtResource( 228 ), ExtResource( 246 ), ExtResource( 238 ), ExtResource( 216 ), ExtResource( 239 ), ExtResource( 227 ), ExtResource( 258 ), ExtResource( 203 ), ExtResource( 248 ), ExtResource( 217 ), ExtResource( 199 ), ExtResource( 205 ), ExtResource( 206 ), ExtResource( 195 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 280 ), ExtResource( 267 ), ExtResource( 284 ), ExtResource( 283 ), ExtResource( 295 ), ExtResource( 296 ), ExtResource( 266 ) ],
+"loop": true,
+"name": "Idle-NW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 102 ), ExtResource( 58 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Walk-W",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 659 ), ExtResource( 663 ), ExtResource( 668 ), ExtResource( 640 ), ExtResource( 664 ), ExtResource( 665 ), ExtResource( 613 ), ExtResource( 643 ), ExtResource( 658 ), ExtResource( 618 ), ExtResource( 647 ), ExtResource( 619 ), ExtResource( 620 ), ExtResource( 621 ), ExtResource( 641 ), ExtResource( 642 ), ExtResource( 622 ), ExtResource( 644 ), ExtResource( 624 ), ExtResource( 645 ), ExtResource( 676 ), ExtResource( 687 ), ExtResource( 682 ), ExtResource( 683 ), ExtResource( 681 ), ExtResource( 684 ), ExtResource( 685 ), ExtResource( 688 ), ExtResource( 686 ), ExtResource( 677 ), ExtResource( 678 ), ExtResource( 679 ), ExtResource( 680 ) ],
+"loop": true,
+"name": "Pickup-SW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 489 ), ExtResource( 490 ), ExtResource( 479 ), ExtResource( 443 ), ExtResource( 453 ), ExtResource( 454 ), ExtResource( 444 ), ExtResource( 449 ), ExtResource( 447 ), ExtResource( 450 ), ExtResource( 445 ), ExtResource( 446 ), ExtResource( 455 ), ExtResource( 451 ), ExtResource( 452 ), ExtResource( 448 ) ],
+"loop": true,
+"name": "Run-W",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 518 ), ExtResource( 496 ), ExtResource( 510 ), ExtResource( 511 ), ExtResource( 502 ), ExtResource( 513 ), ExtResource( 512 ), ExtResource( 514 ), ExtResource( 519 ), ExtResource( 509 ), ExtResource( 507 ), ExtResource( 491 ), ExtResource( 497 ), ExtResource( 520 ), ExtResource( 494 ), ExtResource( 504 ), ExtResource( 503 ), ExtResource( 521 ), ExtResource( 508 ), ExtResource( 505 ), ExtResource( 492 ), ExtResource( 515 ), ExtResource( 493 ), ExtResource( 522 ), ExtResource( 506 ), ExtResource( 495 ), ExtResource( 499 ), ExtResource( 516 ), ExtResource( 517 ), ExtResource( 498 ), ExtResource( 523 ), ExtResource( 500 ), ExtResource( 501 ) ],
+"loop": true,
+"name": "Pickup-E",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 303 ), ExtResource( 309 ), ExtResource( 288 ), ExtResource( 271 ), ExtResource( 307 ), ExtResource( 305 ), ExtResource( 297 ), ExtResource( 264 ), ExtResource( 268 ), ExtResource( 273 ), ExtResource( 263 ), ExtResource( 298 ), ExtResource( 269 ), ExtResource( 287 ), ExtResource( 270 ), ExtResource( 286 ), ExtResource( 304 ), ExtResource( 293 ), ExtResource( 272 ), ExtResource( 310 ), ExtResource( 308 ), ExtResource( 292 ), ExtResource( 285 ), ExtResource( 274 ) ],
+"loop": true,
+"name": "Idle-S",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 410 ), ExtResource( 429 ), ExtResource( 406 ), ExtResource( 431 ), ExtResource( 424 ), ExtResource( 405 ), ExtResource( 418 ), ExtResource( 436 ), ExtResource( 435 ), ExtResource( 430 ), ExtResource( 425 ), ExtResource( 442 ), ExtResource( 432 ), ExtResource( 414 ), ExtResource( 428 ), ExtResource( 409 ) ],
+"loop": true,
+"name": "Run-E",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 181 ), ExtResource( 173 ), ExtResource( 179 ), ExtResource( 174 ), ExtResource( 175 ), ExtResource( 177 ), ExtResource( 176 ), ExtResource( 180 ), ExtResource( 178 ), ExtResource( 187 ), ExtResource( 193 ), ExtResource( 194 ), ExtResource( 182 ), ExtResource( 184 ), ExtResource( 185 ), ExtResource( 192 ), ExtResource( 183 ), ExtResource( 191 ), ExtResource( 186 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 171 ), ExtResource( 172 ) ],
+"loop": true,
+"name": "Idle-E",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 565 ), ExtResource( 558 ), ExtResource( 592 ), ExtResource( 585 ), ExtResource( 593 ), ExtResource( 572 ), ExtResource( 604 ), ExtResource( 610 ), ExtResource( 571 ), ExtResource( 594 ), ExtResource( 583 ), ExtResource( 601 ), ExtResource( 602 ), ExtResource( 587 ), ExtResource( 570 ), ExtResource( 566 ), ExtResource( 586 ), ExtResource( 589 ), ExtResource( 603 ), ExtResource( 584 ), ExtResource( 597 ), ExtResource( 563 ), ExtResource( 573 ), ExtResource( 588 ), ExtResource( 590 ), ExtResource( 564 ), ExtResource( 605 ), ExtResource( 596 ), ExtResource( 606 ), ExtResource( 591 ), ExtResource( 595 ), ExtResource( 574 ), ExtResource( 567 ) ],
+"loop": true,
+"name": "Pickup-W",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 460 ), ExtResource( 461 ), ExtResource( 463 ), ExtResource( 464 ), ExtResource( 465 ), ExtResource( 466 ), ExtResource( 482 ), ExtResource( 478 ), ExtResource( 484 ), ExtResource( 480 ), ExtResource( 481 ), ExtResource( 485 ), ExtResource( 486 ), ExtResource( 483 ), ExtResource( 487 ), ExtResource( 488 ) ],
+"loop": true,
+"name": "Run-SW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 306 ), ExtResource( 289 ), ExtResource( 265 ), ExtResource( 314 ), ExtResource( 275 ), ExtResource( 290 ), ExtResource( 311 ), ExtResource( 281 ), ExtResource( 291 ), ExtResource( 278 ), ExtResource( 294 ), ExtResource( 276 ), ExtResource( 277 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 313 ), ExtResource( 299 ), ExtResource( 312 ), ExtResource( 300 ), ExtResource( 301 ), ExtResource( 260 ), ExtResource( 279 ), ExtResource( 282 ), ExtResource( 302 ) ],
+"loop": true,
+"name": "Idle-SE",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 565 ), ExtResource( 558 ), ExtResource( 592 ), ExtResource( 585 ), ExtResource( 593 ), ExtResource( 572 ), ExtResource( 604 ), ExtResource( 610 ), ExtResource( 571 ), ExtResource( 594 ), ExtResource( 583 ), ExtResource( 601 ), ExtResource( 602 ), ExtResource( 587 ), ExtResource( 570 ), ExtResource( 566 ), ExtResource( 586 ), ExtResource( 589 ), ExtResource( 603 ), ExtResource( 584 ), ExtResource( 597 ), ExtResource( 563 ), ExtResource( 573 ), ExtResource( 588 ), ExtResource( 590 ), ExtResource( 564 ), ExtResource( 605 ), ExtResource( 596 ), ExtResource( 606 ), ExtResource( 591 ), ExtResource( 595 ), ExtResource( 574 ), ExtResource( 567 ) ],
+"loop": true,
+"name": "Pickup-NW",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 630 ), ExtResource( 669 ), ExtResource( 666 ), ExtResource( 638 ), ExtResource( 637 ), ExtResource( 672 ), ExtResource( 612 ), ExtResource( 632 ), ExtResource( 661 ), ExtResource( 653 ), ExtResource( 636 ), ExtResource( 628 ), ExtResource( 649 ), ExtResource( 629 ), ExtResource( 650 ), ExtResource( 654 ), ExtResource( 674 ), ExtResource( 625 ), ExtResource( 667 ), ExtResource( 655 ), ExtResource( 616 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 623 ), ExtResource( 646 ), ExtResource( 639 ), ExtResource( 673 ), ExtResource( 656 ), ExtResource( 617 ), ExtResource( 671 ), ExtResource( 635 ), ExtResource( 657 ), ExtResource( 675 ) ],
+"loop": true,
+"name": "Pickup-SE",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 413 ), ExtResource( 415 ), ExtResource( 419 ), ExtResource( 417 ), ExtResource( 421 ), ExtResource( 423 ), ExtResource( 369 ), ExtResource( 368 ), ExtResource( 402 ), ExtResource( 375 ), ExtResource( 370 ), ExtResource( 382 ), ExtResource( 363 ), ExtResource( 401 ), ExtResource( 387 ), ExtResource( 371 ) ],
+"loop": true,
+"name": "Run-NE",
+"speed": 15.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 143 ), ExtResource( 43 ), ExtResource( 147 ), ExtResource( 138 ), ExtResource( 60 ), ExtResource( 129 ), ExtResource( 70 ), ExtResource( 141 ), ExtResource( 140 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "Run-N",
+"speed": 13.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": false,
 "name": "Idle-NE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 11 ), ExtResource( 40 ), ExtResource( 146 ), ExtResource( 149 ), ExtResource( 158 ), ExtResource( 150 ), ExtResource( 161 ), ExtResource( 148 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "Pickup-NE",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 128 ) ],
+"loop": false,
+"name": "Idle-N",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 153 ), ExtResource( 4 ), ExtResource( 41 ), ExtResource( 87 ), ExtResource( 55 ), ExtResource( 7 ), ExtResource( 35 ), ExtResource( 135 ), ExtResource( 38 ), ExtResource( 130 ) ],
+"loop": true,
+"name": "Pickup-N",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 108 ) ],
+"loop": true,
+"name": "Idle-W",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 116 ), ExtResource( 117 ), ExtResource( 64 ), ExtResource( 19 ), ExtResource( 91 ), ExtResource( 74 ), ExtResource( 34 ), ExtResource( 120 ), ExtResource( 107 ), ExtResource( 92 ) ],
+"loop": true,
+"name": "Run-S",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 97 ), ExtResource( 51 ), ExtResource( 115 ), ExtResource( 93 ), ExtResource( 119 ), ExtResource( 82 ), ExtResource( 62 ), ExtResource( 26 ), ExtResource( 81 ), ExtResource( 121 ) ],
+"loop": true,
+"name": "Run-SE",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 101 ), ExtResource( 9 ), ExtResource( 90 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 71 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Run-NW",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 85 ) ],
+"loop": false,
+"name": "Idle-SW",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 89 ), ExtResource( 96 ), ExtResource( 39 ), ExtResource( 79 ), ExtResource( 12 ), ExtResource( 106 ), ExtResource( 78 ), ExtResource( 123 ), ExtResource( 114 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Pickup-S",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 154 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk-E",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": false,
+"name": "Idle-NW",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 73 ), ExtResource( 102 ), ExtResource( 58 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "Walk-W",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 112 ), ExtResource( 72 ), ExtResource( 109 ), ExtResource( 16 ), ExtResource( 67 ), ExtResource( 127 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 2 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "Pickup-SW",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 73 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 58 ), ExtResource( 3 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Run-W",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 131 ), ExtResource( 151 ), ExtResource( 23 ), ExtResource( 47 ), ExtResource( 95 ), ExtResource( 25 ), ExtResource( 132 ), ExtResource( 155 ), ExtResource( 45 ), ExtResource( 133 ) ],
+"loop": true,
+"name": "Pickup-E",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 76 ) ],
+"loop": false,
+"name": "Idle-S",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 154 ), ExtResource( 134 ), ExtResource( 137 ), ExtResource( 136 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 156 ), ExtResource( 169 ), ExtResource( 166 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run-E",
+"speed": 13.0
 }, {
 "frames": [ ExtResource( 30 ) ],
 "loop": false,
@@ -193,54 +929,9 @@ animations = [ {
 "name": "Pickup-W",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 44 ) ],
-"loop": false,
-"name": "Idle-NW",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 128 ) ],
-"loop": false,
-"name": "Idle-N",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 108 ) ],
+"frames": [ ExtResource( 113 ), ExtResource( 100 ), ExtResource( 126 ), ExtResource( 88 ), ExtResource( 5 ), ExtResource( 86 ), ExtResource( 29 ), ExtResource( 83 ), ExtResource( 33 ), ExtResource( 98 ) ],
 "loop": true,
-"name": "Idle-W",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 168 ), ExtResource( 165 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 163 ), ExtResource( 167 ), ExtResource( 164 ), ExtResource( 125 ), ExtResource( 122 ), ExtResource( 105 ) ],
-"loop": true,
-"name": "Pickup-SE",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 11 ), ExtResource( 40 ), ExtResource( 146 ), ExtResource( 149 ), ExtResource( 158 ), ExtResource( 150 ), ExtResource( 161 ), ExtResource( 148 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "Pickup-NE",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 112 ), ExtResource( 72 ), ExtResource( 109 ), ExtResource( 16 ), ExtResource( 67 ), ExtResource( 127 ), ExtResource( 75 ), ExtResource( 77 ), ExtResource( 2 ), ExtResource( 111 ) ],
-"loop": true,
-"name": "Pickup-SW",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 131 ), ExtResource( 151 ), ExtResource( 23 ), ExtResource( 47 ), ExtResource( 95 ), ExtResource( 25 ), ExtResource( 132 ), ExtResource( 155 ), ExtResource( 45 ), ExtResource( 133 ) ],
-"loop": true,
-"name": "Pickup-E",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 97 ), ExtResource( 51 ), ExtResource( 115 ), ExtResource( 93 ), ExtResource( 119 ), ExtResource( 82 ), ExtResource( 62 ), ExtResource( 26 ), ExtResource( 81 ), ExtResource( 121 ) ],
-"loop": true,
-"name": "Run-SE",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 89 ), ExtResource( 96 ), ExtResource( 39 ), ExtResource( 79 ), ExtResource( 12 ), ExtResource( 106 ), ExtResource( 78 ), ExtResource( 123 ), ExtResource( 114 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "Pickup-S",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ), ExtResource( 101 ), ExtResource( 9 ), ExtResource( 90 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 71 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "Run-NW",
+"name": "Run-SW",
 "speed": 13.0
 }, {
 "frames": [ ExtResource( 157 ) ],
@@ -248,64 +939,23 @@ animations = [ {
 "name": "Idle-SE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 154 ), ExtResource( 134 ), ExtResource( 137 ), ExtResource( 136 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 156 ), ExtResource( 169 ), ExtResource( 166 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Run-E",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 116 ), ExtResource( 117 ), ExtResource( 64 ), ExtResource( 19 ), ExtResource( 91 ), ExtResource( 74 ), ExtResource( 34 ), ExtResource( 120 ), ExtResource( 107 ), ExtResource( 92 ) ],
-"loop": true,
-"name": "Run-S",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 73 ), ExtResource( 36 ), ExtResource( 17 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 58 ), ExtResource( 3 ), ExtResource( 66 ), ExtResource( 68 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "Run-W",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 85 ) ],
-"loop": false,
-"name": "Idle-SW",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 154 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Walk-E",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 31 ), ExtResource( 54 ), ExtResource( 57 ), ExtResource( 37 ), ExtResource( 65 ), ExtResource( 8 ), ExtResource( 104 ), ExtResource( 124 ), ExtResource( 110 ), ExtResource( 63 ) ],
 "loop": true,
 "name": "Pickup-NW",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 153 ), ExtResource( 4 ), ExtResource( 41 ), ExtResource( 87 ), ExtResource( 55 ), ExtResource( 7 ), ExtResource( 35 ), ExtResource( 135 ), ExtResource( 38 ), ExtResource( 130 ) ],
+"frames": [ ExtResource( 168 ), ExtResource( 165 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 163 ), ExtResource( 167 ), ExtResource( 164 ), ExtResource( 125 ), ExtResource( 122 ), ExtResource( 105 ) ],
 "loop": true,
-"name": "Pickup-N",
+"name": "Pickup-SE",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 143 ), ExtResource( 43 ), ExtResource( 147 ), ExtResource( 138 ), ExtResource( 60 ), ExtResource( 129 ), ExtResource( 70 ), ExtResource( 141 ), ExtResource( 140 ), ExtResource( 59 ) ],
-"loop": true,
-"name": "Run-N",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 76 ) ],
-"loop": false,
-"name": "Idle-S",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 142 ), ExtResource( 28 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 152 ), ExtResource( 144 ), ExtResource( 53 ), ExtResource( 18 ), ExtResource( 145 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "Run-NE",
 "speed": 13.0
-}, {
-"frames": [ ExtResource( 113 ), ExtResource( 100 ), ExtResource( 126 ), ExtResource( 88 ), ExtResource( 5 ), ExtResource( 86 ), ExtResource( 29 ), ExtResource( 83 ), ExtResource( 33 ), ExtResource( 98 ) ],
-"loop": true,
-"name": "Run-SW",
-"speed": 13.0
 } ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "IdleE"
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -320,8 +970,7 @@ tracks/0/keys = {
 "values": [ "Idle-E" ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "IdleN"
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -336,8 +985,7 @@ tracks/0/keys = {
 "values": [ "Idle-N" ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "IdleNE"
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -352,8 +1000,7 @@ tracks/0/keys = {
 "values": [ "Idle-NE" ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "IdleNW"
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -368,8 +1015,7 @@ tracks/0/keys = {
 "values": [ "Idle-NW" ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "IdleS"
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -384,7 +1030,7 @@ tracks/0/keys = {
 "values": [ "Idle-S" ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -399,8 +1045,7 @@ tracks/0/keys = {
 "values": [ "Idle-SE" ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "IdleSW"
+[sub_resource type="Animation" id=9]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -415,8 +1060,7 @@ tracks/0/keys = {
 "values": [ "Idle-SW" ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "IdleW"
+[sub_resource type="Animation" id=10]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -431,7 +1075,7 @@ tracks/0/keys = {
 "values": [ "Idle-W" ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -459,8 +1103,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "PickupN"
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -488,8 +1131,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "PickupNE"
+[sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -517,8 +1159,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "PickupNW"
+[sub_resource type="Animation" id=14]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -546,7 +1187,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -574,7 +1215,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -602,8 +1243,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "PickupSW"
+[sub_resource type="Animation" id=17]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -631,8 +1271,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "PickupW"
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -660,8 +1299,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "RunE"
+[sub_resource type="Animation" id=19]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -675,7 +1313,7 @@ tracks/0/keys = {
 "values": [ "Run-E" ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -689,8 +1327,7 @@ tracks/0/keys = {
 "values": [ "Run-N" ]
 }
 
-[sub_resource type="Animation" id=20]
-resource_name = "RunNE"
+[sub_resource type="Animation" id=21]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -704,8 +1341,7 @@ tracks/0/keys = {
 "values": [ "Run-NE" ]
 }
 
-[sub_resource type="Animation" id=21]
-resource_name = "RunNW"
+[sub_resource type="Animation" id=22]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -719,8 +1355,7 @@ tracks/0/keys = {
 "values": [ "Run-NW" ]
 }
 
-[sub_resource type="Animation" id=22]
-resource_name = "RunS"
+[sub_resource type="Animation" id=23]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -734,8 +1369,7 @@ tracks/0/keys = {
 "values": [ "Run-S" ]
 }
 
-[sub_resource type="Animation" id=23]
-resource_name = "RunSE"
+[sub_resource type="Animation" id=24]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -749,8 +1383,7 @@ tracks/0/keys = {
 "values": [ "Run-SE" ]
 }
 
-[sub_resource type="Animation" id=24]
-resource_name = "RunSW"
+[sub_resource type="Animation" id=25]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -764,8 +1397,7 @@ tracks/0/keys = {
 "values": [ "Run-SW" ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "RunW"
+[sub_resource type="Animation" id=26]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -779,136 +1411,134 @@ tracks/0/keys = {
 "values": [ "Run-W" ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "IdleSE"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "IdleNW"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "IdleNE"
 
-[sub_resource type="AnimationNodeAnimation" id=29]
+[sub_resource type="AnimationNodeAnimation" id=30]
 animation = "IdleSW"
 
-[sub_resource type="AnimationNodeAnimation" id=30]
+[sub_resource type="AnimationNodeAnimation" id=31]
 animation = "IdleS"
 
-[sub_resource type="AnimationNodeAnimation" id=31]
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "IdleW"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "IdleE"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=34]
 animation = "IdleN"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=34]
-blend_point_0/node = SubResource( 26 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=35]
+blend_point_0/node = SubResource( 27 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 27 )
+blend_point_1/node = SubResource( 28 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 28 )
+blend_point_2/node = SubResource( 29 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 29 )
+blend_point_3/node = SubResource( 30 )
 blend_point_3/pos = Vector2( -1, 0 )
-blend_point_4/node = SubResource( 30 )
+blend_point_4/node = SubResource( 31 )
 blend_point_4/pos = Vector2( -0.5, 0.5 )
-blend_point_5/node = SubResource( 31 )
+blend_point_5/node = SubResource( 32 )
 blend_point_5/pos = Vector2( -0.5, -0.5 )
-blend_point_6/node = SubResource( 32 )
+blend_point_6/node = SubResource( 33 )
 blend_point_6/pos = Vector2( 0.5, 0.5 )
-blend_point_7/node = SubResource( 33 )
+blend_point_7/node = SubResource( 34 )
 blend_point_7/pos = Vector2( 0.5, -0.5 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=35]
+[sub_resource type="AnimationNodeAnimation" id=36]
 animation = "PickupNW"
 
-[sub_resource type="AnimationNodeAnimation" id=36]
+[sub_resource type="AnimationNodeAnimation" id=37]
 animation = "PickupNE"
 
-[sub_resource type="AnimationNodeAnimation" id=37]
+[sub_resource type="AnimationNodeAnimation" id=38]
 animation = "PickupE"
 
-[sub_resource type="AnimationNodeAnimation" id=38]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "PickupN"
 
-[sub_resource type="AnimationNodeAnimation" id=39]
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "PickupSE"
 
-[sub_resource type="AnimationNodeAnimation" id=40]
+[sub_resource type="AnimationNodeAnimation" id=41]
 animation = "PickupS"
 
-[sub_resource type="AnimationNodeAnimation" id=41]
+[sub_resource type="AnimationNodeAnimation" id=42]
 animation = "PickupSW"
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "PickupW"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=43]
-blend_point_0/node = SubResource( 35 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=44]
+blend_point_0/node = SubResource( 36 )
 blend_point_0/pos = Vector2( 0, -1 )
-blend_point_1/node = SubResource( 36 )
+blend_point_1/node = SubResource( 37 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 37 )
+blend_point_2/node = SubResource( 38 )
 blend_point_2/pos = Vector2( 0.5, 0.5 )
-blend_point_3/node = SubResource( 38 )
+blend_point_3/node = SubResource( 39 )
 blend_point_3/pos = Vector2( 0.5, -0.5 )
-blend_point_4/node = SubResource( 39 )
+blend_point_4/node = SubResource( 40 )
 blend_point_4/pos = Vector2( 0, 1 )
-blend_point_5/node = SubResource( 40 )
+blend_point_5/node = SubResource( 41 )
 blend_point_5/pos = Vector2( -0.5, 0.5 )
-blend_point_6/node = SubResource( 41 )
+blend_point_6/node = SubResource( 42 )
 blend_point_6/pos = Vector2( -1, 0 )
-blend_point_7/node = SubResource( 42 )
+blend_point_7/node = SubResource( 43 )
 blend_point_7/pos = Vector2( -0.5, -0.5 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=44]
-animation = "RunSW"
 
 [sub_resource type="AnimationNodeAnimation" id=45]
-animation = "RunS"
+animation = "RunSW"
 
 [sub_resource type="AnimationNodeAnimation" id=46]
-animation = "RunSE"
+animation = "RunS"
 
 [sub_resource type="AnimationNodeAnimation" id=47]
-animation = "RunE"
+animation = "RunSE"
 
 [sub_resource type="AnimationNodeAnimation" id=48]
-animation = "RunNE"
+animation = "RunE"
 
 [sub_resource type="AnimationNodeAnimation" id=49]
-animation = "RunN"
+animation = "RunNE"
 
 [sub_resource type="AnimationNodeAnimation" id=50]
-animation = "RunNW"
+animation = "RunN"
 
 [sub_resource type="AnimationNodeAnimation" id=51]
+animation = "RunNW"
+
+[sub_resource type="AnimationNodeAnimation" id=52]
 animation = "RunW"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=52]
-blend_point_0/node = SubResource( 44 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=53]
+blend_point_0/node = SubResource( 45 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 45 )
+blend_point_1/node = SubResource( 46 )
 blend_point_1/pos = Vector2( -0.5, 0.5 )
-blend_point_2/node = SubResource( 46 )
+blend_point_2/node = SubResource( 47 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 47 )
+blend_point_3/node = SubResource( 48 )
 blend_point_3/pos = Vector2( 0.5, 0.5 )
-blend_point_4/node = SubResource( 48 )
+blend_point_4/node = SubResource( 49 )
 blend_point_4/pos = Vector2( 1, 0 )
-blend_point_5/node = SubResource( 49 )
+blend_point_5/node = SubResource( 50 )
 blend_point_5/pos = Vector2( 0.5, -0.5 )
-blend_point_6/node = SubResource( 50 )
+blend_point_6/node = SubResource( 51 )
 blend_point_6/pos = Vector2( 0, -1 )
-blend_point_7/node = SubResource( 51 )
+blend_point_7/node = SubResource( 52 )
 blend_point_7/pos = Vector2( -0.5, -0.5 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=53]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=54]
 
@@ -916,17 +1546,20 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=56]
 
-[sub_resource type="AnimationNodeStateMachine" id=57]
-states/Idle/node = SubResource( 34 )
-states/Idle/position = Vector2( 83, 183 )
-states/Pickup/node = SubResource( 43 )
-states/Pickup/position = Vector2( 189, 298 )
-states/Run/node = SubResource( 52 )
-states/Run/position = Vector2( 189, 74 )
-transitions = [ "Idle", "Run", SubResource( 53 ), "Run", "Idle", SubResource( 54 ), "Idle", "Pickup", SubResource( 55 ), "Pickup", "Idle", SubResource( 56 ) ]
-start_node = "Idle"
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=58]
+[sub_resource type="AnimationNodeStateMachine" id=58]
+states/Idle/node = SubResource( 35 )
+states/Idle/position = Vector2( 83, 183 )
+states/Pickup/node = SubResource( 44 )
+states/Pickup/position = Vector2( 189, 298 )
+states/Run/node = SubResource( 53 )
+states/Run/position = Vector2( 189, 74 )
+transitions = [ "Idle", "Run", SubResource( 54 ), "Run", "Idle", SubResource( 55 ), "Idle", "Pickup", SubResource( 56 ), "Pickup", "Idle", SubResource( 57 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -96, -49 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=59]
 
 [node name="Humanoid" instance=ExtResource( 1 )]
 script = ExtResource( 170 )
@@ -935,42 +1568,51 @@ script = ExtResource( 170 )
 polygon = PoolVector2Array( 0.163509, 18.8723, -20.2017, 14.5614, -26.2963, 2.37202, -19.1611, -10.2633, -0.579746, -13.9796, 16.9611, -9.81734, 26.3261, 2.22337, 17.5557, 14.8587 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
-position = Vector2( 0, -191.216 )
+position = Vector2( 0, -52 )
 frames = SubResource( 1 )
-animation = "Idle-S"
+animation = "Pickup-W"
+frame = 8
 playing = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-anims/IdleE = SubResource( 2 )
-anims/IdleN = SubResource( 3 )
-anims/IdleNE = SubResource( 4 )
-anims/IdleNW = SubResource( 5 )
-anims/IdleS = SubResource( 6 )
-anims/IdleSE = SubResource( 7 )
-anims/IdleSW = SubResource( 8 )
-anims/IdleW = SubResource( 9 )
-anims/PickupE = SubResource( 10 )
-anims/PickupN = SubResource( 11 )
-anims/PickupNE = SubResource( 12 )
-anims/PickupNW = SubResource( 13 )
-anims/PickupS = SubResource( 14 )
-anims/PickupSE = SubResource( 15 )
-anims/PickupSW = SubResource( 16 )
-anims/PickupW = SubResource( 17 )
-anims/RunE = SubResource( 18 )
-anims/RunN = SubResource( 19 )
-anims/RunNE = SubResource( 20 )
-anims/RunNW = SubResource( 21 )
-anims/RunS = SubResource( 22 )
-anims/RunSE = SubResource( 23 )
-anims/RunSW = SubResource( 24 )
-anims/RunW = SubResource( 25 )
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="3"]
+visible = false
+position = Vector2( -1188.74, -213.82 )
+frames = SubResource( 2 )
+animation = "Idle-S"
+playing = true
+offset = Vector2( 1188.74, 22.604 )
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
-tree_root = SubResource( 57 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+anims/IdleE = SubResource( 3 )
+anims/IdleN = SubResource( 4 )
+anims/IdleNE = SubResource( 5 )
+anims/IdleNW = SubResource( 6 )
+anims/IdleS = SubResource( 7 )
+anims/IdleSE = SubResource( 8 )
+anims/IdleSW = SubResource( 9 )
+anims/IdleW = SubResource( 10 )
+anims/PickupE = SubResource( 11 )
+anims/PickupN = SubResource( 12 )
+anims/PickupNE = SubResource( 13 )
+anims/PickupNW = SubResource( 14 )
+anims/PickupS = SubResource( 15 )
+anims/PickupSE = SubResource( 16 )
+anims/PickupSW = SubResource( 17 )
+anims/PickupW = SubResource( 18 )
+anims/RunE = SubResource( 19 )
+anims/RunN = SubResource( 20 )
+anims/RunNE = SubResource( 21 )
+anims/RunNW = SubResource( 22 )
+anims/RunS = SubResource( 23 )
+anims/RunSE = SubResource( 24 )
+anims/RunSW = SubResource( 25 )
+anims/RunW = SubResource( 26 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="5"]
+tree_root = SubResource( 58 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 58 )
+parameters/playback = SubResource( 59 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Pickup/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( -0.0018416, -0.0123457 )

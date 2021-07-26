@@ -94,8 +94,8 @@ func _on_start_pressed():
 
 func _on_FinishCreation_pressed():
 	if not is_network_master():
-		gamestate.rpc_id(1, "player_creation", gamestate.player_name, gamestate.player_class)
+		gamestate.rpc_id(1, "player_creation", gamestate.local_player_info)
 	else:
-		gamestate.update_clients_player_updated(1, gamestate.player_name, gamestate.player_class)
+		gamestate.update_clients_player_updated(1, gamestate.local_player_info)
 	playerCreation.hide()
 	$Players.show()
