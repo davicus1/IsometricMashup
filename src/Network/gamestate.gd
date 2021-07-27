@@ -164,6 +164,7 @@ remote func pre_start_game(spawn_points):
 func makePlayerCharacter(player_info:PlayerInfo) -> Actor:
 		var player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
 		var player = player_scene.instance()
+		player.set_character_type("AnimatedSprite")
 		player.set_player_name(player_info.player_name)
 		return player 
 

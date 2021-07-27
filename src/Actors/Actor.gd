@@ -21,6 +21,7 @@ onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStat
 onready var nameLabel = $Name
 
 var collectable_items_in_reach:Array = []
+var character_type:String
 
 enum PlayerState{
 	MOVE,
@@ -110,6 +111,10 @@ func pickupState(_delta):
 
 func set_player_name(new_name):
 	character_name = new_name
+
+
+func set_character_type(new_character_type:String):
+	character_type = new_character_type
 
 
 func on_InteractionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):

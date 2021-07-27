@@ -15,6 +15,7 @@ func _init():
 
 
 func _ready():
+	manipulate_animation_player()
 	callBlendPosition(actionDirection)
 
 
@@ -34,6 +35,14 @@ func doAnimationRun():
 
 func doAnimationIdle():
 	animationState.travel("Idle")
+
+
+func manipulate_animation_player():
+	var sprite_node:AnimatedSprite = get_node(character_type)
+	for animationName in animationPlayer.get_animation_list():
+		var animation:Animation = animationPlayer.get_animation(animationName)
+		animation.track_set_path(0, NodePath(character_type + ":animation"))
+		sprite_node.show()
 
 
 func pickupAnimationFinished():
