@@ -3,7 +3,6 @@ extends Actor
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
-onready var animatedSprite = $AnimatedSprite
 onready var animationState = animationTree.get("parameters/playback")
 
 
@@ -48,7 +47,7 @@ func manipulate_animation_player():
 func pickupAnimationFinished():
 	state = PlayerState.MOVE
 	#TODO Is this the right way to fix the client seeing the host continuing to pickup twice?
-	if not gamestate.is_single_player:
+	if not gamestate.is_single_player && is_network_master():
 		rset("puppet_state", state)
 	pickup_next_item()
 

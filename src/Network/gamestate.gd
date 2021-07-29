@@ -10,7 +10,7 @@ const MAX_PEERS = 4
 # Name for my player.
 var local_player_info = PlayerInfo.new()
 var classes = ["Humanoid", "Trollish"]
-var character = ["Human Male", "Female Troll"]
+var characters = ["Human Male", "Female Troll"]
 
 # Names for remote players in id:PlayerInfo format.
 var players = {}
@@ -38,11 +38,11 @@ signal game_error(what)
 # Callback from SceneTree.
 func _player_connected(id):
 	# Registration of a client beings here, tell the connected player that we are here.
-	rpc_id(id, "register_player", local_player_info)
+	rpc_id(id, "register_player", local_player_info.makeAsDictionary())
 	##### TODO Adjust This and fix so we don't need a null check here
 	if host != null:
 		host.set_peer_timeout(id, 100000, 300000, 600000)
-
+	
 
 # Callback from SceneTree.
 func _player_disconnected(id):
@@ -78,7 +78,9 @@ func _connected_fail():
 remote func register_player(new_player_info):
 	var id = get_tree().get_rpc_sender_id()
 	print(id)
-	players[id] = new_player_info
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
 	emit_signal("player_list_changed")
 
 
@@ -86,9 +88,12 @@ func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
-remote func player_creation(new_player_info:PlayerInfo):
+
+remote func player_creation(new_player_info):
 	var id = get_tree().get_rpc_sender_id()
-	players[id] = new_player_info
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
 	emit_signal("player_list_changed")
 	update_clients_player_updated(id, new_player_info)
 
@@ -100,8 +105,10 @@ func update_clients_player_updated(id, new_player_info):
 				rpc_id(p, "player_updated", id, new_player_info)
 
 
-remote func player_updated(id, new_player_info:PlayerInfo):
-	players[id] = new_player_info
+remote func player_updated(id, new_player_info):
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
 
 
 remote func pre_start_game(spawn_points):
@@ -164,7 +171,7 @@ remote func pre_start_game(spawn_points):
 func makePlayerCharacter(player_info:PlayerInfo) -> Actor:
 		var player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
 		var player = player_scene.instance()
-		player.set_character_type("AnimatedSprite")
+		player.set_character_type(player_info.player_character)
 		player.set_player_name(player_info.player_name)
 		return player 
 
@@ -213,6 +220,7 @@ func join_game(ip, new_player_name):
 	var client = NetworkedMultiplayerENet.new()
 	client.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
+	client.set_peer_timeout(1, 100000, 300000, 600000)
 
 
 func get_player_list():
@@ -225,6 +233,10 @@ func get_player_name():
 
 func get_player_class():
 	return local_player_info.player_class
+
+
+func get_player_character():
+	return local_player_info.player_character
 
 
 func begin_game():
