@@ -1581,7 +1581,7 @@ states/Run/node = SubResource( 53 )
 states/Run/position = Vector2( 189, 74 )
 transitions = [ "Idle", "Run", SubResource( 54 ), "Run", "Idle", SubResource( 55 ), "Idle", "Pickup", SubResource( 56 ), "Pickup", "Idle", SubResource( 57 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -96, -49 )
+graph_offset = Vector2( -96, 65.784 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=59]
 
@@ -1640,6 +1640,6 @@ active = true
 parameters/playback = SubResource( 59 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Pickup/blend_position = Vector2( 0, 0 )
-parameters/Run/blend_position = Vector2( -0.0018416, -0.0123457 )
+parameters/Run/blend_position = Vector2( 0, 0 )
 
 [editable path="PlayerCameraInterface"]

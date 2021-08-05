@@ -101,7 +101,7 @@ func doAnimationIdle():
 	pass
 
 
-func callBlendPosition(theActionDirection):
+func callBlendPosition(_theActionDirection):
 	pass
 
 

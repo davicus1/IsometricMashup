@@ -131,7 +131,6 @@ remote func pre_start_game(spawn_points):
 	var y_sorter: YSort = map_to_load.get_node("YSort/Players")
 	for p_id in spawn_points:
 		var spawn_pos = map_to_load.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
-		var player_scene
 		var player
 		if is_single_player || p_id == get_tree().get_network_unique_id():
 			player = makePlayerCharacter(local_player_info)
@@ -210,7 +209,9 @@ func host_game(new_player_name):
 	is_single_player = false
 	local_player_info.player_name = new_player_name
 	host = NetworkedMultiplayerENet.new()
-	host.create_server(DEFAULT_PORT, MAX_PEERS)
+	var error = host.create_server(DEFAULT_PORT, MAX_PEERS)
+	if error != OK:
+		printerr("Error creating server! %s" % error)
 	get_tree().set_network_peer(host)
 
 
@@ -220,7 +221,7 @@ func join_game(ip, new_player_name):
 	var client = NetworkedMultiplayerENet.new()
 	client.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
-	client.set_peer_timeout(1, 100000, 300000, 600000)
+
 
 
 func get_player_list():
