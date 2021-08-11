@@ -1,4 +1,5 @@
 extends Node
+class_name Gamestate
 
 # Default game port. Can be any number between 1024 and 49151.
 const DEFAULT_PORT = 14242
@@ -7,9 +8,9 @@ const DEFAULT_PORT = 14242
 const MAX_PEERS = 4
 
 # Name for my player.
-var player_name = "The Warrior"
-var player_class = "Human"
-var classes = ["Human", "Troll"]
+var local_player_info = PlayerInfo.new()
+var classes = ["Humanoid", "Trollish"]
+var characters = ["Human Male", "Female Troll"]
 
 # Names for remote players in id:PlayerInfo format.
 var players = {}
@@ -37,11 +38,11 @@ signal game_error(what)
 # Callback from SceneTree.
 func _player_connected(id):
 	# Registration of a client beings here, tell the connected player that we are here.
-	rpc_id(id, "register_player", player_name, player_class)
+	rpc_id(id, "register_player", local_player_info.makeAsDictionary())
 	##### TODO Adjust This and fix so we don't need a null check here
 	if host != null:
 		host.set_peer_timeout(id, 100000, 300000, 600000)
-
+	
 
 # Callback from SceneTree.
 func _player_disconnected(id):
@@ -74,13 +75,12 @@ func _connected_fail():
 
 # Lobby management functions.
 
-remote func register_player(new_player_name, new_player_class):
+remote func register_player(new_player_info):
 	var id = get_tree().get_rpc_sender_id()
 	print(id)
-	var player_info = PlayerInfo.new()
-	player_info.player_name = new_player_name
-	player_info.player_class = new_player_class
-	players[id] = player_info
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
 	emit_signal("player_list_changed")
 
 
@@ -88,24 +88,28 @@ func unregister_player(id):
 	players.erase(id)
 	emit_signal("player_list_changed")
 
-remote func player_creation(new_player_name, new_player_class):
+
+remote func player_creation(new_player_info):
 	var id = get_tree().get_rpc_sender_id()
-	players[id].player_name = new_player_name
-	players[id].player_class = new_player_class
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
 	emit_signal("player_list_changed")
-	update_clients_player_updated(id, new_player_name, new_player_class)
+	update_clients_player_updated(id, new_player_info)
 
 # TODO Maybe the players list should include the server Or the current network master player for client case)
 # So that this and the player creation method can be called by everyone and not special cased for the server. See Lobby._on_FinishCreation_pressed
-func update_clients_player_updated(id, new_player_name, new_player_class):
+func update_clients_player_updated(id, new_player_info):
 		for p in players:
 			if p != id:
-				rpc_id(p, "player_updated", id, new_player_name, new_player_class)
+				rpc_id(p, "player_updated", id, new_player_info)
 
 
-remote func player_updated(id, new_player_name, new_player_class):
-	players[id].player_name = new_player_name
-	players[id].player_class = new_player_class
+remote func player_updated(id, new_player_info):
+	var the_real_player_info = PlayerInfo.new()
+	the_real_player_info.translateDictionary(new_player_info)
+	players[id] = the_real_player_info
+
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
@@ -127,18 +131,13 @@ remote func pre_start_game(spawn_points):
 	var y_sorter: YSort = map_to_load.get_node("YSort/Players")
 	for p_id in spawn_points:
 		var spawn_pos = map_to_load.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
-		var player_scene
 		var player
 		if is_single_player || p_id == get_tree().get_network_unique_id():
-			player_scene = load("res://src/Actors/" + player_class + ".tscn")
-			player = player_scene.instance()
-			player.set_player_name(player_name)
+			player = makePlayerCharacter(local_player_info)
 			local_player_character = player
 		else:
-			var player_info = players[p_id]
-			player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
-			player = player_scene.instance()
-			player.set_player_name(player_info.player_name)
+			var remote_player_info = players[p_id]
+			player = makePlayerCharacter(remote_player_info)
 		
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
@@ -154,7 +153,6 @@ remote func pre_start_game(spawn_points):
 		player.add_to_group("Players",true)
 		#world.get_node("Players").add_child(player)
 		#world.get_node("Walls").add_child(player)
-
 	y_sorter.set_sort_enabled(false)
 	y_sorter.set_sort_enabled(true)
 	# Set up score.
@@ -167,6 +165,14 @@ remote func pre_start_game(spawn_points):
 			rpc_id(1, "ready_to_start", get_tree().get_network_unique_id())
 	elif players.size() == 0:
 		post_start_game()
+
+
+func makePlayerCharacter(player_info:PlayerInfo) -> Actor:
+		var player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
+		var player = player_scene.instance()
+		player.set_character_type(player_info.player_character)
+		player.set_player_name(player_info.player_name)
+		return player 
 
 
 remote func post_start_game():
@@ -201,18 +207,21 @@ func single_player_game():
 
 func host_game(new_player_name):
 	is_single_player = false
-	player_name = new_player_name
+	local_player_info.player_name = new_player_name
 	host = NetworkedMultiplayerENet.new()
-	host.create_server(DEFAULT_PORT, MAX_PEERS)
+	var error = host.create_server(DEFAULT_PORT, MAX_PEERS)
+	if error != OK:
+		printerr("Error creating server! %s" % error)
 	get_tree().set_network_peer(host)
 
 
 func join_game(ip, new_player_name):
 	is_single_player = false
-	player_name = new_player_name
+	local_player_info.player_name = new_player_name
 	var client = NetworkedMultiplayerENet.new()
 	client.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
+
 
 
 func get_player_list():
@@ -220,7 +229,15 @@ func get_player_list():
 
 
 func get_player_name():
-	return player_name
+	return local_player_info.player_name
+
+
+func get_player_class():
+	return local_player_info.player_class
+
+
+func get_player_character():
+	return local_player_info.player_character
 
 
 func begin_game():

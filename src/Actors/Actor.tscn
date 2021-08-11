@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Actors/Actor.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/PlayerCameraInterface.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 31.4654
+
+[node name="Actor" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -146.0
+margin_right = 20.0
+margin_bottom = -132.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerCameraInterface" parent="." instance=ExtResource( 2 )]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource( 1 )
+
+[node name="StashStuff" type="Node2D" parent="."]
+visible = false
+
+[connection signal="area_shape_entered" from="InteractionArea" to="." method="on_InteractionArea_area_shape_entered"]
+[connection signal="area_shape_exited" from="InteractionArea" to="." method="on_InteractionArea_area_shape_exited"]

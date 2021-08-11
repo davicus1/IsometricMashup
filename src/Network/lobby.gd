@@ -4,10 +4,15 @@ onready var playerCreation = $PlayerCreation
 
 func _ready():
 	# Called every time the node is added to the scene.
+# warning-ignore:return_value_discarded
 	gamestate.connect("connection_failed", self, "_on_connection_failed")
+# warning-ignore:return_value_discarded
 	gamestate.connect("connection_succeeded", self, "_on_connection_success")
+# warning-ignore:return_value_discarded
 	gamestate.connect("player_list_changed", self, "refresh_lobby")
+# warning-ignore:return_value_discarded
 	gamestate.connect("game_ended", self, "_on_game_ended")
+# warning-ignore:return_value_discarded
 	gamestate.connect("game_error", self, "_on_game_error")
 	# Set the player name according to the system username. Fallback to the path.
 	if OS.has_environment("USERNAME"):
@@ -53,6 +58,10 @@ func _on_join_pressed():
 func _on_connection_success():
 	$Connect.hide()
 	playerCreation.show()
+	if OS.is_debug_build():
+		print_debug("Setting Client Timeout to 100000, 300000, 600000 for debugging")
+		var client = get_tree().get_network_peer()
+		client.set_peer_timeout(1, 100000, 300000, 600000)
 	#$Players.show()
 
 
@@ -94,8 +103,8 @@ func _on_start_pressed():
 
 func _on_FinishCreation_pressed():
 	if not is_network_master():
-		gamestate.rpc_id(1, "player_creation", gamestate.player_name, gamestate.player_class)
+		gamestate.rpc_id(1, "player_creation", gamestate.local_player_info.makeAsDictionary())
 	else:
-		gamestate.update_clients_player_updated(1, gamestate.player_name, gamestate.player_class)
+		gamestate.update_clients_player_updated(1, gamestate.local_player_info.makeAsDictionary())
 	playerCreation.hide()
 	$Players.show()

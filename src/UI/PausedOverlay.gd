@@ -9,7 +9,9 @@ var paused: = false setget set_paused
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	gamestate.connect("player_died", self, "_on_PlayerData_player_died")
+# warning-ignore:return_value_discarded
 	gamestate.connect("paused_state_changed", self, "_react_to_paused_set_change")
 
 func _react_to_paused_set_change():

@@ -20,3 +20,30 @@ cell_size = Vector2( 256, 128 )
 cell_quadrant_size = 128
 format = 1
 tile_data = PoolIntArray( -2490300, 0, 0, -458732, 0, 0 )
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 135, 805 )
+
+[node name="1" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -20, 895 )
+
+[node name="2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 240, 870 )
+
+[node name="3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 85, 950 )
+
+[node name="4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -125, 955 )
+
+[node name="5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( -5, 1005 )
+
+[node name="6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 360, 855 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Players" type="YSort" parent="YSort"]
