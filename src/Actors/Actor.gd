@@ -148,13 +148,13 @@ func on_InteractionArea_area_shape_exited(area_id, area, _area_shape, _self_shap
 func pickup_next_item():
 	var collectable:Item = collectable_items_in_reach.pop_back()
 	if collectable != null:
-		print("Collectible " + collectable.name + " Owner " + collectable.owner.name)
+		print_debug("Collectible " + collectable.name + " Owner " + collectable.owner.name)
 		collectable.get_parent().remove_child(collectable)
 		inventory.add(collectable)
 		stashStuff.add_child(collectable)
 		collectable.set_owner(self)
 		if collectable.owner != null:
-			print("Owner is now " + collectable.owner.name)
+			print_debug("Owner is now " + collectable.owner.name)
 
 
 #func _build_animated_sprite(character_race:String, character_gender:String, character_model:String):

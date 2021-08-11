@@ -58,8 +58,10 @@ func _on_join_pressed():
 func _on_connection_success():
 	$Connect.hide()
 	playerCreation.show()
-	var client = get_tree().get_network_peer()
-	client.set_peer_timeout(1, 100000, 300000, 600000)
+	if OS.is_debug_build():
+		print_debug("Setting Client Timeout to 100000, 300000, 600000 for debugging")
+		var client = get_tree().get_network_peer()
+		client.set_peer_timeout(1, 100000, 300000, 600000)
 	#$Players.show()
 
 
