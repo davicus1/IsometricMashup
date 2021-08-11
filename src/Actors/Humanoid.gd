@@ -42,9 +42,5 @@ func attach_animation_player_to_AnimationTree():
 	
 
 func pickupAnimationFinished():
-	state = PlayerState.MOVE
-	#TODO Is this the right way to fix the client seeing the host continuing to pickup twice?
-	if not gamestate.is_single_player && is_network_master():
-		rset("puppet_state", state)
-	pickup_next_item()
+	do_pickup()
 

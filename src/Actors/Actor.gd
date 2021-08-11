@@ -90,7 +90,7 @@ func moveState(delta):
 	move_and_slide(motion)
 
 func doAnimationPickup():
-	pass
+	do_pickup()
 
 
 func doAnimationRun():
@@ -108,6 +108,7 @@ func callBlendPosition(_theActionDirection):
 func pickupState(_delta):
 	motion = Vector2.ZERO
 	doAnimationPickup()
+	
 
 
 func set_player_name(new_name):
@@ -145,16 +146,32 @@ func on_InteractionArea_area_shape_exited(area_id, area, _area_shape, _self_shap
 			_collectable_item_not_in_reach(owner)
 
 
-func pickup_next_item():
+func do_pickup():
+		#print_debug(character_name + PlayerState.keys()[state])
+	#pickup_next_item is now a remotesync method to not rely on the state change
+	# from being picked up in the physics process by the client in time to actually
+	#execute the state change on all the clients and pick up the item. This forces 
+	#the clients to pick up the item even if the state change happened too fast
+	if gamestate.is_single_player:
+		pickup_next_item()
+	elif is_network_master():
+		rpc("pickup_next_item")
+	
+	state = PlayerState.MOVE
+	if not gamestate.is_single_player && is_network_master():
+		rset("puppet_state", state)
+
+
+remotesync func pickup_next_item():
 	var collectable:Item = collectable_items_in_reach.pop_back()
 	if collectable != null:
-		print_debug("Collectible " + collectable.name + " Owner " + collectable.owner.name)
+		#print_debug("Collectible " + collectable.name + " Owner " + collectable.owner.name)
 		collectable.get_parent().remove_child(collectable)
 		inventory.add(collectable)
 		stashStuff.add_child(collectable)
 		collectable.set_owner(self)
-		if collectable.owner != null:
-			print_debug("Owner is now " + collectable.owner.name)
+		#if collectable.owner != null:
+		#	print_debug("Owner is now " + collectable.owner.name)
 
 
 #func _build_animated_sprite(character_race:String, character_gender:String, character_model:String):
