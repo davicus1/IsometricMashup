@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Stuffs.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Library.tres" type="TileSet" id=2]
-[ext_resource path="res://src/Actors/Human.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=4]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Props/Cases/DisplayCaseWSword_E.tscn" type="PackedScene" id=6]
@@ -48,13 +47,35 @@ cell_quadrant_size = 64
 format = 1
 tile_data = PoolIntArray( -3407837, 2, 0, -3407835, 2, 0, -3407834, 46, 0, -3407831, 46, 0, -3407826, 2, 0, -3276746, 2, 0, -3211223, 114, 0, -3211210, 2, 0, -3145694, 6, 0, -3145693, 2, 0, -3145692, 2, 0, -3145682, 2, 0, -3014622, 5, 0, -3014621, 5, 0, -3014620, 5, 0, -3014610, 130, 0, -3014607, 130, 0, -3014602, 2, 0, -3014594, 2, 0, -2949086, 2, 0, -2949085, 6, 0, -2949084, 6, 0, -2949074, 96, 0, -2818018, 2, 0, -2818002, 107, 0, -2752473, 55, 0, -2752472, 52, 0, -2752469, 39, 0, -2752468, 36, 0, -2752464, 55, 0, -2752463, 60, 0, -2686930, 107, 0, -2621401, 55, 0, -2621400, 52, 0, -2621397, 39, 0, -2621396, 36, 0, -2621394, 107, 0, -2621392, 51, 0, -2621391, 48, 0, -2555863, 96, 0, -2555861, 110, 0, -2555860, 110, 0, -2555844, 2, 0, -2555843, 2, 0, -2555842, 2, 0, -2490356, 128, 0, -2490322, 99, 0, -2359279, 85, 0, -2359257, 91, 0, -2359256, 92, 0, -2293751, 83, 0, -2293743, 86, 0, -2293719, 99, 0, -2228213, 97, 0, -2228211, 106, 0, -2228209, 106, 0, -2228207, 106, 0, -2228187, 97, 0, -2228185, 106, 0, -2228183, 106, 0, -2228181, 98, 0, -2162679, 83, 0, -2162678, 80, 0, -2162648, 108, 0, -2097145, 1, 0, -2097113, 83, 0, -2097112, 80, 0, -2031609, 2, 0, -2031601, 83, 0, -2031576, 108, 0 )
 
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3731.16, 709.863 )
+
+[node name="1" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3576.16, 799.863 )
+
+[node name="2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3836.16, 774.863 )
+
+[node name="3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3681.16, 854.863 )
+
+[node name="4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3471.16, 859.863 )
+
+[node name="5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3591.16, 909.863 )
+
+[node name="6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 3956.16, 759.863 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="DisplayCaseWSword_E" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 4348, 93 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 4218.47, 502.591 )
+[node name="Players" type="YSort" parent="YSort"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
