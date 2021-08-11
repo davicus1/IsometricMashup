@@ -1,7 +1,6 @@
 extends Actor
 
 
-onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
@@ -14,7 +13,7 @@ func _init():
 
 
 func _ready():
-	manipulate_animation_player()
+	attach_animation_player_to_AnimationTree()
 	callBlendPosition(actionDirection)
 
 
@@ -26,26 +25,21 @@ func callBlendPosition(theActionDirection):
 
 func doAnimationPickup():
 	animationState.travel("Pickup")
-	print_debug("%s: doAnimationPickup" % character_name)
 
 
 func doAnimationRun():
 	animationState.travel("Run")
-	print_debug("%s: doAnimationRun" % character_name)
 
 
 func doAnimationIdle():
 	animationState.travel("Idle")
-	print_debug("%s: doAnimationRun" % character_name)
 
 
-func manipulate_animation_player():
+func attach_animation_player_to_AnimationTree():
 	var sprite_node:AnimatedSprite = get_node(character_type)
-	for animationName in animationPlayer.get_animation_list():
-		var animation:Animation = animationPlayer.get_animation(animationName)
-		animation.track_set_path(0, NodePath(character_type + ":animation"))
 	sprite_node.show()
-
+	animationTree.anim_player = get_node("AnimationPlayer-" + character_type).get_path()
+	
 
 func pickupAnimationFinished():
 	state = PlayerState.MOVE
