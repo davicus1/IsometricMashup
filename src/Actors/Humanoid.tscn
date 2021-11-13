@@ -2076,7 +2076,7 @@ visible = false
 position = Vector2( 0, -52 )
 frames = SubResource( 1 )
 animation = "Idle-S"
-frame = 8
+frame = 3
 playing = true
 
 [node name="Human Male" type="AnimatedSprite" parent="." index="3"]

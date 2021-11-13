@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://src/Objects/item_club.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Props/Cases/DisplayCaseWSword_E.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/UI/PausedOverlay.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Actors/Humanoid.tscn" type="PackedScene" id=16]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="HotelCalifornia" type="Node2D"]
 
@@ -169,3 +172,23 @@ position = Vector2( 595, 1515 )
 
 [node name="DisplayCaseWSword_E" parent="YSort/Furniture" instance=ExtResource( 14 )]
 position = Vector2( 775, 1225 )
+
+[node name="NPCs" type="YSort" parent="YSort"]
+
+[node name="Humanoid" parent="YSort/NPCs" instance=ExtResource( 16 )]
+position = Vector2( 670.512, 1080.35 )
+character_name = "Marslle"
+character_type = "Human Male"
+playerControlled = false
+
+[node name="Female Troll" parent="YSort/NPCs/Humanoid" index="2"]
+frame = 18
+
+[node name="Human Male" parent="YSort/NPCs/Humanoid" index="3"]
+visible = true
+
+[node name="AnimationTree" parent="YSort/NPCs/Humanoid" index="6"]
+parameters/playback = SubResource( 1 )
+
+[editable path="YSort/NPCs/Humanoid"]
+[editable path="YSort/NPCs/Humanoid/PlayerCameraInterface"]

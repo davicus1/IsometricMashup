@@ -15,14 +15,18 @@ var mass:float
 var volume:float
 var inventory:Inventory
 var capacity:Capacity
-var character_name:String
+export var character_name:String
 onready var myCamera = $PlayerCameraInterface
 onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStatusOverlay
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
 
 var collectable_items_in_reach:Array = []
-var character_type:String
+export var character_type:String
+
+export(bool) var playerControlled = true
+
+var automotion = 0
 
 enum PlayerState{
 	MOVE,
@@ -40,8 +44,9 @@ func _init():
 
 func _ready():
 	status_overlay._actor_to_watch(self)
-	if gamestate.is_single_player || is_network_master():
-		myCamera.make_current()
+	if playerControlled:
+		if gamestate.is_single_player || is_network_master():
+			myCamera.make_current()
 	nameLabel.set_text(character_name)
 
 
@@ -55,26 +60,37 @@ func _physics_process(delta):
 
 func moveState(delta):
 	var running = false
-	if gamestate.is_single_player || is_network_master():
-		motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-		motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-		motion.y *= 0.5
-		running = Input.is_action_pressed("Run")
-		if Input.is_action_just_pressed("Pickup"):
-			state = PlayerState.PICKUP
-		
-		if not gamestate.is_single_player:
-			rset("puppet_motion", motion)
-			rset("puppet_direction", actionDirection)
-			rset("puppet_running", running)
-			rset("puppet_state", state)
-			rset("puppet_position", position)
+	if playerControlled:
+		if gamestate.is_single_player || is_network_master():
+			motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+			motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+			motion.y *= 0.5
+			running = Input.is_action_pressed("Run")
+			if Input.is_action_just_pressed("Pickup"):
+				state = PlayerState.PICKUP
+			
+			if not gamestate.is_single_player:
+				rset("puppet_motion", motion)
+				rset("puppet_direction", actionDirection)
+				rset("puppet_running", running)
+				rset("puppet_state", state)
+				rset("puppet_position", position)
+		else:
+			motion = puppet_motion
+			actionDirection = puppet_direction
+			running = puppet_running
+			state = puppet_state
+			position = puppet_position
 	else:
-		motion = puppet_motion
-		actionDirection = puppet_direction
-		running = puppet_running
-		state = puppet_state
-		position = puppet_position
+		if automotion >= 0 && automotion < 120:
+			motion.x = 1.0
+			automotion += 1
+		elif automotion == 120:
+		 automotion = -121
+		else: 
+			motion.x = -1.0
+			automotion += 1
+		
 	callBlendPosition(actionDirection)
 	
 	if motion != Vector2.ZERO:

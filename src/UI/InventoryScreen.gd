@@ -27,7 +27,7 @@ func refresh_inventory():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("inventory") && (gamestate.is_single_player || is_network_master()):
+	if event.is_action_pressed("inventory") && player != null && (gamestate.is_single_player || is_network_master()):
 		show_hide_inventory()
 		scene_tree.set_input_as_handled()
 
