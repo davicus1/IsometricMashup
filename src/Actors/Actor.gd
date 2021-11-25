@@ -15,11 +15,13 @@ var mass:float
 var volume:float
 var inventory:Inventory
 var capacity:Capacity
+var inConversation = false
 export var character_name:String
 onready var myCamera = $PlayerCameraInterface
 onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStatusOverlay
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
+onready var dialog = $PlayerCameraInterface/Label
 
 var collectable_items_in_reach:Array = []
 export var character_type:String
@@ -30,7 +32,8 @@ var automotion = 0
 
 enum PlayerState{
 	MOVE,
-	PICKUP
+	PICKUP,
+	CONVERSATION
 }
 
 var state = PlayerState.MOVE
@@ -56,6 +59,8 @@ func _physics_process(delta):
 			moveState(delta)
 		PlayerState.PICKUP:
 			pickupState(delta)
+		PlayerState.CONVERSATION:
+			conversationState(delta)
 
 
 func moveState(delta):
@@ -104,6 +109,13 @@ func moveState(delta):
 		doAnimationIdle()
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
+
+
+func conversationState(delta):
+	doAnimationIdle()
+	if not inConversation:
+		state = PlayerState.MOVE
+
 
 func doAnimationPickup():
 	do_pickup()
@@ -197,3 +209,13 @@ remotesync func pickup_next_item():
 #		animatedSprite.frames.add_animation(animation)
 #		var texturepath = "res://basePath/" + character_race + "/" + character_gender + "/" + character_model + "_" + animation + "_" + direction
 #		animatedSprite.frames.add_frame(animation,)
+
+
+func _on_EngagementArea_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	var popupSize = Vector2(100,100)
+	var owner = area.get_parent()
+	if owner != self:
+		inConversation = true
+		state = PlayerState.CONVERSATION
+		dialog.text = "We're Interacting!"
+		dialog.show()
