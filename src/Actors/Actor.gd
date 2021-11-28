@@ -8,6 +8,8 @@ puppet var puppet_direction = Vector2.DOWN
 puppet var puppet_running = false
 puppet var puppet_state = PlayerState.MOVE
 puppet var puppet_position = Vector2.ZERO
+puppet var puppet_inConversation = false
+puppet var puppet_dialog = ""
 
 var health_current:int
 var health_max:int
@@ -16,12 +18,14 @@ var volume:float
 var inventory:Inventory
 var capacity:Capacity
 var inConversation = false
+var hadInitialConversation = false
+var currentDialog = ""
 export var character_name:String
 onready var myCamera = $PlayerCameraInterface
 onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStatusOverlay
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
-onready var dialog = $PlayerCameraInterface/Label
+onready var dialog = $Interaction
 
 var collectable_items_in_reach:Array = []
 export var character_type:String
@@ -95,6 +99,9 @@ func moveState(delta):
 		else: 
 			motion.x = -1.0
 			automotion += 1
+		if not gamestate.is_single_player:
+			rset("puppet_state", state)
+			###TO DO: update NPC movements in multiplayer
 		
 	callBlendPosition(actionDirection)
 	
@@ -113,8 +120,31 @@ func moveState(delta):
 
 func conversationState(delta):
 	doAnimationIdle()
-	if not inConversation:
-		state = PlayerState.MOVE
+	if gamestate.is_single_player || is_network_master():
+		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
+			inConversation = false
+		if not inConversation:
+			state = PlayerState.MOVE
+			dialog.hide()
+		if not gamestate.is_single_player:
+			rset("puppet_inConversation", inConversation)
+			rset("puppet_state", state)
+			rset("puppet_dialog", currentDialog)
+	else:
+		inConversation = puppet_inConversation
+		state = puppet_state
+		currentDialog = puppet_dialog
+		dialog.text = currentDialog
+		dialog.visible = inConversation
+
+
+func doDialog(theDialog):
+	currentDialog = theDialog
+	inConversation = true
+	state = PlayerState.CONVERSATION
+	dialog.text = currentDialog
+	dialog.show()
+
 
 
 func doAnimationPickup():
@@ -211,11 +241,35 @@ remotesync func pickup_next_item():
 #		animatedSprite.frames.add_frame(animation,)
 
 
-func _on_EngagementArea_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_EngagementArea_area_shape_entered(area_rid, area, area_shape_index, local_shape_index): #Initial Chat
 	var popupSize = Vector2(100,100)
 	var owner = area.get_parent()
 	if owner != self:
-		inConversation = true
-		state = PlayerState.CONVERSATION
-		dialog.text = "We're Interacting!"
-		dialog.show()
+		if not playerControlled:
+			if not hadInitialConversation:
+				doDialog("Hey there! Wanna Chat?")
+				hadInitialConversation = true
+
+
+func _on_Interaction_gui_input(event:InputEvent): #For clicking on the Label
+	if event.is_action_pressed("ui_select"):
+		doDialog("We're Interacting!")
+
+
+func _on_SelectionArea_input_event(viewport, event, shape_idx): #Clicking on the character to continue/start dialog
+	if event.is_action_pressed("ui_select"):
+		if not playerControlled:
+			doDialog("Was there something else you needed?")
+		else:
+			if not inConversation:
+				doDialog("Yes, we're interacting!")
+			else:
+				inConversation = false
+
+
+
+
+
+
+
+

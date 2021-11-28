@@ -195,6 +195,10 @@ pause={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_4="Mouse"
+
 [rasterizer]
 
 use_pixel_snap=true
