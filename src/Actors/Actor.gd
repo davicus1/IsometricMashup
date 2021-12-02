@@ -17,7 +17,7 @@ var mass:float
 var volume:float
 var inventory:Inventory
 var capacity:Capacity
-var inConversation = false
+remote var inConversation = false
 var hadInitialConversation = false
 var currentDialog = ""
 export var character_name:String
@@ -78,31 +78,32 @@ func moveState(delta):
 			if Input.is_action_just_pressed("Pickup"):
 				state = PlayerState.PICKUP
 			
-			if not gamestate.is_single_player:
-				rset("puppet_motion", motion)
-				rset("puppet_direction", actionDirection)
-				rset("puppet_running", running)
-				rset("puppet_state", state)
-				rset("puppet_position", position)
+	else:
+		if automotion >= 0 && automotion < 120:
+			motion.x = 1.0
+			automotion += 1
+		elif automotion == 120:
+			automotion = -121
+		else: 
+			motion.x = -1.0
+			automotion += 1
+			
+	if not gamestate.is_single_player: 
+		if is_network_master():
+			#rset("puppet_state", state)
+			###TO DO: update NPC movements in multiplayer
+			rset("puppet_motion", motion)
+			rset("puppet_direction", actionDirection)
+			rset("puppet_running", running)
+			rset("puppet_state", state)
+			rset("puppet_position", position)
 		else:
 			motion = puppet_motion
 			actionDirection = puppet_direction
 			running = puppet_running
 			state = puppet_state
 			position = puppet_position
-	else:
-		if automotion >= 0 && automotion < 120:
-			motion.x = 1.0
-			automotion += 1
-		elif automotion == 120:
-		 automotion = -121
-		else: 
-			motion.x = -1.0
-			automotion += 1
-		if not gamestate.is_single_player:
-			rset("puppet_state", state)
-			###TO DO: update NPC movements in multiplayer
-		
+	
 	callBlendPosition(actionDirection)
 	
 	if motion != Vector2.ZERO:
@@ -121,8 +122,6 @@ func moveState(delta):
 func conversationState(delta):
 	doAnimationIdle()
 	if gamestate.is_single_player || is_network_master():
-		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
-			inConversation = false
 		if not inConversation:
 			state = PlayerState.MOVE
 			dialog.hide()
@@ -136,6 +135,10 @@ func conversationState(delta):
 		currentDialog = puppet_dialog
 		dialog.text = currentDialog
 		dialog.visible = inConversation
+	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
+		inConversation = false
+		if not gamestate.is_single_player && not is_network_master():
+			rset_id(1, "inConversation", false)
 
 
 func doDialog(theDialog):
@@ -253,21 +256,31 @@ func _on_EngagementArea_area_shape_entered(area_rid, area, area_shape_index, loc
 
 func _on_Interaction_gui_input(event:InputEvent): #For clicking on the Label
 	if event.is_action_pressed("ui_select"):
-		doDialog("We're Interacting!")
+		if gamestate.is_single_player || is_network_master():
+			doDialog("We're Interacting!")
+		else:
+			rpc_id(1,"moreInteractionWith")
 
 
 func _on_SelectionArea_input_event(viewport, event, shape_idx): #Clicking on the character to continue/start dialog
 	if event.is_action_pressed("ui_select"):
-		if not playerControlled:
-			doDialog("Was there something else you needed?")
+		if gamestate.is_single_player || is_network_master():
+			beingInteractedWith()
 		else:
-			if not inConversation:
-				doDialog("Yes, we're interacting!")
-			else:
-				inConversation = false
+			rpc_id(1, "beingInteractedWith")
 
 
+remote func beingInteractedWith():
+	if not playerControlled:
+			doDialog("Was there something else you needed?")
+	else:
+		if not inConversation:
+			doDialog("Yes, we're interacting!")
+		else:
+			inConversation = false
 
+master func moreInteractionWith():
+	doDialog("Indeed We're Interacting!")
 
 
 
