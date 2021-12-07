@@ -177,7 +177,7 @@ position = Vector2( 775, 1225 )
 
 [node name="Humanoid" parent="YSort/NPCs" instance=ExtResource( 16 )]
 position = Vector2( 670.512, 1080.35 )
-character_name = "Marslle"
+character_name = "Marselle"
 character_type = "Human Male"
 playerControlled = false
 
@@ -185,7 +185,7 @@ playerControlled = false
 text = ""
 
 [node name="Female Troll" parent="YSort/NPCs/Humanoid" index="2"]
-frame = 12
+frame = 5
 
 [node name="Human Male" parent="YSort/NPCs/Humanoid" index="3"]
 visible = true
@@ -199,12 +199,6 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 uppercase = false
-
-[node name="InteractionArea" parent="YSort/NPCs/Humanoid" index="9"]
-visible = true
-
-[node name="EngagementArea" parent="YSort/NPCs/Humanoid" index="11"]
-visible = true
 
 [editable path="YSort/NPCs/Humanoid"]
 [editable path="YSort/NPCs/Humanoid/PlayerCameraInterface"]

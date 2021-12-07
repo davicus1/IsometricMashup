@@ -26,6 +26,8 @@ onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStat
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
 onready var dialog = $Interaction
+onready var ray = $RayCast2D
+const RAY_CAST_SIZE:float = 250.0
 
 var collectable_items_in_reach:Array = []
 export var character_type:String
@@ -55,6 +57,7 @@ func _ready():
 		if gamestate.is_single_player || is_network_master():
 			myCamera.make_current()
 	nameLabel.set_text(character_name)
+	ray.cast_to = actionDirection * RAY_CAST_SIZE
 
 
 func _physics_process(delta):
@@ -65,6 +68,7 @@ func _physics_process(delta):
 			pickupState(delta)
 		PlayerState.CONVERSATION:
 			conversationState(delta)
+	
 
 
 func moveState(delta):
@@ -112,12 +116,25 @@ func moveState(delta):
 		if running:
 			speed *= 3
 		motion = actionDirection * speed * delta
+		ray.cast_to = actionDirection * RAY_CAST_SIZE
+		ray.force_raycast_update() #TO DO Should this be forced?
+		spot_something()
 		doAnimationRun()
 	else:
 		doAnimationIdle()
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
 
+func spot_something():
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		print(self.character_name + " See " + collider.name)
+		if collider.character_name == "Marselle":
+			currentDialog = "I see you Marselle!"
+			dialog.text = currentDialog
+			dialog.visible = true
+	else: 
+		dialog.visible = false
 
 func conversationState(delta):
 	doAnimationIdle()

@@ -2076,14 +2076,14 @@ visible = false
 position = Vector2( 0, -52 )
 frames = SubResource( 1 )
 animation = "Idle-S"
-frame = 20
+frame = 15
 playing = true
 
 [node name="Human Male" type="AnimatedSprite" parent="." index="3"]
 visible = false
 position = Vector2( -1188.74, -213.82 )
 frames = SubResource( 2 )
-animation = "Idle-S"
+animation = "Idle-E"
 playing = true
 offset = Vector2( 1188.74, 22.604 )
 
