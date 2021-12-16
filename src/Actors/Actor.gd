@@ -23,6 +23,7 @@ var currentDialog = ""
 export var character_name:String
 onready var myCamera = $PlayerCameraInterface
 onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStatusOverlay
+
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
 onready var dialog = $Interaction
@@ -156,6 +157,7 @@ func conversationState(delta):
 		inConversation = false
 		if not gamestate.is_single_player && not is_network_master():
 			rset_id(1, "inConversation", false)
+
 
 
 func doDialog(theDialog):

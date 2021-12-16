@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Props/Walls/StoneWall_Corner_W.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/Props/Cases/DisplayCaseWSword_E.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/UI/PausedOverlay.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Actors/Humanoid.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/UI/DialogBox.tscn" type="PackedScene" id=17]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -26,6 +27,10 @@ layer = 128
 
 [node name="PausedOverlay" parent="UI" instance=ExtResource( 15 )]
 visible = false
+
+[node name="DialogBox" parent="UI" instance=ExtResource( 17 )]
+visible = false
+position = Vector2( 600, 768 )
 
 [node name="TileMap" type="TileMap" parent="."]
 mode = 1
@@ -185,7 +190,7 @@ playerControlled = false
 text = ""
 
 [node name="Female Troll" parent="YSort/NPCs/Humanoid" index="2"]
-frame = 5
+frame = 4
 
 [node name="Human Male" parent="YSort/NPCs/Humanoid" index="3"]
 visible = true
