@@ -30,7 +30,7 @@ visible = false
 
 [node name="DialogBox" parent="UI" instance=ExtResource( 17 )]
 visible = false
-position = Vector2( 600, 768 )
+position = Vector2( 642, 709 )
 
 [node name="TileMap" type="TileMap" parent="."]
 mode = 1
@@ -180,30 +180,17 @@ position = Vector2( 775, 1225 )
 
 [node name="NPCs" type="YSort" parent="YSort"]
 
-[node name="Humanoid" parent="YSort/NPCs" instance=ExtResource( 16 )]
-position = Vector2( 670.512, 1080.35 )
+[node name="Marselle" parent="YSort/NPCs" instance=ExtResource( 16 )]
+position = Vector2( 734, 1082 )
 character_name = "Marselle"
 character_type = "Human Male"
 playerControlled = false
 
-[node name="Name" parent="YSort/NPCs/Humanoid" index="0"]
-text = ""
+[node name="Female Troll" parent="YSort/NPCs/Marselle" index="2"]
+frame = 21
 
-[node name="Female Troll" parent="YSort/NPCs/Humanoid" index="2"]
-frame = 4
-
-[node name="Human Male" parent="YSort/NPCs/Humanoid" index="3"]
-visible = true
-
-[node name="AnimationTree" parent="YSort/NPCs/Humanoid" index="6"]
+[node name="AnimationTree" parent="YSort/NPCs/Marselle" index="6"]
 parameters/playback = SubResource( 1 )
 
-[node name="Interaction" parent="YSort/NPCs/Humanoid" index="7"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-uppercase = false
-
-[editable path="YSort/NPCs/Humanoid"]
-[editable path="YSort/NPCs/Humanoid/PlayerCameraInterface"]
+[editable path="YSort/NPCs/Marselle"]
+[editable path="YSort/NPCs/Marselle/PlayerCameraInterface"]

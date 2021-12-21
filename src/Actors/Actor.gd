@@ -26,7 +26,7 @@ onready var status_overlay:ActorStatusOverlay = $PlayerCameraInterface/ActorStat
 
 onready var nameLabel = $Name
 onready var stashStuff = $StashStuff
-onready var dialog = $Interaction
+onready var promptChat = $PromptChat
 onready var ray = $RayCast2D
 const RAY_CAST_SIZE:float = 250.0
 
@@ -132,17 +132,17 @@ func spot_something():
 		print(self.character_name + " See " + collider.name)
 		if collider.character_name == "Marselle":
 			currentDialog = "I see you Marselle!"
-			dialog.text = currentDialog
-			dialog.visible = true
+			promptChat.text = currentDialog
+			promptChat.visible = true
 	else: 
-		dialog.visible = false
+		promptChat.visible = false
 
 func conversationState(delta):
 	doAnimationIdle()
 	if gamestate.is_single_player || is_network_master():
 		if not inConversation:
 			state = PlayerState.MOVE
-			dialog.hide()
+			promptChat.hide()
 		if not gamestate.is_single_player:
 			rset("puppet_inConversation", inConversation)
 			rset("puppet_state", state)
@@ -151,8 +151,8 @@ func conversationState(delta):
 		inConversation = puppet_inConversation
 		state = puppet_state
 		currentDialog = puppet_dialog
-		dialog.text = currentDialog
-		dialog.visible = inConversation
+		promptChat.text = currentDialog
+		promptChat.visible = inConversation
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel"):
 		inConversation = false
 		if not gamestate.is_single_player && not is_network_master():
@@ -160,12 +160,12 @@ func conversationState(delta):
 
 
 
-func doDialog(theDialog):
+func doPromptChat(theDialog):
 	currentDialog = theDialog
 	inConversation = true
 	state = PlayerState.CONVERSATION
-	dialog.text = currentDialog
-	dialog.show()
+	promptChat.text = currentDialog
+	promptChat.show()
 
 
 
@@ -199,7 +199,7 @@ func set_character_type(new_character_type:String):
 	character_type = new_character_type
 
 
-func on_InteractionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):
+func on_PerformActionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):
 	#TODO Why does this not work when the docs say this is how you find it!????
 	#var obj2 = shape_owner_get_owner(shape_find_owner(area_id))
 	
@@ -218,7 +218,7 @@ func _collectable_item_not_in_reach(item:Item):
 	collectable_items_in_reach.erase(item)
 
 
-func on_InteractionArea_area_shape_exited(area_id, area, _area_shape, _self_shape):
+func on_PerformActionArea_area_shape_exited(area_id, area, _area_shape, _self_shape):
 	#TODO this seems brittle
 	var owner = area.get_parent()
 	if owner is Item:
@@ -264,24 +264,18 @@ remotesync func pickup_next_item():
 
 
 func _on_EngagementArea_area_shape_entered(area_rid, area, area_shape_index, local_shape_index): #Initial Chat
-	var popupSize = Vector2(100,100)
 	var owner = area.get_parent()
 	if owner != self:
-		if not playerControlled:
-			if not hadInitialConversation:
-				doDialog("Hey there! Wanna Chat?")
-				hadInitialConversation = true
-
-
-func _on_Interaction_gui_input(event:InputEvent): #For clicking on the Label
-	if event.is_action_pressed("ui_select"):
-		if gamestate.is_single_player || is_network_master():
-			doDialog("We're Interacting!")
+		if owner is Item:
+			print("No talkie %s" % [owner.name])
 		else:
-			rpc_id(1,"moreInteractionWith")
+			if not playerControlled:
+				if not hadInitialConversation:
+					doPromptChat("Hey there! Wanna Chat?")
+					hadInitialConversation = true
 
 
-func _on_SelectionArea_input_event(viewport, event, shape_idx): #Clicking on the character to continue/start dialog
+func _on_InteractWithArea_input_event(viewport, event, shape_idx): #Clicking on the character to continue/start dialog
 	if event.is_action_pressed("ui_select"):
 		if gamestate.is_single_player || is_network_master():
 			beingInteractedWith()
@@ -291,15 +285,14 @@ func _on_SelectionArea_input_event(viewport, event, shape_idx): #Clicking on the
 
 remote func beingInteractedWith():
 	if not playerControlled:
-			doDialog("Was there something else you needed?")
+			gamestate.use_dialog_box(["Was there something else you needed?"])
 	else:
 		if not inConversation:
-			doDialog("Yes, we're interacting!")
+			doPromptChat("Yes, we're interacting!")
 		else:
 			inConversation = false
 
-master func moreInteractionWith():
-	doDialog("Indeed We're Interacting!")
+
 
 
 

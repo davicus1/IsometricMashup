@@ -12,6 +12,7 @@ var local_player_info = PlayerInfo.new()
 var classes = ["Humanoid", "Trollish"]
 var characters = ["Human Male", "Female Troll"]
 
+
 # Names for remote players in id:PlayerInfo format.
 var players = {}
 var players_ready = []
@@ -21,6 +22,9 @@ var local_player_character:Actor
 
 ##### REMOVE THIS VAR?
 var host:NetworkedMultiplayerENet
+
+# Globals
+var dialogBox:DialogBox = null
 
 
 # Signals to let the in-game UI know what's going on
@@ -266,6 +270,17 @@ func end_game():
 
 	emit_signal("game_ended")
 	players.clear()
+
+
+func register_dialog_box(the_dialog_box:DialogBox):
+	dialogBox = the_dialog_box
+
+
+func use_dialog_box(pages_of_dialog:Array):
+	if dialogBox != null:
+		dialogBox.popup(pages_of_dialog)
+	else:
+		printerr("No Dialog Box Found.")
 
 
 func _ready():

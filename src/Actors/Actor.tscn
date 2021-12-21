@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Actors/Actor.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/PlayerCameraInterface.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 radius = 31.4654
 
 [sub_resource type="CircleShape2D" id=2]
@@ -29,7 +29,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Interaction" type="Label" parent="."]
+[node name="PromptChat" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -50,10 +50,10 @@ __meta__ = {
 
 [node name="PlayerCameraInterface" parent="." instance=ExtResource( 2 )]
 
-[node name="InteractionArea" type="Area2D" parent="."]
+[node name="PerformActionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerformActionArea"]
+shape = SubResource( 4 )
 
 [node name="StashStuff" type="Node2D" parent="."]
 visible = false
@@ -64,9 +64,11 @@ visible = false
 modulate = Color( 0.862745, 0.776471, 0.0627451, 0.4 )
 shape = SubResource( 2 )
 
-[node name="SelectionArea" type="Area2D" parent="."]
+[node name="InteractWithArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractWithArea"]
 position = Vector2( 0, -61 )
 shape = SubResource( 3 )
 
@@ -75,10 +77,9 @@ enabled = true
 cast_to = Vector2( 0, 120 )
 collision_mask = 16
 
-[connection signal="gui_input" from="Interaction" to="." method="_on_Interaction_gui_input"]
-[connection signal="area_shape_entered" from="InteractionArea" to="." method="on_InteractionArea_area_shape_entered"]
-[connection signal="area_shape_exited" from="InteractionArea" to="." method="on_InteractionArea_area_shape_exited"]
+[connection signal="area_shape_entered" from="PerformActionArea" to="." method="on_PerformActionArea_area_shape_entered"]
+[connection signal="area_shape_exited" from="PerformActionArea" to="." method="on_PerformActionArea_area_shape_exited"]
 [connection signal="area_shape_entered" from="EngagementArea" to="." method="_on_EngagementArea_area_shape_entered"]
-[connection signal="input_event" from="SelectionArea" to="." method="_on_SelectionArea_input_event"]
+[connection signal="input_event" from="InteractWithArea" to="." method="_on_InteractWithArea_input_event"]
 
 [editable path="PlayerCameraInterface"]

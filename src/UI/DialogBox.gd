@@ -17,6 +17,8 @@ var page = 0
 func _ready():
 	label.visible_characters = 0
 	set_process_input(true)
+	gamestate.register_dialog_box(self)
+
 
 func _input(event):
 	if event.is_action_pressed("Talk") && not visible:
