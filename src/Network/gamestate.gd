@@ -19,6 +19,7 @@ var players_ready = []
 
 var is_single_player = true
 var local_player_character:Actor
+var _current_level:LevelArchtype setget ,get_current_level
 
 ##### REMOVE THIS VAR?
 var host:NetworkedMultiplayerENet
@@ -119,9 +120,12 @@ remote func pre_start_game(spawn_points):
 	# Change scene.
 	#var map_to_load = load("res://src/Levels/dungeon.tscn").instance()
 	var map_to_load = load("res://src/Levels/HotelCalifornia.tscn").instance()
+	#var map_to_load = load("res://src/Levels/OldTown.tscn").instance()
+	print(map_to_load.get_level_name())
 	#get_tree().change_scene_to(dungeon_scene)
 	#get_tree().paused = false
 	get_tree().get_root().add_child(map_to_load)
+	_current_level = map_to_load
 
 	if is_single_player:
 		var old_scene = get_tree().get_root().get_node("SingleplayerPlayerCreation")
@@ -294,3 +298,6 @@ func _ready():
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	#warning-ignore:return_value_discarded
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
+
+func get_current_level() -> LevelArchtype:
+	return _current_level

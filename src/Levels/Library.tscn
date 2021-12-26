@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Stuffs.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Library.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Levels/Library.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=4]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Props/Cases/DisplayCaseWSword_E.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D"]
+[node name="Library" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -212.265 ]
 }

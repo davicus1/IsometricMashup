@@ -22,7 +22,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Talk") && not visible:
-		popup(pages_of_dialog)
+		popup(dialogmanager.get_current_dialog())
+		#popup(pages_of_dialog)
 	elif event.is_action_pressed("Talk") || (event.is_action_pressed("ui_select")):
 		if label.visible_characters >= label.get_total_character_count():
 			label.visible_characters = 0
