@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Components/Capacity.gd"
 }, {
+"base": "Button",
+"class": "CombatActivityButton",
+"language": "GDScript",
+"path": "res://src/UI/CombatActivityButton.gd"
+}, {
 "base": "Polygon2D",
 "class": "DialogBox",
 "language": "GDScript",
@@ -83,6 +88,7 @@ _global_script_class_icons={
 "Actor": "",
 "ActorStatusOverlay": "",
 "Capacity": "",
+"CombatActivityButton": "",
 "DialogBox": "",
 "DialogManager": "",
 "Equipment": "",
@@ -112,6 +118,7 @@ GameConfig="*res://src/AutoLoad/config.gd"
 Music="*res://src/AutoLoad/Music.tscn"
 gamestate="*res://src/Network/gamestate.gd"
 dialogmanager="*res://src/Systems/DialogManager.gd"
+combatmanager="*res://src/Systems/CombatManager.gd"
 
 [display]
 

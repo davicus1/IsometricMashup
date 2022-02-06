@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/JRPGCombatScreen.gd" type="Script" id=1]
+[ext_resource path="res://src/UI/CombatActivityButton.tscn" type="PackedScene" id=2]
+
+[node name="Combat" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGColor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.411765 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CombatControlBarBG" type="ColorRect" parent="BGColor"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -159.199
+margin_right = -20.0
+margin_bottom = -39.1995
+color = Color( 0.4, 0.4, 0.4, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeleButton" parent="BGColor" instance=ExtResource( 2 )]
+
+[node name="RangedButton" parent="BGColor" instance=ExtResource( 2 )]
+margin_left = 1056.0
+margin_right = 1120.0
+text = "Ranged"
+combat_action = "Ranged"
+
+[node name="BlockButton" parent="BGColor" instance=ExtResource( 2 )]
+margin_left = 960.0
+margin_right = 1024.0
+text = "Block"
+combat_action = "Block"

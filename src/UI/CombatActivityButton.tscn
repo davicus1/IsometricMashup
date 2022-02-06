@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/CombatActivityButton.gd" type="Script" id=1]
+
+[node name="CombatActivityButton" type="Button"]
+margin_left = 1152.0
+margin_top = 768.0
+margin_right = 1216.0
+margin_bottom = 832.0
+hint_tooltip = "Block using your weapon"
+mouse_default_cursor_shape = 3
+text = "Mele"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+combat_action = "Mele"
+
+[connection signal="pressed" from="." to="." method="_on_CombatActivityButton_pressed"]
