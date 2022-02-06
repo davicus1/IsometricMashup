@@ -32,16 +32,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeleButton" parent="BGColor" instance=ExtResource( 2 )]
+[node name="MeleButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 1132.0
+margin_top = 27.199
+margin_right = 1196.0
+margin_bottom = 91.199
+hint_tooltip = "Use a blunt object to beat people"
 
-[node name="RangedButton" parent="BGColor" instance=ExtResource( 2 )]
-margin_left = 1056.0
-margin_right = 1120.0
+[node name="RangedButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 1036.0
+margin_top = 27.199
+margin_right = 1100.0
+margin_bottom = 91.199
+hint_tooltip = "Use a ranged attack"
 text = "Ranged"
 combat_action = "Ranged"
 
-[node name="BlockButton" parent="BGColor" instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_right = 1024.0
+[node name="BlockButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 940.0
+margin_top = 27.199
+margin_right = 1004.0
+margin_bottom = 91.199
 text = "Block"
 combat_action = "Block"
+
+[node name="HealButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 845.0
+margin_top = 27.199
+margin_right = 909.0
+margin_bottom = 91.199
+hint_tooltip = "Heal yourself"
+text = "Heal"
+combat_action = "Heal"
