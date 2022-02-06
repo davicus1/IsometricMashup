@@ -1,4 +1,8 @@
-extends Node2D
+extends LevelArchtype
+
+func _init():
+	_level_name = "Old Town"
+
 
 var current_phase = 1
 onready var phase_1_rubble = $"YSort/RubblePhase1"

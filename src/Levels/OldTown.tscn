@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Props/Walls/StoneWall_E.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Props/Walls/StoneWall_Corner_S.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Props/Walls/StoneWall_Corner_N.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Props/Walls/StoneWall_N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Humanoid.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Props/Walls/StoneWall_S.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Props/Walls/StoneWall_E_Window.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Props/Walls/StoneWall_Corner_E.tscn" type="PackedScene" id=10]
@@ -23,10 +24,21 @@
 [ext_resource path="res://src/Props/PreFabBuildings/Stone Building 4x5 double door E and W.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/Props/PreFabBuildings/Stone Merchant Building 3x3 W Door With Stands 4x3.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/Props/PreFabBuildings/Water Cistern.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/UI/DialogBox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/UI/PausedOverlay.tscn" type="PackedScene" id=26]
 
 [node name="OldTown" type="Node2D"]
 position = Vector2( 568, 88 )
 script = ExtResource( 16 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PausedOverlay" parent="CanvasLayer" instance=ExtResource( 26 )]
+visible = false
+
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 25 )]
+visible = false
+position = Vector2( 640, 780 )
 
 [node name="Dirt" type="TileMap" parent="."]
 mode = 1
@@ -456,3 +468,17 @@ position = Vector2( 7168, -1304 )
 
 [node name="Rubble Stone Building 4x3 E Door" parent="YSort/RubblePhase1" instance=ExtResource( 15 )]
 position = Vector2( 3760, -1608 )
+
+[node name="NPCs" type="YSort" parent="YSort"]
+
+[node name="Marselle" parent="YSort/NPCs" instance=ExtResource( 7 )]
+position = Vector2( -1426.12, 1497.07 )
+character_name = "Marselle"
+character_type = "Human Male"
+playerControlled = false
+
+[node name="Jaqueline" parent="YSort/NPCs" instance=ExtResource( 7 )]
+position = Vector2( -1965.2, 1730.27 )
+character_name = "Jaqueline"
+character_type = "Female Troll"
+playerControlled = false

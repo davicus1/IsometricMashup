@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/DialogBox.gd" type="Script" id=1]
+
+[node name="DialogBox" type="Polygon2D"]
+position = Vector2( 216, 16 )
+color = Color( 0.105882, 0.0941176, 0.0941176, 0.392157 )
+polygon = PoolVector2Array( -216, -16, 216, -16, 216, 72, -216, 72 )
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -192.0
+margin_right = 200.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 16
+bbcode_enabled = true
+bbcode_text = "Some text here. This should be a character dialogue but is static text. However it looks like it wrapped.
+
+Here is a new line.
+"
+text = "Some text here. This should be a character dialogue but is static text. However it looks like it wrapped.
+
+Here is a new line.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
