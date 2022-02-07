@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UI/JRPGCombatScreen.gd" type="Script" id=1]
 [ext_resource path="res://src/UI/CombatActivityButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UI/LoadPlayersButton.gd" type="Script" id=3]
 
 [node name="Combat" type="Control"]
 anchor_right = 1.0
@@ -64,3 +65,70 @@ margin_bottom = 91.199
 hint_tooltip = "Heal yourself"
 text = "Heal"
 combat_action = "Heal"
+
+[node name="LoadPlayers" type="Button" parent="BGColor/CombatControlBarBG"]
+margin_left = 44.0
+margin_top = 27.199
+margin_right = 136.0
+margin_bottom = 47.199
+text = "Load Players"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1088, 128 )
+
+[node name="1" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1088, 256 )
+
+[node name="2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1088, 384 )
+
+[node name="3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1088, 512 )
+
+[node name="4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1088, 640 )
+
+[node name="5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 960, 320 )
+
+[node name="6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 960, 448 )
+
+[node name="7" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 1216, 384 )
+
+[node name="EnemySpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 258, 130 )
+
+[node name="1" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 258, 258 )
+
+[node name="2" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 258, 386 )
+
+[node name="3" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 258, 514 )
+
+[node name="4" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 258, 642 )
+
+[node name="5" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 384, 320 )
+
+[node name="6" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 384, 448 )
+
+[node name="7" type="Position2D" parent="EnemySpawnPoints"]
+position = Vector2( 128, 384 )
+
+[node name="Players" type="YSort" parent="."]
+
+[connection signal="pressed" from="BGColor/CombatControlBarBG/LoadPlayers" to="." method="_on_LoadPlayers_pressed"]
