@@ -1,28 +1,19 @@
 extends Control
 
 onready var tmp_player_bag = $Players
+onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
+
 
 func add_players(player_list):
 	var spawnPoint = 0
 	for player in player_list:
 		var spawn_pos = get_node("SpawnPoints/" + str(spawnPoint)).position
-		var character_sprite = load_sprite(player.player_character)
-		character_sprite.position = spawn_pos
-		tmp_player_bag.add_child(character_sprite)
+		var combat_actor:CombatActor = combat_actor_scene.instance()
+		combat_actor.load_sprite(player.player_character)
+		combat_actor.position = spawn_pos
+		tmp_player_bag.add_child(combat_actor)
 		spawnPoint += 1
-		
 
-func load_sprite(character_type) -> Sprite:
-	var character_sprite = Sprite.new()
-	var texture = ImageTexture.new()
-	var image = Image.new()
-	if (character_type == "Human Male"):
-		image.load("res://Assets/Characters/Male/Male_4_Idle0.png")
-	else: 
-		image.load("res://Assets/Characters/FemaleTroll/Isometric_Corona/Idle/Cor_Idle_Up_L_00007.png")
-	texture.create_from_image(image)
-	character_sprite.texture = texture
-	return character_sprite
 
 
 func _on_LoadPlayers_pressed():

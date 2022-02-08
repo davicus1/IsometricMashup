@@ -80,25 +80,25 @@ __meta__ = {
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="0" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 128 )
+position = Vector2( 959, 257 )
 
 [node name="1" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 256 )
+position = Vector2( 1090, 193 )
 
 [node name="2" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 384 )
+position = Vector2( 1088, 360 )
 
 [node name="3" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 512 )
+position = Vector2( 1089, 511 )
 
 [node name="4" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 640 )
+position = Vector2( 1088, 671 )
 
 [node name="5" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 960, 320 )
+position = Vector2( 960, 415 )
 
 [node name="6" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 960, 448 )
+position = Vector2( 959, 575 )
 
 [node name="7" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 1216, 384 )

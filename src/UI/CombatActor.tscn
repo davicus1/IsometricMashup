@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UI/ActorHealthBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00008.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/CombatActor.gd" type="Script" id=3]
+
+[node name="CombatActor" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4, -49 )
+texture = ExtResource( 2 )
+
+[node name="ActorHealthBar" parent="." instance=ExtResource( 1 )]
+position = Vector2( -68, -160 )
