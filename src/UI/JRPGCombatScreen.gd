@@ -4,6 +4,9 @@ onready var tmp_player_bag = $Players
 onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
 
 
+var selectedPlayer
+
+
 func add_players(player_list):
 	var spawnPoint = 0
 	for player in player_list:
@@ -12,7 +15,11 @@ func add_players(player_list):
 		combat_actor.load_sprite(player.player_character)
 		combat_actor.position = spawn_pos
 		tmp_player_bag.add_child(combat_actor)
+		if spawnPoint == 0:
+			SelectPlayer(combat_actor)
 		spawnPoint += 1
+		combat_actor.connect("combatActorSelected",self,"SelectPlayer")
+
 
 
 
@@ -52,6 +59,13 @@ func _on_LoadPlayers_pressed():
 #	var player_list = get_tree().get_nodes_in_group("Players")
 	var player_list = [player1info,player2info,player3info,player4info,player5info,player6info,player7info,player8info]
 	add_players(player_list)
+
+
+func SelectPlayer(player):
+	if selectedPlayer != null:
+		selectedPlayer.toggleSelection()
+	selectedPlayer = player
+	selectedPlayer.toggleSelection()
 
 
 func makePlayerCharacter(player_info:PlayerInfo) -> Actor:

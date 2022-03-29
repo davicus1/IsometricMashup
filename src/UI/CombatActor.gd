@@ -2,7 +2,10 @@ extends Node2D
 class_name CombatActor
 
 onready var character_sprite = $Sprite
+onready var selected_character = $SelectedCharacter
 var texture
+
+signal combatActorSelected(the_actor)
 
 func _ready():
 	if texture != null:
@@ -21,3 +24,16 @@ func load_sprite(character_type):
 	if character_sprite != null:
 		character_sprite.texture = texture
 	return 
+
+
+func toggleSelection():
+	selected_character.visible = not selected_character.visible
+
+
+func _on_SelectionArea_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("ui_select"):
+		emit_signal("combatActorSelected",self)
+
+
+func _on_SelectionArea_mouse_entered():
+	print("Mouse Entered.")

@@ -1,11 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/UI/ActorHealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/FemaleTroll/Isometric_Corona/Attk/Cor_Atk1_L_00008.png" type="Texture" id=2]
 [ext_resource path="res://src/UI/CombatActor.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Textures/white_texture.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.0
+height = 104.0
 
 [node name="CombatActor" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="SelectionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea"]
+position = Vector2( -7, -41 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -4, -49 )
@@ -13,3 +26,15 @@ texture = ExtResource( 2 )
 
 [node name="ActorHealthBar" parent="." instance=ExtResource( 1 )]
 position = Vector2( -68, -160 )
+
+[node name="SelectedCharacter" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.294118, 0.278431, 0.266667, 1 )
+show_behind_parent = true
+position = Vector2( 0, 1 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 211.507, 55.2978, 67.5256, 60.1591 )
+
+[connection signal="input_event" from="SelectionArea" to="." method="_on_SelectionArea_input_event"]
+[connection signal="mouse_entered" from="SelectionArea" to="." method="_on_SelectionArea_mouse_entered"]
