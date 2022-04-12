@@ -16,6 +16,7 @@ __meta__ = {
 [node name="BGColor" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 0.411765 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,6 +30,7 @@ margin_left = 20.0
 margin_top = -159.199
 margin_right = -20.0
 margin_bottom = -39.1995
+mouse_filter = 1
 color = Color( 0.4, 0.4, 0.4, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

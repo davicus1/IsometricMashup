@@ -51,6 +51,7 @@ __meta__ = {
 [node name="PlayerCameraInterface" parent="." instance=ExtResource( 2 )]
 
 [node name="PerformActionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerformActionArea"]
 shape = SubResource( 4 )
@@ -59,6 +60,7 @@ shape = SubResource( 4 )
 visible = false
 
 [node name="EngagementArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EngagementArea"]
 modulate = Color( 0.862745, 0.776471, 0.0627451, 0.4 )
@@ -81,5 +83,6 @@ collision_mask = 16
 [connection signal="area_shape_exited" from="PerformActionArea" to="." method="on_PerformActionArea_area_shape_exited"]
 [connection signal="area_shape_entered" from="EngagementArea" to="." method="_on_EngagementArea_area_shape_entered"]
 [connection signal="input_event" from="InteractWithArea" to="." method="_on_InteractWithArea_input_event"]
+[connection signal="mouse_entered" from="InteractWithArea" to="." method="_on_InteractWithArea_mouse_entered"]
 
 [editable path="PlayerCameraInterface"]

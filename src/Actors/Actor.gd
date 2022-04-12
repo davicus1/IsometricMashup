@@ -293,8 +293,5 @@ remote func beingInteractedWith():
 			inConversation = false
 
 
-
-
-
-
-
+func _on_InteractWithArea_mouse_entered():
+	print("Mouse Entered")
