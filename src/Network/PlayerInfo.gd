@@ -5,7 +5,9 @@ var player_name:String = "The Warrior"
 var player_class:String = "Humanoid"
 var player_character:String = "Female Troll"
 
-
+var health_max = 10
+var health_current = 5
+	
 func makeAsDictionary():
 	return {
 		"player_name": player_name,

@@ -3,14 +3,28 @@ class_name CombatActor
 
 onready var character_sprite = $Sprite
 onready var selected_character = $SelectedCharacter
+onready var actor_health_bar = $ActorHealthBar
 var texture
 
 signal combatActorSelected(the_actor)
+#signal healthUpdated()
+
+var health_current:int
+var health_max:int
 
 func _ready():
 	if texture != null:
 		character_sprite.texture = texture
+	actor_health_bar.health_updated(health_current,health_max)
 
+
+func heal(healthPoints:int):
+	health_current = min(health_max,health_current + healthPoints)
+	actor_health_bar.health_updated(health_current,health_max)
+
+func take_damage(damagePoints:int):
+	health_current = max(0,health_current - damagePoints)
+	actor_health_bar.health_updated(health_current,health_max)
 
 
 func load_sprite(character_type):
@@ -35,5 +49,3 @@ func _on_SelectionArea_input_event(viewport, event, shape_idx):
 		emit_signal("combatActorSelected",self)
 
 
-func _on_SelectionArea_mouse_entered():
-	print("Mouse Entered.")

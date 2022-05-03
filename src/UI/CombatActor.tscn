@@ -37,4 +37,3 @@ region_enabled = true
 region_rect = Rect2( 211.507, 55.2978, 67.5256, 60.1591 )
 
 [connection signal="input_event" from="SelectionArea" to="." method="_on_SelectionArea_input_event"]
-[connection signal="mouse_entered" from="SelectionArea" to="." method="_on_SelectionArea_mouse_entered"]

@@ -8,7 +8,7 @@ enum COMBAT_ACTION{
 	Heal
 	}
 	
-func combat_action(action):
+func combat_action(action,selected_player):
 	var difficulty = 2
 	var chanceToHit = 10 + difficulty # on a d20
 	var weapon_damage = 0
@@ -31,6 +31,7 @@ func combat_action(action):
 	if action == "Block":
 		print("Your Action: %s" % action)
 	elif action == "Heal":
+		selected_player.heal(healing_points)
 		print("Your Action: %s Healing Points: %s" % [action,healing_points])
 	else:
 		var toHitRoll = (randi() % 20) + 1

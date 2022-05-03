@@ -2,9 +2,12 @@ extends Control
 
 onready var tmp_player_bag = $Players
 onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
-
+onready var heal_button = $BGColor/CombatControlBarBG/HealButton
 
 var selectedPlayer
+
+func _ready():
+	heal_button.set_combat_screen_callback(self)
 
 
 func add_players(player_list):
@@ -13,6 +16,8 @@ func add_players(player_list):
 		var spawn_pos = get_node("SpawnPoints/" + str(spawnPoint)).position
 		var combat_actor:CombatActor = combat_actor_scene.instance()
 		combat_actor.load_sprite(player.player_character)
+		combat_actor.health_current = player.health_current
+		combat_actor.health_max = player.health_max
 		combat_actor.position = spawn_pos
 		tmp_player_bag.add_child(combat_actor)
 		if spawnPoint == 0:
