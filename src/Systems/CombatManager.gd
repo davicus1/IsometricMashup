@@ -1,14 +1,25 @@
 extends Node
+class_name CombatManager 
 
 signal Combat_Happened
+signal Selected_Character_Changed(new_selected_character)
+signal Heal_Character
+signal Combat_Action(action)
 enum COMBAT_ACTION{
 	Mele,
 	Ranged,
 	Block,
 	Heal
 	}
-	
-func combat_action(action,selected_player):
+
+var selected_character
+
+func _init():
+	connect("Combat_Action",self,"combat_action")
+	connect("Selected_Character_Changed",self,"selected_character_changed")
+
+
+func perform_combat_action(action,selected_character):
 	var difficulty = 2
 	var chanceToHit = 10 + difficulty # on a d20
 	var weapon_damage = 0
@@ -31,7 +42,7 @@ func combat_action(action,selected_player):
 	if action == "Block":
 		print("Your Action: %s" % action)
 	elif action == "Heal":
-		selected_player.heal(healing_points)
+		selected_character.heal(healing_points)
 		print("Your Action: %s Healing Points: %s" % [action,healing_points])
 	else:
 		var toHitRoll = (randi() % 20) + 1
@@ -41,4 +52,13 @@ func combat_action(action,selected_player):
 		print("Your Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
 		emit_signal("Combat_Happened",damage)
 
+
+#Called by signals
+func combat_action(action):
+	perform_combat_action(action,selected_character)
+
+
+#Called by signals
+func selected_character_changed(new_selected_character):
+	selected_character = new_selected_character
 

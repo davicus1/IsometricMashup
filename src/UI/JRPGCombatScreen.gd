@@ -2,12 +2,11 @@ extends Control
 
 onready var tmp_player_bag = $Players
 onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
-onready var heal_button = $BGColor/CombatControlBarBG/HealButton
 
-var selectedPlayer
+var selectedCharacter
 
 func _ready():
-	heal_button.set_combat_screen_callback(self)
+	combatmanager.connect("Selected_Character_Changed",self,"SelectCharacter")
 
 
 func add_players(player_list):
@@ -21,11 +20,8 @@ func add_players(player_list):
 		combat_actor.position = spawn_pos
 		tmp_player_bag.add_child(combat_actor)
 		if spawnPoint == 0:
-			SelectPlayer(combat_actor)
+			combatmanager.emit_signal("Selected_Character_Changed",combat_actor)
 		spawnPoint += 1
-		combat_actor.connect("combatActorSelected",self,"SelectPlayer")
-
-
 
 
 func _on_LoadPlayers_pressed():
@@ -65,17 +61,11 @@ func _on_LoadPlayers_pressed():
 	var player_list = [player1info,player2info,player3info,player4info,player5info,player6info,player7info,player8info]
 	add_players(player_list)
 
+#Called by signals
+func SelectCharacter(player):
+	if selectedCharacter != null:
+		selectedCharacter.toggleSelection()
+	selectedCharacter = player
+	selectedCharacter.toggleSelection()
 
-func SelectPlayer(player):
-	if selectedPlayer != null:
-		selectedPlayer.toggleSelection()
-	selectedPlayer = player
-	selectedPlayer.toggleSelection()
 
-
-func makePlayerCharacter(player_info:PlayerInfo) -> Actor:
-		var player_scene = load("res://src/Actors/" + player_info.player_class + ".tscn")
-		var player = player_scene.instance()
-		player.set_character_type(player_info.player_character)
-		player.set_player_name(player_info.player_name)
-		return player 

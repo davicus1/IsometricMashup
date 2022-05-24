@@ -46,6 +46,6 @@ func toggleSelection():
 
 func _on_SelectionArea_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_select"):
-		emit_signal("combatActorSelected",self)
+		combatmanager.emit_signal("Selected_Character_Changed",self)
 
 
