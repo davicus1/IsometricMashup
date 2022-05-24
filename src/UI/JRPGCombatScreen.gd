@@ -3,10 +3,10 @@ extends Control
 onready var tmp_player_bag = $Players
 onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
 
-var selectedCharacter
+var selected_character
 
 func _ready():
-	combatmanager.connect("Selected_Character_Changed",self,"SelectCharacter")
+	combatmanager.connect("Selected_Character_Changed",self,"toggle_selected_character")
 
 
 func add_players(player_list):
@@ -62,10 +62,10 @@ func _on_LoadPlayers_pressed():
 	add_players(player_list)
 
 #Called by signals
-func SelectCharacter(player):
-	if selectedCharacter != null:
-		selectedCharacter.toggleSelection()
-	selectedCharacter = player
-	selectedCharacter.toggleSelection()
+func toggle_selected_character(player):
+	if selected_character != null:
+		selected_character.toggle_selection()
+	selected_character = player
+	selected_character.toggle_selection()
 
 

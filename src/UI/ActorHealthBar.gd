@@ -1,4 +1,5 @@
 extends Node2D
+class_name ActorHealthBar
 
 onready var health_bar = $HealthBar
 

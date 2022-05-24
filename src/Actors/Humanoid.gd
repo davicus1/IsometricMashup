@@ -7,6 +7,7 @@ onready var animationState = animationTree.get("parameters/playback")
 
 #A prototype HU-MAAN. 
 func _init():
+	#health should be set my gamestate, not these defaults.
 	health_max = 10
 	health_current = 10
 	capacity = Capacity.new(50,100,20)

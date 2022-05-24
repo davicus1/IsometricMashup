@@ -3,6 +3,8 @@ class_name Actor
 
 const MOTION_SPEED = 160 * 60 # Pixels/second.
 
+signal health_updated
+
 puppet var puppet_motion = Vector2.ZERO
 puppet var puppet_direction = Vector2.DOWN
 puppet var puppet_running = false
@@ -11,8 +13,8 @@ puppet var puppet_position = Vector2.ZERO
 puppet var puppet_inConversation = false
 puppet var puppet_dialog = ""
 
-var health_current:int
-var health_max:int
+var health_current:int setget set_health_current
+var health_max:int setget set_health_max
 var mass:float
 var volume:float
 var inventory:Inventory
@@ -82,7 +84,8 @@ func moveState(delta):
 			running = Input.is_action_pressed("Run")
 			if Input.is_action_just_pressed("Pickup"):
 				state = PlayerState.PICKUP
-			
+			if Input.is_action_just_pressed("Heal"):
+				set_health_current(health_current +1)
 	else:
 		if automotion >= 0 && automotion < 120:
 			motion.x = 1.0
@@ -197,6 +200,15 @@ func set_player_name(new_name):
 
 func set_character_type(new_character_type:String):
 	character_type = new_character_type
+
+func set_health_current(new_health):
+	health_current = new_health
+	emit_signal("health_updated")
+
+
+func set_health_max(new_max):
+	health_max = new_max
+	emit_signal("health_updated")
 
 
 func on_PerformActionArea_area_shape_entered(area_id, area:Area2D, _area_shape, _self_shape):

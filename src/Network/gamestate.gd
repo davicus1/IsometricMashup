@@ -29,7 +29,6 @@ var dialogBox:DialogBox = null
 
 
 # Signals to let the in-game UI know what's going on
-signal health_updated()
 signal player_died()
 signal paused_state_changed()
 
@@ -180,6 +179,8 @@ func makePlayerCharacter(player_info:PlayerInfo) -> Actor:
 		var player = player_scene.instance()
 		player.set_character_type(player_info.player_character)
 		player.set_player_name(player_info.player_name)
+		player.set_health_current(player_info.health_current)
+		player.set_health_max(player_info.health_max)
 		return player 
 
 

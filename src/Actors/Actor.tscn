@@ -79,6 +79,7 @@ enabled = true
 cast_to = Vector2( 0, 120 )
 collision_mask = 16
 
+[connection signal="health_updated" from="." to="PlayerCameraInterface/ActorStatusOverlay" method="_on_Actor_health_updated"]
 [connection signal="area_shape_entered" from="PerformActionArea" to="." method="on_PerformActionArea_area_shape_entered"]
 [connection signal="area_shape_exited" from="PerformActionArea" to="." method="on_PerformActionArea_area_shape_exited"]
 [connection signal="area_shape_entered" from="EngagementArea" to="." method="_on_EngagementArea_area_shape_entered"]
