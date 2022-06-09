@@ -3,20 +3,25 @@ class_name CombatManager
 
 signal Combat_Happened
 signal Selected_Character_Changed(new_selected_character)
+signal Selected_NPC_Changed(new_selected_NPC)
 signal Heal_Character
 signal Combat_Action(action)
 enum COMBAT_ACTION{
 	Mele,
 	Ranged,
 	Block,
-	Heal
+	Heal,
+	HealNPC,
+	MeleNPC
 	}
 
 var selected_character
+var selected_NPC
 
 func _init():
 	connect("Combat_Action",self,"combat_action")
 	connect("Selected_Character_Changed",self,"selected_character_changed")
+	connect("Selected_NPC_Changed",self,"selected_NPC_changed")
 
 
 func perform_combat_action(action,selected_character):
@@ -36,20 +41,39 @@ func perform_combat_action(action,selected_character):
 			defence_bonus = 4
 		"Heal":
 			healing_points = 2
+		"HealNPC":
+			healing_points = 4
+		"MeleNPC":
+			weapon_damage = 6
+			chanceToHit += 0
 	
 	randomize()
 	
 	if action == "Block":
+		selected_character.block(defence_bonus)
 		print("Your Action: %s" % action)
 	elif action == "Heal":
 		selected_character.heal(healing_points)
+		selected_character.stop_block()
 		print("Your Action: %s Healing Points: %s" % [action,healing_points])
+	elif action == "HealNPC":
+		selected_NPC.heal(healing_points)
+		print("Enemy Action: %s Healing Points: %s" % [action,healing_points])
 	else:
 		var toHitRoll = (randi() % 20) + 1
 		var damage = 0
+		if action == "MeleNPC":
+			chanceToHit += selected_character.defence_bonus
+		else:
+			selected_character.stop_block()
 		if (toHitRoll >= chanceToHit):
 			damage = (randi() % weapon_damage) + 1 # d8
-		print("Your Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
+		if action == "MeleNPC":
+			print("NPC Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
+			selected_character.take_damage(damage)
+		else:
+			print("Your Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
+			selected_NPC.take_damage(damage)
 		emit_signal("Combat_Happened",damage)
 
 
@@ -60,5 +84,8 @@ func combat_action(action):
 
 #Called by signals
 func selected_character_changed(new_selected_character):
-	selected_character = new_selected_character
+	selected_character = new_selected_character#Called by signals
+
+func selected_NPC_changed(new_selected_NPC):
+	selected_NPC = new_selected_NPC
 

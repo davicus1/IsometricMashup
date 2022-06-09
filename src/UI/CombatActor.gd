@@ -9,12 +9,18 @@ var texture
 
 var health_current:int
 var health_max:int
+var defence_bonus:int = 0
 
 func _ready():
 	if texture != null:
 		character_sprite.texture = texture
 	actor_health_bar.health_updated(health_current,health_max)
 
+func block(new_defence_bonus:int):
+	defence_bonus = new_defence_bonus
+
+func stop_block():
+	defence_bonus = 0
 
 func heal(healthPoints:int):
 	health_current = min(health_max,health_current + healthPoints)

@@ -1,15 +1,19 @@
 extends Control
 
 onready var tmp_player_bag = $Players
+onready var tmp_enemy_bag = $Enemies
 onready var combat_actor_scene = load("res://src/UI/CombatActor.tscn")
+onready var combat_enemy_scene = load("res://src/NPC/CombatEnemy.tscn")
 
 var selected_character
+var selected_NPC
 
 func _ready():
 	combatmanager.connect("Selected_Character_Changed",self,"toggle_selected_character")
+	combatmanager.connect("Selected_NPC_Changed",self,"toggle_selected_NPC")
 
 
-func add_players(player_list):
+func add_players(player_list, enemy_list):
 	var spawnPoint = 0
 	for player in player_list:
 		var spawn_pos = get_node("SpawnPoints/" + str(spawnPoint)).position
@@ -22,7 +26,18 @@ func add_players(player_list):
 		if spawnPoint == 0:
 			combatmanager.emit_signal("Selected_Character_Changed",combat_actor)
 		spawnPoint += 1
-
+	
+	spawnPoint = 0
+	for enemy in enemy_list:
+		var spawn_pos = get_node("EnemySpawnPoints/" + str(spawnPoint)).position
+		var combat_enemy:CombatEnemy = combat_enemy_scene.instance()
+		combat_enemy.health_current = 25
+		combat_enemy.health_max = 25
+		combat_enemy.position = spawn_pos
+		tmp_enemy_bag.add_child(combat_enemy)
+		if spawnPoint == 0:
+			combatmanager.emit_signal("Selected_NPC_Changed",combat_enemy)
+		spawnPoint += 1
 
 func _on_LoadPlayers_pressed():
 	
@@ -59,7 +74,9 @@ func _on_LoadPlayers_pressed():
 	
 #	var player_list = get_tree().get_nodes_in_group("Players")
 	var player_list = [player1info,player2info,player3info,player4info,player5info,player6info,player7info,player8info]
-	add_players(player_list)
+	#TODO Placeholder until we pull the enemy's info
+	var enemy_list = [0,1,2,3,4,5,6,7]
+	add_players(player_list,enemy_list)
 
 #Called by signals
 func toggle_selected_character(player):
@@ -68,4 +85,9 @@ func toggle_selected_character(player):
 	selected_character = player
 	selected_character.toggle_selection()
 
-
+#Called by signals
+func toggle_selected_NPC(non_player):
+	if selected_NPC != null:
+		selected_NPC.toggle_selection()
+	selected_NPC = non_player
+	selected_NPC.toggle_selection()

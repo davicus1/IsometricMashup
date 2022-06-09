@@ -43,6 +43,15 @@ margin_right = 1196.0
 margin_bottom = 91.199
 hint_tooltip = "Use a blunt object to beat people"
 
+[node name="EnemyMeleButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 276.0
+margin_top = 27.199
+margin_right = 340.0
+margin_bottom = 91.199
+hint_tooltip = "Use a blunt object to beat people"
+text = "Mele NPC"
+combat_action = "MeleNPC"
+
 [node name="RangedButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
 margin_left = 1036.0
 margin_top = 27.199
@@ -69,6 +78,15 @@ hint_tooltip = "Heal yourself"
 text = "Heal"
 combat_action = "Heal"
 
+[node name="EnemyHealButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 172.0
+margin_top = 27.199
+margin_right = 236.0
+margin_bottom = 91.199
+hint_tooltip = "Heal yourself"
+text = "Heal NPC"
+combat_action = "HealNPC"
+
 [node name="LoadPlayers" type="Button" parent="BGColor/CombatControlBarBG"]
 margin_left = 44.0
 margin_top = 27.199
@@ -83,55 +101,57 @@ __meta__ = {
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="0" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 959, 257 )
+position = Vector2( 960, 320 )
 
 [node name="1" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 1090, 193 )
 
 [node name="2" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 360 )
+position = Vector2( 1216, 320 )
 
 [node name="3" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1089, 511 )
+position = Vector2( 1088, 448 )
 
 [node name="4" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1088, 671 )
+position = Vector2( 1088, 704 )
 
 [node name="5" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 960, 415 )
+position = Vector2( 832, 448 )
 
 [node name="6" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 959, 575 )
 
 [node name="7" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1216, 384 )
+position = Vector2( 1216, 576 )
 
 [node name="EnemySpawnPoints" type="Node2D" parent="."]
 
 [node name="0" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 258, 130 )
+position = Vector2( 320, 192 )
 
 [node name="1" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 258, 258 )
+position = Vector2( 192, 320 )
 
 [node name="2" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 258, 386 )
+position = Vector2( 320, 448 )
 
 [node name="3" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 258, 514 )
+position = Vector2( 192, 576 )
 
 [node name="4" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 258, 642 )
+position = Vector2( 320, 704 )
 
 [node name="5" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 384, 320 )
+position = Vector2( 448, 320 )
 
 [node name="6" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 384, 448 )
+position = Vector2( 448, 576 )
 
 [node name="7" type="Position2D" parent="EnemySpawnPoints"]
-position = Vector2( 128, 384 )
+position = Vector2( 88, 448 )
 
 [node name="Players" type="YSort" parent="."]
+
+[node name="Enemies" type="YSort" parent="."]
 
 [connection signal="pressed" from="BGColor/CombatControlBarBG/LoadPlayers" to="." method="_on_LoadPlayers_pressed"]

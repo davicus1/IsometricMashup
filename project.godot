@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/CombatActor.gd"
 }, {
+"base": "Node2D",
+"class": "CombatEnemy",
+"language": "GDScript",
+"path": "res://src/NPC/CombatEnemy.gd"
+}, {
 "base": "Node",
 "class": "CombatManager",
 "language": "GDScript",
@@ -106,6 +111,7 @@ _global_script_class_icons={
 "Capacity": "",
 "CombatActivityButton": "",
 "CombatActor": "",
+"CombatEnemy": "",
 "CombatManager": "",
 "DialogBox": "",
 "DialogManager": "",
