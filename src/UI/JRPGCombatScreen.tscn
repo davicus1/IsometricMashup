@@ -16,6 +16,7 @@ __meta__ = {
 [node name="BGColor" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 776, 752 )
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.411765 )
 __meta__ = {
@@ -74,9 +75,19 @@ margin_left = 845.0
 margin_top = 27.199
 margin_right = 909.0
 margin_bottom = 91.199
+rect_pivot_offset = Vector2( -1218, -640 )
 hint_tooltip = "Heal yourself"
 text = "Heal"
 combat_action = "Heal"
+
+[node name="TargetButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
+margin_left = 589.0
+margin_top = 27.199
+margin_right = 653.0
+margin_bottom = 91.199
+hint_tooltip = "Target PCs"
+text = "Target"
+combat_action = "Target"
 
 [node name="EnemyHealButton" parent="BGColor/CombatControlBarBG" instance=ExtResource( 2 )]
 margin_left = 172.0

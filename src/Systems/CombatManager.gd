@@ -6,6 +6,8 @@ signal Selected_Character_Changed(new_selected_character)
 signal Selected_NPC_Changed(new_selected_NPC)
 signal Heal_Character
 signal Combat_Action(action)
+signal Randomly_Target
+signal Player_Targeted
 enum COMBAT_ACTION{
 	Mele,
 	Ranged,
@@ -17,11 +19,13 @@ enum COMBAT_ACTION{
 
 var selected_character
 var selected_NPC
+var targeted_character
 
 func _init():
 	connect("Combat_Action",self,"combat_action")
 	connect("Selected_Character_Changed",self,"selected_character_changed")
 	connect("Selected_NPC_Changed",self,"selected_NPC_changed")
+	connect("Player_Targeted",self,"target_player_changed")
 
 
 func perform_combat_action(action,selected_character):
@@ -70,7 +74,7 @@ func perform_combat_action(action,selected_character):
 			damage = (randi() % weapon_damage) + 1 # d8
 		if action == "MeleNPC":
 			print("NPC Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
-			selected_character.take_damage(damage)
+			targeted_character.take_damage(damage)
 		else:
 			print("Your Action: %s Roll: %s/%s Damage : %s" % [action,toHitRoll,chanceToHit,damage])
 			selected_NPC.take_damage(damage)
@@ -79,7 +83,10 @@ func perform_combat_action(action,selected_character):
 
 #Called by signals
 func combat_action(action):
-	perform_combat_action(action,selected_character)
+	if action == "Target":
+		emit_signal("Randomly_Target")
+	else:
+		perform_combat_action(action,selected_character)
 
 
 #Called by signals
@@ -88,4 +95,8 @@ func selected_character_changed(new_selected_character):
 
 func selected_NPC_changed(new_selected_NPC):
 	selected_NPC = new_selected_NPC
+
+
+func target_player_changed(new_targeted_character):
+	targeted_character = new_targeted_character
 

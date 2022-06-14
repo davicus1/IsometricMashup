@@ -39,3 +39,4 @@ func _on_SelectionArea_input_event(viewport, event, shape_idx):
 		combatmanager.emit_signal("Selected_NPC_Changed",self)
 
 
+

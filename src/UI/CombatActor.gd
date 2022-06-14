@@ -4,6 +4,7 @@ class_name CombatActor
 onready var character_sprite = $Sprite
 onready var selected_character = $SelectedCharacter
 onready var actor_health_bar:ActorHealthBar = $ActorHealthBar
+onready var target_character = $TargetCharacter
 var texture
 
 
@@ -52,5 +53,13 @@ func toggle_selection():
 func _on_SelectionArea_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_select"):
 		combatmanager.emit_signal("Selected_Character_Changed",self)
+
+
+func targeted():
+	target_character.visible = true
+
+
+func untargeted():
+	target_character.visible = false
 
 

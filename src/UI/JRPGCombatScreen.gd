@@ -11,7 +11,7 @@ var selected_NPC
 func _ready():
 	combatmanager.connect("Selected_Character_Changed",self,"toggle_selected_character")
 	combatmanager.connect("Selected_NPC_Changed",self,"toggle_selected_NPC")
-
+	combatmanager.connect("Randomly_Target",self,"acquire_random_target")
 
 func add_players(player_list, enemy_list):
 	var spawnPoint = 0
@@ -23,6 +23,7 @@ func add_players(player_list, enemy_list):
 		combat_actor.health_max = player.health_max
 		combat_actor.position = spawn_pos
 		tmp_player_bag.add_child(combat_actor)
+		combat_actor.add_to_group("PCs")
 		if spawnPoint == 0:
 			combatmanager.emit_signal("Selected_Character_Changed",combat_actor)
 		spawnPoint += 1
@@ -35,6 +36,7 @@ func add_players(player_list, enemy_list):
 		combat_enemy.health_max = 25
 		combat_enemy.position = spawn_pos
 		tmp_enemy_bag.add_child(combat_enemy)
+		combat_enemy.add_to_group("NPCs")
 		if spawnPoint == 0:
 			combatmanager.emit_signal("Selected_NPC_Changed",combat_enemy)
 		spawnPoint += 1
@@ -91,3 +93,14 @@ func toggle_selected_NPC(non_player):
 		selected_NPC.toggle_selection()
 	selected_NPC = non_player
 	selected_NPC.toggle_selection()
+
+
+func acquire_random_target():
+	#Could get_tree live in the Combat Manager instead?
+	get_tree().call_group_flags(SceneTree.GROUP_CALL_REALTIME, "PCs","untargeted")
+	var pcs = get_tree().get_nodes_in_group("PCs")
+	var number_of_targets:int = pcs.size()
+	var int_target_position:int = randi() % number_of_targets
+	var pc = pcs[int_target_position]
+	pc.targeted()
+	combatmanager.emit_signal("Player_Targeted",pc)
